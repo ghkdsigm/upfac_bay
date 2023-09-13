@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - 다운로드 내역</title>
+    <link rel="stylesheet" href="/resources/assets/css/reset.css">
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/payment.css">
+    <link rel="stylesheet" href="/resources/assets/css/mypage.css">
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css">
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+    <header class="header"></header>
+
+    <main class="all_wrap">
+        <section class="mypage_area">
+            <div class="my_info">
+                <div class="container">
+                    <!-- [dev] 판매자 모드일경우 my_info_cont 에 on 추가 -->
+                    <div class="my_info_cont">
+                        <div class="is_profile">
+                            <div class="is_img">
+                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" />
+                            </div>
+                            <div class="is_text">
+                                <!-- [dev] 판매자 모드일경우 type_user 텍스트 '판매자 회원' 으로 변경-->
+                                <div class="type">
+                                    <p class="type_user">구매자 회원</p>
+                                    <p>판매자 모드</p>
+                                    <div class="switch">
+                                        <span>ON</span>
+                                        <span>OFF</span>
+                                    </div>
+                                </div>
+                                <h3>Whisky Hotel 1996</h3>
+                                <div class="following">
+                                    <p>Follow</p>
+                                    <a href="javascript:;">123,456,170</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [dev]
+                            <h5>사용가능 쿠폰</h5>  >   <h5>N월 판매 내역<p class="i_info"><img src="/resources/assets/images/mypage/ico_info.svg" alt="아이콘" /><span class="tooltip">· 구매 취소가 반영되지 않은 내용으로 실 판매 내역과,<br />실 정산 금액은 차이가 발생할 수 있습니다</span></p></h5>
+                            <h5>적립금</h5>  >  <h5>N월 정산 예정금액<p class="i_info"><img src="/resources/assets/images/mypage/ico_settings.svg" alt="아이콘" />내 정산 계좌<span class="tooltip">· 내 정산 계좌 : (국민) 841201-04-012808<a href="javascript:;">수정</a></span></p></h5>
+                        -->
+                        <div class="is_benefits">
+                            <div class="is_coupon">
+                                <h5>사용가능 쿠폰</h5>
+                                <p><span>1</span>장</p>
+                            </div>
+                            <div class="is_point">
+                                <h5>적립금</h5>
+                                <p><span>13,200</span>P</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="mypage_list">
+                    <li class="on"><a href="javascript:;">내가 본 상품</a></li>
+                    <li><a href="javascript:;">즐겨찾기</a></li>
+                    <li><a href="javascript:;">장바구니</a></li>
+                    <li><a href="javascript:;">구매 내역</a></li>
+                    <li><a href="javascript:;">다운로드 내역</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- 다운로드 내역 -->
+        <section class="mypage_download_area">
+            <div class="container">
+                <div class="cont">
+                    <div class="item_tab">
+                        <ul class="item_tab_list tab_none_style">
+                            <li class="on"><button type="button">전체 목록</button></li>
+                            <li><button type="button">다운로드 전</button></li>
+                            <li><button type="button">다운로드 완료</button></li>
+                            <li><button type="button">다운로드 만료</button></li>
+                        </ul>
+                        <span>· 구매 취소는 구매 후 상품을 다운로드 하지 않은 상태에서 7일 이내에만 가능하며, 7일 이후에는 불가능합니다.</span>
+                    </div>
+                    <div class="item_product">
+                        <div class="item_product_title">
+                            <h3>구매일<span>2023.07.27 18:23</span></h3>
+                        </div>
+                        <ul class="item_product_list">
+                            <li>
+                                <div class="is_img">
+                                    <img src="/resources/assets/images/test/item01.jpg" alt="상품이미지" />
+                                </div>
+                                <div class="is_text">
+                                    <sup>3D > 캐릭터</sup>
+                                    <h4>그레이하운드 캐릭터 3D 이미지</h4>
+                                    <div class="price"> 
+                                        <p class="price_final">25,000<small>원</small></p>
+                                        <p class="price_og">35000<span>원</span></p>
+                                    </div>
+                                    <div class="tag">
+                                        <span>#Autodesk FBX</span>
+                                    </div>
+                                </div>
+                                <div class="is_btn">
+                                    <!-- [dev] 디폴트: p태그 class 없음 -->
+                                    <p>2023.08.03 18:23 까지 구매취소 가능</p>
+                                    <button type="button" class="btn_download">다운로드</button>
+                                    <button type="button" class="btn_cancel">구매취소</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="is_img">
+                                    <img src="/resources/assets/images/test/item01.jpg" alt="상품이미지" />
+                                </div>
+                                <div class="is_text">
+                                    <sup>3D > 캐릭터</sup>
+                                    <h4>그레이하운드 캐릭터 3D 이미지</h4>
+                                    <div class="price"> 
+                                        <p class="price_final">25,000<small>원</small></p>
+                                        <p class="price_og">35000<span>원</span></p>
+                                    </div>
+                                    <div class="tag">
+                                        <span>#Autodesk FBX</span>
+                                    </div>
+                                </div>
+                                <div class="is_btn">
+                                    <!-- [dev] 다운로드 만료일 표기시: p태그class text_download_re 추가 -->
+                                    <p class="download_re">다운로드 만료일 2023.10.27 18:23</p>
+                                    <button type="button" class="btn_download_re">재 다운로드</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="is_img">
+                                    <img src="/resources/assets/images/test/item01.jpg" alt="상품이미지" />
+                                </div>
+                                <div class="is_text">
+                                    <sup>3D > 캐릭터</sup>
+                                    <h4>그레이하운드 캐릭터 3D 이미지</h4>
+                                    <div class="price"> 
+                                        <p class="price_final">25,000<small>원</small></p>
+                                        <p class="price_og">35000<span>원</span></p>
+                                    </div>
+                                    <div class="tag">
+                                        <span>#Autodesk FBX</span>
+                                    </div>
+                                </div>
+                                <div class="is_btn">
+                                    <p class="download_re">다운로드 만료일 2023.10.27 18:23</p>
+                                    <button type="button" class="btn_download_end">다운기간 만료</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item_product">
+                        <div class="item_product_title">
+                            <h3>구매일<span>2023.07.26 10:03</span></h3>
+                        </div>
+                        <ul class="item_product_list">
+                            <li>
+                                <div class="is_img">
+                                    <img src="/resources/assets/images/test/item01.jpg" alt="상품이미지" />
+                                </div>
+                                <div class="is_text">
+                                    <sup>3D > 캐릭터</sup>
+                                    <h4>그레이하운드 캐릭터 3D 이미지</h4>
+                                    <div class="price"> 
+                                        <p class="price_final">25,000<small>원</small></p>
+                                        <p class="price_og">35000<span>원</span></p>
+                                    </div>
+                                    <div class="tag">
+                                        <span>#Autodesk FBX</span>
+                                    </div>
+                                </div>
+                                <div class="is_btn">
+                                    <!-- [dev] 디폴트: p태그 class 없음 -->
+                                    <p>2023.08.03 18:23 까지 구매취소 가능</p>
+                                    <button type="button" class="btn_download">다운로드</button>
+                                    <button type="button" class="btn_cancel">구매취소</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="is_img">
+                                    <img src="/resources/assets/images/test/item01.jpg" alt="상품이미지" />
+                                </div>
+                                <div class="is_text">
+                                    <sup>3D > 캐릭터</sup>
+                                    <h4>그레이하운드 캐릭터 3D 이미지</h4>
+                                    <div class="price"> 
+                                        <p class="price_final">25,000<small>원</small></p>
+                                        <p class="price_og">35000<span>원</span></p>
+                                    </div>
+                                    <div class="tag">
+                                        <span>#Autodesk FBX</span>
+                                    </div>
+                                </div>
+                                <div class="is_btn">
+                                    <!-- [dev] 다운로드 만료일 표기시: p태그class text_download_re 추가 -->
+                                    <p class="download_re">다운로드 만료일 2023.10.27 18:23</p>
+                                    <button type="button" class="btn_download_re">재 다운로드</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="is_img">
+                                    <img src="/resources/assets/images/test/item01.jpg" alt="상품이미지" />
+                                </div>
+                                <div class="is_text">
+                                    <sup>3D > 캐릭터</sup>
+                                    <h4>그레이하운드 캐릭터 3D 이미지</h4>
+                                    <div class="price"> 
+                                        <p class="price_final">25,000<small>원</small></p>
+                                        <p class="price_og">35000<span>원</span></p>
+                                    </div>
+                                    <div class="tag">
+                                        <span>#Autodesk FBX</span>
+                                    </div>
+                                </div>
+                                <div class="is_btn">
+                                    <p class="download_re">다운로드 만료일 2023.10.27 18:23</p>
+                                    <button type="button" class="btn_download_end">다운기간 만료</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 다운로드 끝 -->
+    </main>
+
+    <footer class="footer"></footer>
+    
+    <!-- Jquery -->
+    <script type="text/javascript" src="/resources/assets/js/jquery.min.js"></script>
+    <!-- Swiper -->
+    <script type="text/javascript" src="/resources/assets/js/swiper-bundle.min.js"></script>
+    <!-- 공통js -->
+    <script type="text/javascript" src="/resources/assets/js/common.js"></script>
+    <!-- threesixty -->
+    <script type="text/javascript" src="/resources/assets/js/plugins/jquery.threesixty.js"></script>    
+    <!-- 데이터피커 -->
+    <script type="text/javascript" src="/resources/assets/js/plugins/jquery-ui.min.js"></script>
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script> 
+
+    <script>
+        $(function(){
+            // [dev] 판매자모드 전환 스위치 
+            $('.mypage_area .my_info .my_info_cont .type').on('click',function(){
+                $(this).toggleClass('on');
+            });
+        })
+    </script>
+</body>
+</html>

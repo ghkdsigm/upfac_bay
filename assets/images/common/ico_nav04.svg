@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.096" height="10" viewBox="0 0 15.096 10">
+  <g id="car-sport-outline" transform="translate(0.548 0.5)">
+    <path id="패스_37" data-name="패스 37" d="M14.678,7.331c-.229-.3-1.08-.513-1.44-1.061s-.655-1.732-1.571-2.187A10.019,10.019,0,0,0,8,3.5a9.983,9.983,0,0,0-3.668.582c-.918.457-1.211,1.641-1.571,2.188s-1.211.758-1.44,1.062A8.677,8.677,0,0,0,1.029,10.5,7.908,7.908,0,0,0,1.311,12H4c.44,0,.583-.165,1.483-.25.988-.094,1.956-.125,2.519-.125s1.563.031,2.549.125c.9.085,1.048.25,1.483.25h2.656a7.908,7.908,0,0,0,.281-1.5,8.707,8.707,0,0,0-.292-3.169Z" transform="translate(-1 -3.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_38" data-name="패스 38" d="M12.5,12h1.75v.5H12.5Z" transform="translate(-1 -3.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_39" data-name="패스 39" d="M1.75,12H3.5v.5H1.75Z" transform="translate(-1 -3.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_40" data-name="패스 40" d="M11.39,9.661A3.177,3.177,0,0,0,9.806,9.15,9.722,9.722,0,0,0,8.006,9a11.529,11.529,0,0,0-1.8.15,3.119,3.119,0,0,0-1.583.511c-.369.358.172.759.6.807s1.233.03,2.791.03,2.38.017,2.791-.03S11.726,10.044,11.39,9.661Z" transform="translate(-1 -3.5)"/>
+    <path id="패스_41" data-name="패스 41" d="M13.487,7.6a.1.1,0,0,0-.1-.094,4.049,4.049,0,0,0-1.408.209,2.934,2.934,0,0,0-.94.471.134.134,0,0,0,.043.222,14.229,14.229,0,0,0,1.651.1c.331,0,.672-.094.736-.389a1.638,1.638,0,0,0,.015-.516Z" transform="translate(-1 -3.5)"/>
+    <path id="패스_42" data-name="패스 42" d="M2.513,7.6a.1.1,0,0,1,.1-.094,4.049,4.049,0,0,1,1.408.209,2.934,2.934,0,0,1,.94.471.134.134,0,0,1-.043.222,14.229,14.229,0,0,1-1.651.1c-.331,0-.672-.094-.736-.389A1.638,1.638,0,0,1,2.513,7.6Z" transform="translate(-1 -3.5)"/>
+    <path id="패스_43" data-name="패스 43" d="M13.5,6H14" transform="translate(-1 -3.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_44" data-name="패스 44" d="M2,6h.5" transform="translate(-1 -3.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_45" data-name="패스 45" d="M2.438,6.594A26.121,26.121,0,0,1,8,6.219a26.121,26.121,0,0,1,5.563.375" transform="translate(-1 -3.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

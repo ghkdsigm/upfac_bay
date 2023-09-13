@@ -1,0 +1,478 @@
+/* 결제하기 */
+.payment_wrap .cont {
+    display: flex;
+}
+.payment_wrap .cont_info {
+    max-width: 810px;
+    min-width: 810px;
+    padding: 60px 50px 0 0;
+    border-right: 1px solid #EFEFEF;
+}
+.payment_wrap .cont_info .item_product h3 {
+    margin-top: 40px;
+}
+.payment_wrap .cont_info .item_product_list {
+    margin-top: 10px;
+    border-top: 1px solid #1C1B1B;
+}
+.payment_wrap .cont_info .item_product .item {
+    padding: 30px 0;
+    border-bottom: 1px solid #DFDFDF;
+}
+.payment_wrap .cont_info .item_product .item h4 {
+    font-size: 20px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.payment_wrap .cont_info .item_product .item .detail {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+.payment_wrap .cont_info .item_product .item .detail .is_img {
+    max-width: 272px;
+    min-width: 272px;
+    width: 100%;
+    background: #000;
+    margin-right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.payment_wrap .cont_info .item_product .item .detail .is_img img {
+    width: 100%;
+}
+.payment_wrap .cont_info .item_product .item .detail .price {
+    display: flex;
+    align-items: flex-end;
+}
+.payment_wrap .cont_info .item_product .item .detail .price .price_final {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.payment_wrap .cont_info .item_product .item .detail .price .price_final small {
+    font-size: 16px;
+}
+.payment_wrap .cont_info .item_product .item .detail .price .price_og {
+    font-size: 14px;
+    color: #878787;
+    text-decoration: line-through;
+}
+.payment_wrap .cont_info .item_product .item .detail label {
+    font-size: 14px;
+    min-width: 110px;
+}
+.payment_wrap .cont_info .item_product .item .detail .coupon {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.payment_wrap .cont_info .item_product .item .detail .coupon select {
+    -webkit-appearance:none; /* for chrome */
+    -moz-appearance:none; /*for firefox*/
+    appearance:none;
+    width: 360px;
+    height: 40px;
+    padding: 0 10px;
+    background:url('/resources/assets/images/arrow.png') right 10px center no-repeat;
+    border-radius: 6px;
+    border: 1px solid #DFDFDF;
+}
+.payment_wrap .cont_info .item_product .item .detail .point {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.payment_wrap .cont_info .item_product .item .detail .point .point_box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 360px;
+    height: 40px;
+    padding: 0 5px 0 10px;
+    border-radius: 6px;
+    border: 1px solid #DFDFDF;
+}
+.payment_wrap .cont_info .item_product .item .detail .point input {
+    font-size: 14px;
+    font-weight: bold;
+    height: 100%;
+    text-align: right;
+}
+.payment_wrap .cont_info .item_product .item .detail .point p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.payment_wrap .cont_info .item_product .item .detail .point .btn_use {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    height: 30px;
+    padding: 0 10px;
+    margin-left: 10px;
+    background: #1C1B1B;
+    border-radius: 4px;
+}
+.payment_wrap .cont_info .item_product .item .detail .point_have {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #878787;
+    text-align: right;
+}
+.payment_wrap .cont_info .item_product .item .tag {
+    display: flex;
+    margin-top: 10px;
+}
+.payment_wrap .cont_info .item_product .item .tag span {
+    font-size: 10px;
+    display: inline-block;
+    padding: 4px 8px;
+    color: #4E76CB;
+    background: #D6E3FF;
+    border-radius: 4px;
+}
+.payment_wrap .cont_info .item_product .item .tag span + span {
+    margin-left: 4px;
+}
+
+/* 사용권 유형 */
+.payment_wrap .item_license {
+    margin-top: 60px;
+}
+.payment_wrap .item_license .accordion {
+    margin-top: 20px;
+}
+.payment_wrap .item_license .accordion_list + .accordion_list {
+    margin-top: 20px;
+}
+.payment_wrap .item_license .accordion_list {
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px #DFDFDF;
+}
+.payment_wrap .item_license .accordion_list.on,
+.payment_wrap .item_license .accordion_list:hover {
+    box-shadow: 0 0 0 2px #1C1B1B;
+}
+.payment_wrap .item_license .accordion_title {
+    display: flex;
+    align-items: center;
+    padding: 30px 20px;
+}
+.payment_wrap .item_license .accordion_title p {
+    position: relative;
+    font-weight: bold;
+    padding-left: 34px;
+    color: #878787;
+}
+.payment_wrap .item_license .accordion_title p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url(/resources/assets/images/common/radio_off.svg) no-repeat;
+}
+.payment_wrap .item_license .accordion_list.on p,
+.payment_wrap .item_license .accordion_list:hover p {
+    color: #1C1B1B;
+}
+.payment_wrap .item_license .accordion_list.on p::before,
+.payment_wrap .item_license .accordion_list:hover p::before {
+    background: url(/resources/assets/images/common/radio_on.svg) no-repeat;
+}
+.payment_wrap .item_license .accordion_title span {
+    font-size: 14px;
+    margin-left: 10px;
+    color: #878787;
+}
+.payment_wrap .item_license .accordion_list.on span,
+.payment_wrap .item_license .accordion_title:hover span {
+    color: #1C1B1B;
+}
+.payment_wrap .item_license .accordion_title .is_arw {
+    width: 31px;
+    height: 17px;
+    margin-left: auto;
+    background: url(/resources/assets/images/common/accordion_arw_off.svg) no-repeat;
+}
+.payment_wrap .item_license .accordion_list.on .is_arw {
+    background: url(/resources/assets/images/common/accordion_arw_on.svg) no-repeat;
+}
+.payment_wrap .item_license .accordion_toggle {
+    display: none;
+    padding: 30px 0;
+    margin: 0 20px;
+    border-top: 1px solid #DFDFDF;
+}
+.payment_wrap .item_license .accordion_toggle_item {
+    margin-top: 20px;
+}
+.payment_wrap .item_license .accordion_toggle p {
+    font-size: 14px;
+    font-weight: bold;
+}
+.payment_wrap .item_license .accordion_toggle p~p {
+    margin-top: 20px;
+}
+.payment_wrap .item_license .accordion_toggle p img {
+    margin-right: 10px;
+}
+.payment_wrap .item_license .accordion_toggle .input_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding-right: 5px;
+    margin-top: 14px;
+    border: 1px solid #dfdfdf;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.payment_wrap .item_license .accordion_toggle .input_box input {
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+.payment_wrap .item_license .accordion_toggle .input_box input.input_read::placeholder {
+    color: #1C1B1B;
+}
+.payment_wrap .item_license .accordion_toggle .input_box input::placeholder {
+    color: #B9B9B9;
+}
+.payment_wrap .item_license .accordion_toggle button {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    height: 30px;
+    color: #fff;
+    background: #1C1B1B;
+    border-radius: 4px;
+}
+.payment_wrap .item_license .accordion_toggle .btn_delete {
+    color: #1C1B1B;
+    background: #DFDFDF;
+}
+.payment_wrap .item_license .accordion_toggle button::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    background: url(/resources/assets/images/common/ico_add.png) no-repeat;
+}
+.payment_wrap .item_license .accordion_toggle .btn_delete::before {
+    width: 12px;
+    height: 2px;
+    background: url(/resources/assets/images/common/ico_delete.png) no-repeat;
+}
+.payment_wrap .item_license .accordion_toggle .caution {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.payment_wrap .item_license .accordion_toggle .caution li {
+    font-size: 12px;
+}
+.payment_wrap .item_license .accordion_toggle .caution li + li {
+    margin-top: 2px;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_box {
+    position: relative;
+    width: 100%;
+    margin-left: 7px;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px 0 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #dfdfdf;
+    cursor: pointer;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_box.on .select_title {
+    border-radius: 6px 6px 0 0;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice p {
+    font-weight: inherit;
+    font-size: 12px;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_list {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 18px 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 0 0 6px 6px;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_box.on .select_list {
+    display: block;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_list li + li {
+    margin-top: 7px;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_list input[type="checkbox"] {
+    display: none;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_list label {
+    font-size: 12px;    
+    cursor: pointer;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_list input + label:before {
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: url(/resources/assets/images/common/check_square_off.svg) no-repeat;
+}
+.payment_wrap .item_license .accordion_toggle .project_choice .select_list input:checked + label:before {
+    content: "";
+    background: url(/resources/assets/images/common/check_square_on.svg) no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+
+.payment_wrap .item_pay_method {
+    margin-top: 60px;
+}
+.payment_wrap .item_pay_method .pay_method_list {
+    display: flex;
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #1C1B1B;
+}
+.payment_wrap .item_pay_method .pay_method_list .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 80px;
+    box-shadow: 0 0 0 1px #DFDFDF;
+    border-radius: 8px;
+}
+.payment_wrap .item_pay_method .pay_method_list .item.on {
+    box-shadow: 0 0 0 2px #1C1B1B;
+}
+.payment_wrap .item_pay_method .pay_method_list .item + .item {
+    margin-left: 10px;
+}
+.payment_wrap .item_pay_method .pay_method_list .item button {
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.payment_wrap .cont_pay {
+    width: 100%;
+    padding-left: 30px;
+}
+.payment_wrap .cont_pay .item {
+    position: sticky;
+    top: 157px;
+    padding-top: 60px;
+}
+.payment_wrap .cont_pay .pay_info {
+    margin-top: 20px;
+}
+.payment_wrap .cont_pay .pay_info li {
+    display: flex;
+    justify-content: space-between;
+}
+.payment_wrap .cont_pay .pay_info li p {
+    font-size: 18px;
+
+}
+.payment_wrap .cont_pay .pay_info li.sm p {
+    font-size: 12px;
+}
+.payment_wrap .cont_pay .pay_info li + li {
+    margin-top: 10px;
+}
+.payment_wrap .cont_pay .pay_final {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #DFDFDF;
+}
+.payment_wrap .cont_pay .pay_final p {
+    font-size: 18px;
+    font-weight: bold;
+}
+.payment_wrap .cont_pay .pay_final span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FF5050;
+}
+.payment_wrap .cont_pay .pay_check {
+    margin-top: 60px;
+}
+.payment_wrap .cont_pay .pay_check input[type="checkbox"] {
+    display: none;
+}
+.payment_wrap .cont_pay .pay_check label {
+    font-size: 14px;    
+    font-weight: bold;
+    cursor: pointer;
+}
+.payment_wrap .cont_pay .pay_check input + label:before {
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: -2px;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: url(/resources/assets/images/common/check_off.svg) no-repeat;
+}
+.payment_wrap .cont_pay .pay_check input:checked + label:before {
+    content: "";
+    background: url(/resources/assets/images/common/check_on.svg) no-repeat;
+    background-position: center;
+    text-align: center;
+}
+.payment_wrap .cont_pay .btn_pay {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    color: #fff;
+    border-radius: 8px;
+    background: #FF5050;
+}
+/* 결제하기 끝 */
+
+

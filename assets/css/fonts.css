@@ -1,0 +1,7 @@
+@font-face{
+    font-family:'Pretendard-b';
+    src:url('/resources/assets/fonts/Pretendard-Bold.woff') format('woff'),
+    url('/resources/assets/fonts/Pretendard-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}

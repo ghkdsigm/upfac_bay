@@ -1,0 +1,208 @@
+.login_area { display: flex; width: 100%; height: 100%; position: absolute;  top: 0; z-index: 100; background-repeat: no-repeat; background-position: top center; background-size: cover; } 
+.login_area::before { content: ""; z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); } 
+.login_area .login_wrap { position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; z-index: 1; max-width: 500px; height: 70vh; max-height: 700px; background: #fff; border-radius: 10px; box-sizing: border-box; align-items: center; width: 100%; justify-content: center;  } 
+
+form { margin-top: 30px; } 
+.login_form-content .title h2 {font-size:32px;text-align:center;}
+.login_forms { width: 100%; height: 100%; overflow-y: auto; padding: 30px 40px;} 
+.login_form { position: relative; max-width: 430px; width: 100%; border-radius: 6px; background: #FFF; } 
+.login_header { font-size: 32px; font-weight: 600; color: #232836; text-align: center; } 
+.login_form .field { position: relative; width: 100%; margin-top: 25px; border-radius: 6px; } 
+.login_form .field.authconfirm { display: flex; align-items: center; border-radius:10px; outline:none;}
+.login_form .field.authconfirm label { display: flex; align-items: center; outline: none; border: 1px solid#CACACA; border-radius: 10px; width: 100%; margin-bottom: 0; } 
+.login_form .field.authconfirm label > input { border:none; padding: 0 20px; } 
+.login_form .field.authconfirm label > button { background:#5157FF; padding:13px 29px; color:#fff; margin:10px 10px 10px 0; max-width:90px; } 
+.login_form .field .tip { font-size:12px; color:#878787; display: block; margin-bottom: 5px; } 
+.login_form .field.field_pwconfirm { margin-top: 5px; } 
+.login_form .field.field_pwconfirm label { position: absolute; top: 11px; left: 10px; display: none; } 
+.login_form .field label { display: flex; margin-bottom:10px; } 
+.login_form .field label em { font-weight:bold; } 
+.field input,
+.field textarea,
+.field button { height: 100%; width: 100%; border: none; font-size: 16px; font-weight: bold; border-radius: 10px; } 
+.field input { outline: none; padding: 20px; border: 1px solid#CACACA; } 
+.field input::placeholder { font-size:14px; color:#B9B9B9; font-weight:400;} 
+.field textarea { outline: none; padding: 20px; border: 1px solid#CACACA; } 
+.field textarea::placeholder { font-size:14px; color:#B9B9B9; font-weight:400;} 
+.eye-icon { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 18px; color: #8b8b8b; cursor: pointer; padding: 5px; } 
+.field input.password.error_focus {border:1px solid #FF6E6E;}
+.field input.email.error_focus {border:1px solid #FF6E6E;}
+
+.field.auto_login_wrap label { display: -moz-box; display: -ms-flexbox;  -moz-box-align: start; -ms-flex-align: start;  -webkit-box-pack: left;  -moz-box-pack: left; -ms-flex-pack: left;  cursor: pointer; display:inline-flex; align-items: center; } 
+.field.auto_login_wrap span { display: inline-block; vertical-align: middle; font-size: 15px; margin-left: 8px; color: #2B2B2B; } 
+.field.auto_login_wrap input { display: none; } 
+.field.auto_login_wrap label:before { vertical-align: middle; background-repeat: no-repeat; background-image: url('/resources/assets/images/common/check_off.png'); background-position: center center; -webkit-background-size: auto auto; -moz-background-size: auto; background-size: auto; content: ''; width: 28px; height: 28px; -webkit-box-flex: 0; -webkit-flex: none; -moz-box-flex: 0; -ms-flex: none; flex: none; } 
+.field.auto_login_wrap input:checked+label:before { background-repeat: no-repeat; background-image: url('/resources/assets/images/common/check_on.png'); } 
+
+.field .loginbt_type01 { color: #fff; background-color: #1C1B1B; transition: all 0.3s ease; cursor: pointer; } 
+.field .loginbt_type01:hover { background-color: #016dcb; } 
+.field .loginbt_type02 { background-color: transparent; border:1px solid #1C1B1B; transition: all 0.3s ease; cursor: pointer; } 
+.field .loginbt_type02:hover { }
+.field .loginbt_type01, .loginbt_type02 { padding:20px 0; } 
+
+.loginbt_type04 { padding:20px 0; } 
+.field .loginbt_type04 { font-size:24px;background-color: #FFB300; transition: all 0.3s ease; cursor: pointer; color:#fff;} 
+.field .loginbt_type04:hover { }
+
+.loginbt_type05 { padding:20px 0; } 
+.field .loginbt_type05 { max-width:160px; font-size:24px;background-color: #B9B9B9; transition: all 0.3s ease; cursor: pointer; color:#fff;} 
+.field .loginbt_type05:hover { }
+
+
+.field .loginbt_type03 {padding:10px 0;  background-color: transparent; border:1px solid #878787; transition: all 0.3s ease; cursor: pointer; color:#878787; } 
+.field .loginbt_type03:hover { border:1px solid #000; color:#000; } 
+.field .loginbt_type03.on { color: #5157FF; border: 1px solid #5157FF; } 
+
+.login_form-link { text-align: center; margin-top: 10px; } 
+.login_form-link span,
+.login_form-link a { font-size: 14px; font-weight: 400; color: #232836; } 
+.login_form a { color: #878787; text-decoration: none; } 
+.login_form-content a:hover { text-decoration: underline; } 
+.login_form .media-options > a { display: flex; align-items: center; margin-top: 0; justify-content: center; } 
+.line { position: relative; height: 1px; width: 100%; margin: 30px 0; background-color: #d4d4d4; } 
+.line::before { content: 'SNS 계정으로 로그인'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #FFF; color: #1C1B1B; font-size: 16px; padding: 0 15px; } 
+.media-options { display: flex; } 
+
+
+.find_pw { display: flex; justify-content: space-between; align-items: center; } 
+.find_pw > a { font-size:12px; } 
+
+.error_msg { color:#FF6E6E; margin-top: 10px; font-size:12px; } 
+.regetauth { color:#707070; margin-top: 10px; font-size:12px; } 
+.regetauth > a { color:#000000; text-decoration: underline; font-weight:bold; } 
+.findpw_dec { text-align: center; margin-top: 40px; font-weight: bold; font-size: 16px; } 
+
+.field_agree { display: flex; flex-direction: column; } 
+.field_agree label { align-items: center; } 
+.field_agree label.check_all { margin-bottom:20px; } 
+.field_agree label span { display: inline-block; vertical-align: middle; font-size: 16px; margin-left: 8px; color: #2B2B2B; } 
+.field_agree label.check_all span { font-size:18px; font-weight:bold; } 
+.field_agree label:before { vertical-align: middle; background-repeat: no-repeat; background-image: url('/resources/assets/images/common/check_off.png'); background-position: center center; -webkit-background-size: auto auto; -moz-background-size: auto; background-size: auto; content: ''; width: 28px; height: 28px; -webkit-box-flex: 0; -webkit-flex: none; -moz-box-flex: 0; -ms-flex: none; flex: none; } 
+.field_agree input { display: none; } 
+.field_agree input:checked+label:before { background-image: url('/resources/assets/images/common/check_on.png'); } 
+
+/*프로필 수정 시작*/
+.profile_area { display: flex; width: 100%; height: 100%; position: absolute;  top: 0; z-index: 100; background-repeat: no-repeat; background-position: top center; background-size: cover; } 
+.profile_area::before { content: ""; z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); } 
+.profile_area .profile_wrap { position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; z-index: 1; max-width: 500px; height: fit-content; max-height: 700px; background: #fff; border-radius: 10px; box-sizing: border-box; align-items: center; width: 100%; justify-content: center; } 
+.profile_area .profile_wrap.profile_edit_wrap {height:70vh;}
+.profile_area .profile_wrap.profile_edit_wrap #profileImageInput {display: none;}
+.profile_area .profile_wrap.prfile_edit_wrap_wide {max-width:600px;}
+.profile_area .profile_wrap.prfile_edit_wrap_wide .profile_form {max-width: 600px;}
+
+.profile_form-content .title h2 {font-size:32px; text-align:center;}
+.profile_forms { width: 100%; height: 100%; overflow-y: auto; padding: 30px 40px;} 
+.profile_form { position: relative; max-width: 430px; width: 100%; border-radius: 6px; background: #FFF; } 
+.login_header { font-size: 32px; font-weight: 600; color: #232836; text-align: center; } 
+.profile_form .field { position: relative; width: 100%; margin-top: 25px; border-radius: 6px; } 
+.profile_form .field.authconfirm { display: flex; align-items: center; border-radius:10px; outline:none;}
+.profile_form .field.authconfirm label { display: flex; align-items: center; outline: none; border: 1px solid#CACACA; border-radius: 10px; width: 100%; margin-bottom: 0; } 
+.profile_form .field.authconfirm label > input { border:none; padding: 0 20px; } 
+.profile_form .field.authconfirm label > button { background:#5157FF; padding:13px 29px; color:#fff; margin:10px 10px 10px 0; max-width:90px; } 
+.profile_form .field .tip { font-size:12px; color:#878787; display: block; margin-bottom: 5px; } 
+.profile_form .field.field_pwconfirm { margin-top: 5px; } 
+.profile_form .field.field_pwconfirm label { position: absolute; top: 11px; left: 10px; display: none; } 
+.profile_form .field label { display: flex; margin-bottom:10px; } 
+.profile_form .field label.introduce {display: flex; justify-content: space-between;}
+.profile_form .field label.nickname {display: flex; justify-content: space-between;}
+.profile_form .field label.nickname .on {color:#5157FF;font-size:12px;}
+.profile_form .field label.introduce .textLengthWrap {letter-spacing: -0.5px;}
+.profile_form .field label.introduce .textLengthWrap span {font-size:16px}
+.profile_form .field label em { font-weight:bold; } 
+
+.profile_form .field.input-field .input_line2 {display: flex;}
+.profile_form .field.input-field .input_line2 select {    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
+    max-width: 150px;
+    width: 100%;
+    padding: 0 15px;
+    margin-left: 10px;
+    color: #1C1B1B;
+    border: 1px solid #DFDFDF;
+    border-radius: 10px;
+    background: url(/resources/assets/images/arrow.png) right 10px center no-repeat;
+    cursor: pointer;}
+
+.profile_form .switch-field {display: flex;align-items: center;margin-top: 10px;}
+.profile_form .switch-field p {font-size:16px; color:#1C1B1B}
+
+.profile_form .profile_img {position: relative; max-width: 140px; max-height: 140px; width: 140px; height: 140px; margin: 40px auto 0; display: flex;  align-items: center;    justify-content: center;}
+/* .profile_form .profile_img.on:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background:url(/resources/assets/images/login/profile_picture_dim.png) no-repeat;
+}
+ */
+.profile_form .profile_img:after {    content: '';
+    width: 40px;
+    height: 40px;
+    display: block;
+    z-index: 999;
+    position: absolute;
+    right: 0px;
+    bottom: -15px;
+    background: url(/resources/assets/images/login/profile_picture_edit_part.svg) no-repeat;}
+.profile_form .profile_img > img {    height: 100%;
+    width: 120px;
+    left: 0;    pointer-events: none;
+    position: absolute;
+    object-fit: cover;    background: #F5F5F5;}
+.profile_form .profile_img.on > img {    border-radius: 50px 50px 0 50px;} 
+.profile_form .profile_img .change_profile_img {width:100%;height:100%;position:absolute;}
+.profile_form-link { text-align: center; margin-top: 10px; } 
+.profile_form-link span,
+.profile_form-link a { font-size: 14px; font-weight: 400; color: #232836; } 
+.profile_form a { color: #878787; text-decoration: none; } 
+.profile_form-content a:hover { text-decoration: underline; } 
+.profile_form .media-options > a { display: flex; align-items: center; margin-top: 0; justify-content: center; } 
+.profile_edit_bt {display: flex;}
+.profile_edit_bt > button:last-child {margin-left:10px;}
+
+/*프로필 수정 끝*/
+
+/*팝업닫기*/
+.login_wrap .layerpop_close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -30px;
+    display: block;
+    right: 0px;
+    font-size: 40px;
+    color: #ffffff;
+    z-index: 15;
+}
+.login_wrap .layerpop_close img {
+    display: block;
+}
+
+.profile_wrap .layerpop_close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -30px;
+    display: block;
+    right: 0px;
+    font-size: 40px;
+    color: #ffffff;
+    z-index: 15;
+}
+.profile_wrap .layerpop_close img {
+    display: block;
+}
+
+@media(max-width: 992px){
+ #wrap.login_area .login_wrap { height: 80vh; } 
+ }
+@media(max-width: 767px){
+ #wrap.login_area .login_wrap { width:90%; } 
+ }
+@media(max-width: 480px) { }

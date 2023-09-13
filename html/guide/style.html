@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style 공통 정의</title>
+    <script type="text/javascript" src="/resources/assets/js/versions/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="/resources/assets/css/reset.css">
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/login.css">
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css">
+    
+    <!-- 기본 스타일 -->
+    <style>        
+        * {
+            font-family: Verdana, Geneva, sans-serif, "Malgun Gothic";
+        }
+        .guide {
+            border-top: 2px solid #32373c;
+            padding:20px;
+        }
+        .guide > h1 {
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .guide > article {
+            border: 1px solid #ddd;
+            margin-bottom: 30px;
+            background: #efefef;
+        }
+        .guide > article:after {
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+        }
+        .guide > article > .view {
+            padding: 15px;
+            box-sizing: border-box;
+            background: #fff;
+        }
+        .guide > article > .view > .item > h2 {
+            font-size: 13px;
+            color: #333;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+        .guide > article > .view > .item > h2:first-child {
+            margin-top: 0;
+        }
+        .guide > article > .view > .item > section {
+            padding: 10px;
+            border: 1px solid #dedede;
+            margin-bottom: 6px;
+        }
+        .guide > article > .view > .source {
+            margin: 15px 0 30px;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color:#ddd;
+        }
+        .guide > article > .view > .source > xmp {
+            font-size: 12px;
+            color: #32373c;
+            word-break: break-all;
+            white-space: pre-wrap;
+        }
+        .guide > article.full > .view, .guide > article.full > .source {
+            float: none;
+            width: 100%;
+        }
+        .guide + .top{ position: fixed; right:10px; bottom:10px; z-index:100; background:#333; width:50px; height:50px; text-align:center; line-height:50px; color:#fff; border-radius:50%;}
+    </style>
+    <!-- //기본 스타일 -->
+</head>
+<body>
+    <div>
+        <div class="guide">
+            <!-- group -->
+            <h1>타이틀</h1>
+            <article>
+                <div class="view">
+                    <!-- item -->
+                    <div class="item">
+                        <h2>Type1</h2>
+                        <section>
+                            <!-- 타이틀 타입01 -->
+                            <div class="titleType01"><h2>UPFAC 업데이트</h2></div>         
+                            <!-- 타이틀 타입01 -->                            
+                        </section>
+                        <button type="button" class="btn-view-code">view code</button>
+                    </div>
+                    <!-- //item -->  
+                    <div class="source">
+                        <xmp></xmp>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item">
+                        <h2>Type2</h2>
+                        <section>
+                            <!-- 타이틀 타입01 -->
+                            <div class="title">
+                                <h3>그레이하운드 캐릭터 3D 이미지 
+                                    <span>2시간 전 내용수정</span>
+                                </h3>
+                            </div>         
+                            <!-- 타이틀 타입01 -->                            
+                        </section>
+                        <button type="button" class="btn-view-code">view code</button>
+                    </div>
+                    <!-- //item -->  
+                    <div class="source">
+                        <xmp></xmp>
+                    </div>
+                </div>
+                
+            </article>
+            <!-- //group -->
+        
+            <!-- group -->
+            <h1>리스트 기본 스타일</h1>
+            <article>
+                <div class="view">
+                    <!-- item -->
+                    <div class="item">
+                        <h2></h2>
+                        <section>
+                            <!-- 리스트타입01 -->
+                            <section class="product_area">
+                                <div class="container">
+                                    <div class="title">
+                                        <h2>UPFAC 업데이트</h2>
+                                    </div>
+                                    <ul class="cont">
+                                        <li class="item">
+                                            <a href="javascript:;">
+                                                <div class="is_img">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <div class="is_text">
+                                                    <div class="is_text_top">
+                                                        <h3 class="user_name">유저이름</h3>
+                                                        <div class="info">
+                                                            <span class="info_view">1.1K</span>
+                                                            <span class="info_favorites">123</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="price">13,000원</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:;">
+                                                <div class="is_img">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <div class="is_text">
+                                                    <div class="is_text_top">
+                                                        <h3 class="user_name">유저이름</h3>
+                                                        <div class="info">
+                                                            <span class="info_view">1.1K</span>
+                                                            <span class="info_favorites">123</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="price">13,000원</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:;">
+                                                <div class="is_img">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <div class="is_text">
+                                                    <div class="is_text_top">
+                                                        <h3 class="user_name">유저이름</h3>
+                                                        <div class="info">
+                                                            <span class="info_view">1.1K</span>
+                                                            <span class="info_favorites">123</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="price">13,000원</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:;">
+                                                <div class="is_img">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <div class="is_text">
+                                                    <div class="is_text_top">
+                                                        <h3 class="user_name">유저이름</h3>
+                                                        <div class="info">
+                                                            <span class="info_view">1.1K</span>
+                                                            <span class="info_favorites">123</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="price">13,000원</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:;">
+                                                <div class="is_img">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <div class="is_text">
+                                                    <div class="is_text_top">
+                                                        <h3 class="user_name">유저이름</h3>
+                                                        <div class="info">
+                                                            <span class="info_view">1.1K</span>
+                                                            <span class="info_favorites">123</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="price">13,000원</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <!-- 리스트타입02 -->
+                        </section>
+                        <button type="button" class="btn-view-code">view code</button>
+                    </div>
+                    <!-- //item -->    
+                    <div class="source">
+                        <xmp></xmp>
+                    </div>                
+                </div>
+            </article>
+            <!-- //group -->      
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(e) {
+            $(".guide .btn-view-code").click(function(){
+                var myText = $(this).prev("section").html();
+                var _source = $(this).parent(".item").next();
+                var _view = $(this).parent(".item");
+                _source.children("xmp").html(myText);
+            });
+        });        
+    </script>
+</body>
+</html>

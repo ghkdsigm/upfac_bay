@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신규물품등록</title>
+    <!-- 리셋 -->
+    <link rel="stylesheet" href="/resources/assets/css/reset.css" />
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="/resources/assets/css/style.css" />
+    <!-- 해당페이지 -->
+    <link rel="stylesheet" href="/resources/assets/css/products.css">
+    <!-- 반응형 -->
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css" />
+    <!-- quilljs 에디터 -->
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+    <!-- dropzone 업로드 -->
+    <link rel="stylesheet" href="/resources/assets/css/dropzone/dropzone.min.css">
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+
+    <!-- 임시 헤더 -->
+    <header class="header">
+    </header>
+    <!-- //임시헤더 -->
+
+    <main class="all_wrap">
+        <section class="product_area">
+            <div class="container">
+                <div class="cont">        
+                    <div class="sub_title">
+                        <h2>신규상품등록</h2>
+                        <a href="javascript:;">상품등록 가이드 보기</a>
+                    </div>     
+                    <!-- 신규상품등록 -->         
+                    <div class="product_wrap">                          
+                        <div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            카테고리
+                                        </td>
+                                        <td class="flexline">
+                                            <div class="flexline">
+                                                <span class="pr-10 regit_tit">상품 구분</span>
+                                                <div class="selectradio">
+                                                    <input type="radio" id="select" name="sel" checked ><label for="select">3D</label>
+                                                    <input type="radio" id="select2" name="sel"><label for="select2">2D</label>
+                                               </div>
+                                            </div>
+                                            <div class="flexline regit_category">
+                                                <span class="pr-10 regit_tit">상세 카테고리</span>
+                                                <div class="category">
+                                                    <select name="category">
+                                                        <option value="" hidden="">카테고리선택</option>
+                                                        <option value="">카테고리1</option>
+                                                        <option value="">카테고리2</option>
+                                                    </select>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            제목
+                                        </td>
+                                        <td>
+                                            <div class="register_title">
+                                                <input type="text" placeholder="제목입니다 입력 시 인풋박스 라인 컬러 텍스트 컬러 변경됩니다">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            파일등록
+                                        </td>
+                                        <td>
+                                            <div class="progress_area"> 
+                                                <div>
+                                                    <ol>
+                                                        <li class="done">01 업로드</li>
+                                                        <li class="ing">02 WebGL 화면 처리</li>
+                                                        <li>03 파일 등록 완료</li>
+                                                    </ol>
+                                                </div>
+                                                <button type="button" data-pop="fileinfo_pop">등록된 파일정보 확인</button>
+                                            </div>
+                                            <div>
+                                                <!-- 업로드 완료시 아래 태그 (off 대신 on 추가) 미완료시 (on 대신 off태그) -->
+                                                <div class="uploaded_area on">
+                                                    <img src="/resources/assets/images/webGL.jpg" alt="" />
+                                                    <div class="upload_area default">
+                                                        <p>등록된 파일이 없습니다.</p>
+                                                        <a href="javascript:;" class="upload_bt" data-pop="upload_pop">업로드</a>
+                                                    </div>
+                                                    <div class="upload_area reupload">
+                                                        <!-- 등록된 파일 로딩중에 하단 태그에 클래스 on 추가 그 외에는 off 상태 -->
+                                                        <p class="registered_loading off">등록한 파일을 읽어오는 중입니다.</p>
+                                                        <div class="registered_zone">
+                                                            <strong>등록된 파일 내역</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    Source/camel_with_saddle_rigged_and_animated.glb 
+                                                                </li>
+                                                                <li>
+                                                                    textures/gltf_embedded_0.jpeg 
+                                                                </li>
+                                                                <li>
+                                                                    textures/gltf_embedded_1.jpeg 
+                                                                </li>
+                                                                <li>
+                                                                    textures/gltf_embedded_2.jpeg
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        
+                                                        <a href="javascript:;" class="upload_bt" data-pop="upload_pop">재업로드</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            판매가격
+                                        </td>
+                                        <td>
+                                            <div class="register_sellprice flexline">
+                                                <input type="text" placeholder="58,000"> 원
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            해외 판매가격
+                                        </td>
+                                        <td>
+                                            <div class="register_sellprice flexline">
+                                                <input type="text" placeholder="4.1"> &#36; (달러)
+                                                <span>· 가격을 입력하지 않으면 해외 몰에는 상품이 노출되지 않습니다.</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            할인설정
+                                        </td>
+                                        <td>
+                                            <div class="tab_toggle">
+                                                <li class="on">
+                                                    <span>사용함</span>
+                                                </li>
+                                                <li>
+                                                    <span>사용안함</span>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <div class="register_discount">
+                                                    <div class="dc_area">
+                                                        <div class="dc_title">
+                                                            <span>국내 가격할인</span>
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" placeholder="5,000"> 원 할인
+                                                            <div class="sell_discount">
+                                                                <span class="dsc_calc">
+                                                                    <span class="discount_dash">할인 적용가</span>
+                                                                    <span class="discount_price"><em>53,000</em> 원</span>
+                                                                </span>
+                                                                <span class="dsc_txt">
+                                                                    (5,000원 할인)에 판매합니다.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dc_area">
+                                                        <div class="dc_title">
+                                                            <span>해외 가격할인</span>
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" placeholder="0"> 원 할인
+                                                            <div class="sell_discount">
+                                                                <span class="dsc_calc">
+                                                                    <span class="discount_dash">할인 적용가</span>
+                                                                    <span class="discount_price"><em>0</em> &#36;</span>
+                                                                </span>
+                                                                <span class="dsc_txt">
+                                                                    (&#36; 할인)에 판매합니다.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            물품설명
+                                        </td>
+                                        <td>
+                                            <!-- Create the editor container -->
+                                            <div id="editor-container">
+                                                <h1>Quill to HTML</h1>
+                                                Modify this content to update HTML output.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            태그
+                                        </td>
+                                        <td>
+                                            <div class="register_title tag">
+                                                <input type="text" placeholder="5자 이내로 작성, 띄워 쓰기 불가, 최대 10까지 등록 가능">
+                                                <a href="javascript:;" class="add_tag">태그추가</a>
+                                            </div>
+                                            <ul class="register_tags">
+                                                <li>
+                                                    <span>#3DModel</span>
+                                                    <a href="javascript:;"><img src="/resources/assets/images/products/ico_close.svg" alt=""></a>
+                                                </li>
+                                                <li>
+                                                    <span>#동물</span>
+                                                    <a href="javascript:;"><img src="/resources/assets/images/products/ico_close.svg" alt=""></a>
+                                                </li>
+                                                <li>
+                                                    <span>#동물</span>
+                                                    <a href="javascript:;"><img src="/resources/assets/images/products/ico_close.svg" alt=""></a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>          
+                        </div>  
+                    </div>  
+                    <!-- //신규상품등록 -->           
+                </div>
+            </div>            
+        </section>         
+    </main>
+
+    <!-- 신규상품등록 최하단 버튼 -->  
+    <div class="regit_product">
+        <a href="javascript:;">상품등록하기</a>
+    </div>
+    <!-- //신규상품등록 최하단 버튼 -->  
+
+    <!-- 팝업뜰때 배경 -->
+    <div id="mask"></div>
+
+    <!-- 신규 물품 등록 팝업 -->
+    <div id="new_layerbox" class="new_layerpop">
+        <div class="new_layerpop_area">
+            <!-- <div class="title">레이어팝업 타이틀</div> -->
+            <a href="javascript:popupClose();" class="new_layerpop_close" id="new_layerbox_close"><img src="/resources/assets/images/common/ico_closepop.svg" alt=""></a>
+            <div class="content">
+                <div class="item_detail">
+                    <div class="file_dropzon">   
+                        <!-- 3D 상품 등록 -->
+                        <div class="each_upload three_upload off">                                
+                            <div class="title">
+                                <h2>3D 상품 등록</h2>
+                            </div>
+                            <div class="threejs_dropzone">
+                                <div class="drag_area">
+                                    <strong>
+                                        고객에게 노출될 <em>대표 상품을 등록</em> 해주세요
+                                    </strong>
+                                    <div class="drag_zone">
+                                        <span>
+                                            대표 상품 등록
+                                        </span>
+                                        <img src="/resources/assets/images/products/ico_cloud.svg" alt="upload_icon" />
+                                        <p class="txt01">
+                                            드래그 앤 드롭 또는 클릭하여 파일 찾기
+                                        </p>
+                                        <p class="txt02">
+                                            해당 영역에 파일이, 대표 상품으로 등록됩니다.<br/>(FBX OBJ GLTF GLB, 파일만 등록 가능)
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="drag_area">
+                                    <strong>
+                                        함께 <em>묶어 판매할 다른 상품</em>이 있다면 등록해주세요
+                                    </strong>
+                                    <div class="drag_zone">
+                                        <span>
+                                            추가 상품 등록
+                                        </span>
+                                        <img src="/resources/assets/images/products/ico_cloud.svg" alt="upload_icon" />
+                                        <p class="txt01">
+                                            드래그 앤 드롭 또는 클릭하여 파일 찾기
+                                        </p>
+                                        <p class="txt02">
+                                            두 개 이상의 모델 파일을 등록하고자 할 때<br/>대표 상품을 제외한 상품은 해당 영역에 등록해주세요.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="save">
+                                <a href="javascript:;">저장하기</a>
+                            </div>
+                        </div>
+                        <!-- //3D 상품 등록 -->
+                        <!-- 2D 상품 등록 -->
+                        <div class="each_upload two_upload on">
+                            <div class="title">
+                                <h2>2D 상품 등록</h2>
+                            </div>
+                            <div class="threejs_dropzone">
+                                <div class="drag_area">
+                                    <strong>
+                                        고객에게 노출될 <em>대표 상품을 등록</em> 해주세요
+                                    </strong>
+                                    <div class="drag_zone">
+                                        <span>
+                                            썸네일 등록
+                                        </span>
+                                        <img src="/resources/assets/images/products/ico_cloud.svg" alt="upload_icon" />
+                                        <p class="txt01">
+                                            드래그 앤 드롭 또는 클릭하여 파일 찾기
+                                        </p>                                        
+                                    </div>
+
+                                </div>
+                                <div class="drag_area">
+                                    <strong>
+                                        고객에게 판매할 <em>2D 상품을 등록</em> 해주세요
+                                    </strong>
+                                    <div class="drag_zone">
+                                        <span>
+                                            상품 등록
+                                        </span>
+                                        <img src="/resources/assets/images/products/ico_cloud.svg" alt="upload_icon" />
+                                        <p class="txt01">
+                                            드래그 앤 드롭 또는 클릭하여 파일 찾기
+                                        </p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="save">
+                                <a href="javascript:;">저장하기</a>
+                            </div>
+                        </div>
+                        <!-- //2D 상품 등록 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //신규 물품 등록 팝업 -->
+
+    <!-- 등록된 파일정보 팝업 -->
+    <div id="registed_file" class="registered_filepop">
+        <div class="registered_area">
+            <a href="javascript:popupClose();" class="registered_filepop_close" id="registed_file_close"><img src="/resources/assets/images/common/ico_closepop.svg" alt=""></a>
+            <div class="content">
+                <div class="item_detail">
+                    <div class="file_listzone">
+                        <div class="each_file_info">
+                            <div class="title">
+                                <h2>등록된 파일정보</h2>
+                                <p>업로드한 파일과 상이하거나, 입력되지 않은 정보를 수정 입력 해주세요.</p>
+                            </div>
+                            <div class="file_area">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>3D Format</td>
+                                            <td>OBJ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Download Size</td>
+                                            <td>30MB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Geometry</td>
+                                            <td>Triangles 12.4K</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vertices</td>
+                                            <td>6.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ipt">PBR</td>
+                                            <td>
+                                                <input type="text" placeholder="내용을 입력해 주세요" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Texture</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>UV Mapping</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ipt">Materials</td>
+                                            <td>
+                                                <input type="text" placeholder="내용을 입력해 주세요" />                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ipt">UV Layers</td>
+                                            <td>
+                                                <input type="text" placeholder="내용을 입력해 주세요" />                                                  
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Animated</td>
+                                            <td>Big Motion</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rigged</td>
+                                            <td>
+                                                <input type="text" placeholder="내용을 입력해 주세요" />                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Renderer</td>
+                                            <td>Mentalray</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="save">
+                                <a href="javascript:;">저장하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //등록된 파일정보 팝업 -->
+    
+    
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script> 
+    <!-- quilljs 에디터 -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- dropzone 업로드 -->
+    <script src="/resources/assets/js/plugins/jquery.dropzone.min.js"></script>
+
+    <script>
+        //상품등록
+        $(window).scroll(function() {
+            var scrollTop = $(window).scrollTop();
+            var footerHeight = $('.footer').outerHeight();
+            var scrollBottom = $(document).height() - $(window).height() - footerHeight;
+            $(".regit_product").css("bottom",0);
+            if (scrollTop > scrollBottom + 130) {
+                $(".regit_product").css("bottom",footerHeight);
+            } else {
+                $(".regit_product").css("bottom",0);
+            }
+        });
+
+        //탭 스타일 없음, 상품 등록 토글 탭
+        $('.tab_toggle li').click(function () {
+            var idx = $(this).index();
+            $('.tab_toggle li').removeClass('on');
+            $('.tab_toggle li').eq(idx).addClass('on');
+            if(idx === 0){
+                $('.register_discount').slideDown();
+            } else {
+                $('.register_discount').slideUp();
+            }
+        }) 
+    </script>
+
+    <script>
+        // Initialize QUill editor
+    
+        var quill = new Quill('#editor-container', {
+        modules: {
+            toolbar: [
+            [{ header: [1, 2, 3, 4, 5, 6,  false] }],
+            ['bold', 'italic', 'underline','strike'],
+            ['image', 'code-block'],
+            ['link'],
+            [{ 'script': 'sub'}, { 'script': 'super' }],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['clean']
+            ]
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow'  // or 'bubble'
+        });
+
+
+        //레이어 팝업
+        function wrapWindowByMask() {
+
+        //화면의 높이와 너비를 구한다.
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+
+        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+        $('#mask').css({
+            'width': '100%',
+            'height': '100%'
+        });
+
+        //애니메이션 효과   
+        $('#mask').fadeTo("slow", 0.5);
+        }
+
+        function popupOpen(e) {
+            $('.new_layerpop').css("position", "absolute");
+            $('.registered_filepop').css("position", "absolute");
+            $('body').css("overflow", "hidden");
+            //영역 가운에데 레이어를 뛰우기 위해 위치 계산 
+            //리사이즈시 작동 펑션
+            if(e === 'upload_pop'){
+
+                window.addEventListener('resize', function () {
+                    $('.new_layerpop').css("top", (($(window).height() - $('.new_layerpop').outerHeight()) / 2) + $(window).scrollTop());
+                    $('.new_layerpop').css("left", (($(window).width() - $('.new_layerpop').outerWidth()) / 2) + $(window).scrollLeft());
+                });
+                $('.new_layerpop').css("top", (($(window).height() - $('.new_layerpop').outerHeight()) / 2) + $(window).scrollTop());
+                $('.new_layerpop').css("left", (($(window).width() - $('.new_layerpop').outerWidth()) / 2) + $(window).scrollLeft());
+                //$('.layerpop').draggable();
+                $('#new_layerbox').show();
+
+            } else if(e === 'fileinfo_pop') {
+
+                window.addEventListener('resize', function () {
+                    $('.registered_filepop').css("top", (($(window).height() - $('.registered_filepop').outerHeight()) / 3) + $(window).scrollTop());
+                    $('.registered_filepop').css("left", (($(window).width() - $('.registered_filepop').outerWidth()) / 2) + $(window).scrollLeft());
+                });
+                $('.registered_filepop').css("top", (($(window).height() - $('.registered_filepop').outerHeight()) / 3) + $(window).scrollTop());
+                $('.registered_filepop').css("left", (($(window).width() - $('.registered_filepop').outerWidth()) / 2) + $(window).scrollLeft());
+                //$('.layerpop').draggable();
+                $('#registed_file').show();
+
+            }
+            
+        }
+
+        $('#new_layerbox_close').on('click', function() {
+            popupClose()
+        })
+
+        $('#registed_file_close').on('click', function() {
+            popupClose()
+        })
+
+        function popupClose() {
+            $('#new_layerbox').hide();
+            $('#registed_file').hide();
+            $('#mask').hide();
+            $('body').css("overflow", "unset");
+        }
+
+        function goDetail(e) {
+
+            /*팝업 오픈전 별도의 작업이 있을경우 구현*/
+            popupOpen(e); //레이어 팝업창 오픈 
+            wrapWindowByMask(); //화면 마스크 효과           
+        } 
+        /****썸네일 클릭시 리스트 팝업****/
+
+        /*썸네일 Each 클릭 펑션*/
+        $('.upload_bt, .progress_area button').on('click', function(e) {            
+            goDetail(e.target.dataset.pop)                       
+        })
+
+        // 외부영역 클릭 시 팝업 닫기
+        $(document).mouseup(function (e){	
+            var LayerPopup = $("#new_layerbox, #registed_file");
+            if(LayerPopup.has(e.target).length === 0){
+                $('#new_layerbox').hide();
+                $('#registed_file').hide();
+                $('#mask').hide();
+                $('body').css("overflow", "unset");
+            }
+        });
+    </script>
+
+</body>
+</html>

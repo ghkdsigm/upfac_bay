@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 수정</title>
+    <link rel="stylesheet" href="/resources/assets/css/reset.css">
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/login.css">
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css">
+</head>
+<body>
+    <!-- 임시 헤더 -->
+    <header class="header">
+    </header>
+    <!-- //임시헤더 -->
+    
+    <main class="all_wrap">
+        <section class="profile_area pop_up">
+            <div class="profile_wrap profile_edit_wrap prfile_edit_wrap_wide">
+                <a href="javascript:;" onclick="popupClose(this);" class="layerpop_close" id="layerbox_close"><img src="/resources/assets/images/common/ico_closepop.svg" alt=""></a>
+                <div class="profile_forms">
+                    <div class="profile_form fpw">
+                        <div class="profile_form-content">
+                            <div class="title">
+                                <h2>프로필 수정</h2>
+                            </div>
+                            <div class="profile_img on">
+                                <button class="change_profile_img" onclick="onClickUpload()"></button>
+                                <input type="file" accept="image/*" id="profileImageInput" class="hidden" onchange="readURL(this);">
+                                <img src="/resources/assets/images/login/profile_picture_edit.svg" alt="프로필 수정" id="preview"/>
+                            </div>                            
+                            <form action="#">
+                                <div class="field input-field">
+                                    <label for="nickname" class="nickname"><em>닉네임</em><span class="on">사용할 수 있는 닉네임 입니다.</span></label>
+                                    <input type="nickname" placeholder="" class="input" id="nickname">
+                                </div>
+                                <div class="field input-field">
+                                    <label for="introduce" class="introduce">
+                                        <em>자기소개</em>
+                                        <div class="textLengthWrap">
+                                            <span class="textCount">0</span>
+                                            <span class="textTotal">/100</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <textarea name="" cols="30" rows="10" placeholder="자개소개를 입력해주세요." id="introduce"></textarea>
+                                </div>
+                                <div class="field input-field">
+                                    <label for="id"><em>아이디(Email)</em></label>
+                                    <input type="id" placeholder="whjeong@itembay.com" class="input" id="id" disabled>
+                                </div>
+                                <div class="field input-field">
+                                    <label for="txtPassword1"><em>비밀번호</em></label>
+                                    <span class="tip">영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합(10~16자)</span>
+                                    <input type="password" placeholder="비밀번호 입력" class="input" name="txtPassword1" id="txtPassword1" maxlength="20" />
+                                </div>
+                                <div class="field input-field field_pwconfirm">
+                                    <label for="txtPassword2"><em>비밀번호 확인</em></label>
+                                    <input type="password" placeholder="비밀번호 확인" class="input" name="txtPassword2" id="txtPassword2" maxlength="20" />
+                                </div>                               
+                                <div class="field input-field">
+                                    <label for="email" class="find_pw"><em>이메일</em></label>
+                                    <div class="input_line2">
+                                        <input type="email" placeholder="whjeong@itembay.com" class="email error_focus" id="email" />    
+                                        <select name="" id="">
+                                            <option value="">직접입력</option>
+                                            <option value="">naver.com</option>
+                                            <option value="">google.com</option>
+                                        </select>         
+                                    </div>    
+                                    <div class="error_msg">이미 사용중인 이메일 입니다.</div> 
+                                </div>                                
+                                <div class="switch-field">
+                                    <div>                                         
+                                        <label class="checkbox-google">
+                                            <input type="checkbox" checked>
+                                            <span class="checkbox-google-switch"></span>
+                                        </label>
+                                    </div>
+                                    <p>특별혜택, 이벤트 등의 마케팅소식을 이메일로 받습니다.</p>
+                                </div>
+                                <div class="field input-field">
+                                    <label for="phonenum"><em>휴대전화 번호</em></label>
+                                    <input type="number" placeholder="-없이 숫자만 입력" class="input" name="phonenum" id="phonenum" maxlength="20" />
+                                </div>
+                                <div class="switch-field">
+                                    <div>
+                                        <label class="checkbox-google">
+                                            <input type="checkbox">
+                                            <span class="checkbox-google-switch"></span>
+                                        </label>                                         
+                                        
+                                    </div>
+                                    <p>특별혜택, 이벤트 등의 마케팅소식을 SMS/톡채널로 받습니다.</p>
+                                </div>
+                                <div class="field profile_edit_bt mt-20">
+                                    <button type="button" class="loginbt_type05">취소</button>
+                                    <button type="button" class="loginbt_type04">수정하기</button>
+                                </div>
+                            </form>                            
+                        </div>     
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </main>
+    
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- 물품 팝업 -->
+    <script src="/resources/assets/js/list.js"></script>
+
+    <script>
+        $('#introduce').keyup(function (e) {
+            let content = $(this).val();
+            
+            // 글자수 세기
+            if (content.length == 0 || content == '') {
+                $('.textCount').text('0');
+            } else {
+                $('.textCount').text(content.length);
+            }
+            
+            // 글자수 제한
+            if (content.length > 200) {
+                // 100자 부터는 타이핑 되지 않도록
+                $(this).val($(this).val().substring(0, 100));
+                // 100자 넘으면 알림창 뜨도록
+                alert('글자수는 100자까지 입력 가능합니다.');
+            };
+        });
+
+        function onClickUpload() {
+            let myInput = document.getElementById("profileImageInput");
+            myInput.click();
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                document.getElementById('preview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                document.getElementById('preview').src = e.target.result;
+            }
+        }
+    </script>
+</body>
+</html>

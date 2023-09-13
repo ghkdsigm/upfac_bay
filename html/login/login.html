@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="/resources/assets/css/reset.css">
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/login.css">
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css">
+</head>
+<body>
+    <!-- 임시 헤더 -->
+    <header class="header">
+    </header>
+    <!-- //임시헤더 -->
+    
+    <main class="all_wrap">
+        <section class="login_area pop_up">
+            <div class="login_wrap">
+                <a href="javascript:;" onclick="popupClose(this);" class="layerpop_close" id="layerbox_close"><img src="/resources/assets/images/common/ico_closepop.svg" alt=""></a>
+                <div class="login_forms">
+                    <div class="login_form login">
+                        <div class="login_form-content">
+                            <div class="title">
+                                <h2>LOGIN</h2>
+                            </div>
+                            <form action="#">
+                                <div class="field input-field">
+                                    <label for="email"><em>아이디(Email)</em></label>
+                                    <input type="email" placeholder="example@example.com" class="input" id="email">
+                                </div>
+                
+                                <div class="field input-field">
+                                    <label for="password" class="find_pw"><em>비밀번호</em> <a href="">비밀번호를 잊으셨나요?</a></label>
+                                    <input type="password" placeholder="비밀번호 입력" class="password error_focus" id="password" />
+                                    <i class='bx bx-hide eye-icon'></i>
+                                </div>
+                                <div class="error_msg">비밀번호가 일치하지 않습니다</div>            
+    
+                                <div class="field button-field auto_login_wrap mt-10 dragunable">     
+                                    <input type="checkbox" name="auto_login_main" id="auto_login_main" />                           
+                                    <label for="auto_login_main" class="mb-0"> <span>아이디 저장</span>
+                                    </label>                                
+                                </div>
+                
+                                <div class="field button-field mt-10">
+                                    <button type="button" class="loginbt_type01">로그인</button>
+                                </div>
+                                <div class="field button-field mt-10 signupfield">
+                                    <button type="button" class="loginbt_type02">회원가입</button>
+                                </div>
+                            </form>
+                        </div>
+                
+                        <div class="line"></div>
+                
+                        <div class="media-options">
+                            <a href="#" title="네이버 로그인" class="field facebook">
+                                <img src="/resources/assets/images/login/sns_naver.png" alt="sns 네이버 로그인" />
+                            </a>
+                            <a href="#" title="카카오 로그인"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_kakao.png" alt="sns 카카오 로그인" />
+                            </a>
+                            <a href="#" title="구글 로그인"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_google.png" alt="sns 구글 로그인" />
+                            </a>
+                            <a href="#" title="페이스북 로그인"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_facebook.png" alt="sns 페이스북 로그인" />
+                            </a>
+                            <a href="#" title="트위터 로그인"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_tweeter.png" alt="sns 트위터 로그인" />
+                            </a>
+                        </div>              
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </main>
+    
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- 물품 팝업 -->
+    <script src="/resources/assets/js/list.js"></script>
+    
+    <script>        
+        $(document).ready(function(){     
+            //패스워드 입력 에러 뜰시 .error_focus 클래스 추가
+            if(!$('.password').hasClass('error_focus')){
+                $('.error_msg').hide()
+            } else {
+                $('.error_msg').show()
+            }
+        })
+        
+    </script>
+
+</body>
+</html>

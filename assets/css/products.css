@@ -1,0 +1,206 @@
+.product_wrap { border-top:2px solid #1C1B1B; border-bottom:2px solid #1C1B1B; width:100%; margin-top:40px; } 
+.product_wrap tr td { padding:20px; } 
+.product_wrap tr td:first-child { padding:20px 50px; border-right: 1px solid #EFEFEF; font-weight:bold; color:#1C1B1B; font-size: 14px; vertical-align: top; line-height: 55px; } 
+
+.product_wrap .regit_tit {font-size:14px;}
+.product_wrap .selectradio { padding: 15px 0px; } 
+.product_wrap .selectradio input[type=radio] { display: none; } 
+.product_wrap .selectradio label { margin-right:10px; } 
+.product_wrap .selectradio input[type=radio]+label { display: inline-block; cursor: pointer; height: 24px; width: 45px; background: url(/resources/assets/images/common/radio_off.svg) no-repeat; line-height: 24px; text-align: right; font-weight:bold; font-size:13px; } 
+.product_wrap .selectradio input[type=radio]+label { background-color: #fff; color: #333; } 
+.product_wrap .selectradio input[type=radio]:checked+label { background: url(/resources/assets/images/common/radio_on.svg) no-repeat; } 
+
+.product_wrap table { width:100%; } 
+
+.product_wrap .regit_category { padding-left:20px; } 
+.product_wrap .category { display: flex; align-items: center; } 
+
+.product_wrap .category label { font-size: 14px; min-width: 110px; } 
+
+.product_wrap .category select { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 360px; height: 40px; padding: 0 10px; background: url(/resources/assets/images/arrow.png) right 10px center no-repeat; border-radius: 6px; border: 1px solid #DFDFDF; } 
+
+.register_title { position: relative; } 
+.register_title input { width: 100%; border-bottom:1px solid #DFDFDF; padding:20px; box-sizing: border-box; background:#F8F8F8; } 
+.register_title input:focus { outline: none !important; border-bottom: 1px solid #1C1B1B; } 
+.register_title input::placeholder { color: #1C1B1B; font-size:16px; } 
+.register_title.tag input::placeholder { color: #B9B9B9; font-size:16px; } 
+
+.register_title .add_tag { color: #fff; padding: 0 30px; position: absolute; right: 0; height: 100%; background: #878787; display: flex; align-items: center; justify-content: center; top: 0; } 
+.register_tags { display: flex; margin-top:20px; } 
+.register_tags li { background:#EFF2F7; padding:6px; margin-right:10px; display: flex; align-items: center;} 
+.register_tags li span {font-size:12px;}
+.register_tags li a {display: flex; padding-left: 5px;}
+
+.register_sellprice { font-size:16px; } 
+.register_sellprice span { font-size:12px; padding-left:10px; padding-top: 3px; color:#878787; } 
+.register_sellprice input { max-width:320px; margin-right:10px;border-bottom:1px solid #DFDFDF; padding:20px; box-sizing: border-box; background:#F8F8F8; } 
+.register_sellprice input:focus { outline: none !important; border-bottom: 1px solid #1C1B1B; } 
+.register_sellprice input::placeholder { color: #1C1B1B; font-size:16px; } 
+
+.register_discount { background:#F1FCF8; padding:30px; } 
+.register_discount input { max-width:320px; text-align: right; width:300px; border-bottom:1px solid #DFDFDF; padding:20px; box-sizing: border-box; background:#ffffff; } 
+.register_discount input::placeholder { color: #1C1B1B; font-size:16px; } 
+.register_discount input:focus { outline: none !important; border-bottom: 1px solid #1C1B1B; } 
+
+.register_discount .dc_area { display: flex; } 
+.register_discount .dc_area:first-child { margin-bottom:30px; } 
+.register_discount .dc_area .dc_title { padding-right:10px; } 
+.register_discount .dc_area .dc_title > span { top: 20px; position: relative; display: block; } 
+
+.register_discount .sell_discount { display: flex; align-items: end; padding: 10px; } 
+.register_discount .sell_discount .discount_dash:before { content:''; width: 22px; height: 32px; display: inline-block; position: relative; top: -5px; background:url(/resources/assets/images/products/discount_dash.svg)}
+.register_discount .sell_discount .discount_price em { font-size:22px; font-weight:bold; } 
+
+.register_discount .sell_discount .dsc_calc { display: flex; width: 290px; margin-right: 5px; letter-spacing: -0.5px; justify-content: space-between; align-items: end; color:#FF5050; font-size: 14px; } 
+.register_discount .sell_discount .dsc_calc .dsc_calc { } 
+.register_discount .sell_discount .dsc_txt { font-size:14px; } 
+
+.progress_area { display: flex; justify-content: space-between; font-size:12px; padding-bottom: 10px; } 
+.progress_area button { background:#1C1B1B; color:#fff; padding:5px 10px; } 
+.progress_area ol { display: flex; } 
+.progress_area ol li { letter-spacing: -1px; color:#DFDFDF; font-size: 14px; display: flex; align-items: center; } 
+.progress_area ol li:not(:last-child):after { display: inline-block; content: ""; width:40px; height:20px; background:url(/resources/assets/images/common/ico_commas.svg) no-repeat; transform: translate(10px, 35%); } 
+.progress_area ol li.done { color:#1C1B1B; font-weight:bold; } 
+.progress_area ol li.ing { color:#3ADEA6; font-weight:bold; } 
+
+.uploaded_area { display: flex; } 
+.uploaded_area.off .upload_area.default { display: block; } 
+.uploaded_area.off .upload_area.reupload { display: none; } 
+.uploaded_area.on .upload_area.default { display: none; } 
+.uploaded_area.on .upload_area.reupload { display: block; } 
+
+.upload_area { display: none; width:100%; max-width: 280px; position: relative; margin-left: 10px; border: 1px solid #DFDFDF; } 
+.upload_area.default p { height:calc(100% - 70px); display: flex; align-items: center; justify-content: center; color: #B9B9B9; font-size: 14px; } 
+.upload_area .upload_bt { background: #F8F8F8; border-top: 1px solid #DFDFDF; color: #878787; font-size: 16px; display: block; text-align: center; padding: 20px 0; position: absolute; bottom: 0; width: 100%; display: inline-flex; align-items: center; justify-content: center; } 
+.upload_area .upload_bt:before { content: ''; width: 45px; height: 30px; margin-right: 5px; background: url(/resources/assets/images/products/ico_cloud.svg) 0 0 no-repeat; } 
+
+.upload_area.reupload strong { font-weight:bold; font-size:14px; } 
+.upload_area.reupload ul li { max-width: 250px; word-break: break-word; font-size:11px; line-height:20px; } 
+.upload_area.reupload p { height:calc(100% - 70px); display: flex; align-items: center; justify-content: center; color: #B9B9B9; font-size: 14px; } 
+.upload_area.reupload .registered_loading.on ~ .registered_zone {display:none;}
+.upload_area.reupload .registered_loading.off {display: none;}
+.upload_area.reupload .registered_loading.off ~ .registered_zone {display:block;}
+.registered_zone { height: calc(100% - 70px); overflow-x: hidden; overflow-y: scroll; padding: 20px; overflow-y: auto; } 
+
+.tab_toggle { display: flex; border:1px solid #DFDFDF; } 
+.tab_toggle li { list-style: none; width: 50%; display: flex; justify-content: center; align-items: center; padding: 15px 0; color: #000; font-weight: bold; font-size:14px; cursor: pointer; box-sizing: border-box; } 
+
+.tab_toggle li:first-child { border-right:1px solid #DFDFDF; } 
+
+.tab_toggle li.on { background: #3ADEA6; color:#fff}
+
+.regit_product { width: 100%; background: #1C1B1B; color: #fff; font-size: 24px; font-weight: bold; display: flex; position: fixed; bottom: 0; z-index: 100; } 
+.regit_product > a { justify-content: center; align-items: center; display: flex; width: 100%; color:#fff; padding: 35px 0; } 
+.regit_product.on { } 
+
+/*신규 등록 팝업*/
+/****신규 물품 등록 팝업****/
+#mask { position: fixed; left: 0; top: 0; z-index: 999; background-color: #000000; display: none; } 
+ 
+.new_layerpop { display: none; z-index: 1000; position: fixed; top: 0; left: 0; 
+ justify-content: center; align-items: center; opacity: 1; transform: translateZ(0); transition: opacity .2s; perspective: 1000px; perspective-origin: 50% 50%; max-width: 740px; max-height: 540px; } 
+.new_layerpop .new_layerpop_area { width:100%; height:100%; border: 1px solid #DFDFDF; border-radius: 10px; background: #fff; } 
+.new_layerpop_area .new_layerpop_close { width: 20px; height: 20px; position: absolute; top: -30px; display: block; right: 0px; font-size: 40px; color: #ffffff; z-index: 15; } 
+.new_layerpop_area .new_layerpop_close img { display: block; } 
+.new_layerpop_area .new_layerpop_close:hover { background: transparent url('btn_exit_on.png') no-repeat; cursor: pointer; } 
+.new_layerpop_area .content { width: 100%; height:100%; color: #828282; } 
+.new_layerpop_area .content .item_detail { height:100%; } 
+.new_layerpop_area .content .item_detail .section { height: 100%; } 
+
+.new_layerpop_area .file_dropzon { padding: 20px; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; } 
+.new_layerpop_area .file_dropzon .file_dropzon_item { display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 30px 0; width: 220px; height: 220px; border: 2px dashed #DFDFDF; border-radius: 10px; cursor: pointer; } 
+.new_layerpop_area .file_dropzon .file_dropzon_item + .file_dropzon_item { margin-left: 20px; } 
+.new_layerpop_area .file_dropzon .file_dropzon_title { font-weight: bold; background: #878787; display: flex; align-items: center; justify-content: center; width: 90px; height: 40px; color: #fff; border-radius: 20px; } 
+.new_layerpop_area .file_dropzon .explanation { font-size: 14px; font-weight: bold; text-align: center; } 
+
+/****신규 물품 등록 팝업****/
+/*신규 등록 팝업*/
+
+/*등록된 파일정보 확인 팝업*/
+.registered_filepop { display: none; z-index: 1000; position: fixed; top: 0; left: 0; 
+justify-content: center; align-items: center; opacity: 1; transform: translateZ(0); transition: opacity .2s; perspective: 1000px; perspective-origin: 50% 50%; max-width: 740px; max-height: 540px; } 
+.registered_filepop .registered_area { width:100%; height:100%; border: 1px solid #DFDFDF; border-radius: 10px; background: #fff; } 
+.registered_area .registered_filepop_close { width: 20px; height: 20px; position: absolute; top: -30px; display: block; right: 0px; font-size: 40px; color: #ffffff; z-index: 15; } 
+.registered_area .registered_filepop_close img { display: block; } 
+.registered_area .registered_filepop_close:hover { background: transparent url('btn_exit_on.png') no-repeat; cursor: pointer; } 
+.registered_area .content { width: 100%; height:100%; color: #828282; } 
+.registered_area .content .item_detail { height:100%; } 
+.registered_area .content .item_detail .section { height: 100%; } 
+.registered_area .content .item_detail .each_file_info .title {padding-bottom: 30px; color: #1C1B1B;display: flex;  align-items: center; flex-direction: column;}
+.registered_area .content .item_detail .each_file_info .title p {padding-top:10px;}
+.registered_area .content .item_detail .each_file_info .file_area {width:100%;}
+.registered_area .content .item_detail .each_file_info .file_area table {width:calc(100% - 20px);margin: 0 10px;border-top: 2px solid #1C1B1B;  border-bottom: 2px solid #1C1B1B;}
+.registered_area .content .item_detail .each_file_info .file_area table tr:first-child td {padding-top:30px;}
+.registered_area .content .item_detail .each_file_info .file_area table tr:last-child td {padding-bottom:30px;}
+.registered_area .content .item_detail .each_file_info .file_area table td {padding:5px 0;}
+.registered_area .content .item_detail .each_file_info .file_area table td.ipt {color:#FF5050;}
+.registered_area .content .item_detail .each_file_info .file_area table td input {max-width:160px;border:1px solid #DFDFDF;padding:5px 10px;}
+.registered_area .content .item_detail .each_file_info .file_area table td input::placeholder {color:#B9B9B9; font-size:12px;}
+.registered_area .content .item_detail .each_file_info .file_area table td:first-child {font-size:12px;}
+.registered_area .content .item_detail .each_file_info .file_area table td:last-child {color: #1C1B1B;text-align: right;font-size:12px;font-weight:bold;}
+.registered_area .content .item_detail .each_file_info { display: flex; justify-content: center; align-items: center; flex-direction: column; } 
+
+.registered_area .file_listzone { padding: 30px 20px; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; } 
+.registered_area .file_listzone .file_dropzon_item { display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 30px 0; width: 220px; height: 220px; border: 2px dashed #DFDFDF; border-radius: 10px; cursor: pointer; } 
+.registered_area .file_listzone .file_dropzon_item + .file_dropzon_item { margin-left: 20px; } 
+.registered_area .file_listzone .file_dropzon_title { font-weight: bold; background: #878787; display: flex; align-items: center; justify-content: center; width: 90px; height: 40px; color: #fff; border-radius: 20px; } 
+.registered_area .file_listzone .explanation { font-size: 14px; font-weight: bold; text-align: center; } 
+.each_file_info .save { margin-top:20px; } 
+.each_file_info .save a { background: #FFB300; font-size: 24px; font-weight: bold; padding: 14px 100px; border-bottom: 10px; display: block; border-radius: 10px; color:#fff; } 
+
+
+/*등록된 파일정보 확인 팝업*/
+
+/*2d,3d - 신규 등록 팝업*/
+/****2d,3d - 신규 물품 등록 팝업****/
+.each_upload .title { padding-bottom: 30px; color: #1C1B1B; } 
+.each_upload { display: none; } 
+.each_upload.two_upload.on { display: block; } 
+.each_upload.three_upload.on { display: flex; justify-content: center; align-items: center; flex-direction: column; } 
+.each_upload.two_upload.on { display: flex; justify-content: center; align-items: center; flex-direction: column; } 
+
+.each_upload .threejs_dropzone { } 
+.each_upload .threejs_dropzone .drag_area { width: 50%; } 
+.each_upload .threejs_dropzone .drag_area em { font-weight:bold; } 
+.each_upload .threejs_dropzone .drag_area strong { display: flex; justify-content: center; padding-bottom: 10px; font-size:14px; color:#1C1B1B; } 
+.each_upload .threejs_dropzone .drag_area .drag_zone { display: flex; flex-direction: column; justify-content: center; min-width: 340px; align-items: center; padding: 45px 0; border-radius: 10px; border: 2px dashed #DFDFDF; } 
+.each_upload .threejs_dropzone .drag_area .drag_zone > span { font-size: 16px; font-weight: bold; background: #878787; border-radius: 20px; padding: 10px 15px; color: #fff; } 
+.each_upload .threejs_dropzone .drag_area .drag_zone > img { max-width:60px; padding:30px 0; } 
+.each_upload .threejs_dropzone .drag_area .drag_zone > .txt01 { padding-bottom:15px; font-size: 14px; font-weight: bold; color:#1C1B1B } 
+.each_upload .threejs_dropzone .drag_area .drag_zone > .txt02 { font-size: 12px; color:#000; text-align: center; } 
+
+.each_upload .save { margin-top:20px; } 
+.each_upload .save a { background: #FFB300; font-size: 24px; font-weight: bold; padding: 14px 100px; border-bottom: 10px; display: block; border-radius: 10px; color:#fff; } 
+
+.each_upload .threejs_dropzone { display: flex; gap: 20px; } 
+
+/****2d,3d - 신규 물품 등록 팝업****/
+/*2d,3d - 신규 등록 팝업*/
+
+
+
+
+/* 에디터 */
+.ql-editor strong {font-weight:bold;}
+.ql-editor em {font-style:italic}
+
+@media(max-width: 992px){
+ .product_wrap tr td { display: block; padding:10px 0 0; } 
+ .product_wrap tr td:first-child { padding:20px 0 0; border:0; } 
+ .uploaded_area { display: block; } 
+ .uploaded_area > img { width:100%; } 
+ .upload_area { margin:10px 0 0 0; height:300px; } 
+ .product_wrap .regit_category { padding-left:0; } 
+ .product_wrap .category select { min-width:200px; width:auto; } 
+ .progress_area { display: block; } 
+ .progress_area button { margin-top:10px; } 
+ .register_discount .dc_area {}
+ .register_discount .dc_area .dc_title {}
+ .register_discount input { min-width: 300px; width:auto; } 
+ .register_discount .sell_discount { flex-direction: column; align-items: baseline; } 
+ .register_discount .sell_discount .dsc_txt { margin-top:10px; width: 100%; text-align: right; } 
+ .register_discount .sell_discount .dsc_calc { width:100%; } 
+ .register_tags { margin-bottom:20px; } 
+ }
+@media(max-width: 767px) {}
+@media(max-width: 480px) {}

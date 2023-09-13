@@ -1,0 +1,302 @@
+/* 공통 */
+.hide {display: none;}
+/* 드래그 금지 */
+.dragunable {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+/* 공통 끝 */
+
+/* 
+    공통 사항
+    1.버튼
+    2.탭
+    3.레이어팝업
+    4.
+*/
+
+/* 버튼 */
+[class*="btn_full"] {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    font-size: 16px;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.btn_full01 {
+    width: 100%;
+    height: 50px;
+    background: #eff1f4;
+    color: #333b58;
+    border-radius: 4px;
+}
+.btn_full02 {
+    width: 100%;
+    height: 50px;
+    border:1px solid #DFDFDF;
+    color: #3D3D3D;
+    font-weight:bold;
+    border-radius: 8px;
+}
+.btn_full03 {
+    width: 100%;
+    height: 50px;
+    background: #EFF2F7;
+    color: #5157FF;
+    font-weight:bold;
+    border-radius: 8px;    
+    margin: 0px auto;
+}
+.btn_full04 {
+    width: 100%;
+    padding: 5px 0;
+    background: #e1fbec;
+    border: 1px solid #C6F2D9;
+    color: #21C18A;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.btn_full03.type01 {
+    background-color: #6f748c;
+}
+.btn_full03.type02 {
+    background-color: #6f748c;
+}
+.btn_full03.type03 {
+    background-color: #635bca;
+}
+.btn_full03.off {
+    background-color: #d0d3d7;
+}
+.btn_full04 {
+    width: 100%;
+    padding:6px 0;
+    background: #F5F5F5;
+    border:1px solid #DFDFDF;
+    color: #878787;
+    border-radius:5px;
+    font-weight: 300;    
+    font-size: 12px;
+}
+.btn_full04 span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn_full04 span img {
+    margin-right:12px;
+}
+.btn_full05 {
+    width: 187px;
+    height: 62px;
+    margin: 20px auto 50px;
+    line-height: 62px;
+    color: #fff;
+    font-size: 18px;
+    background: #635bca;
+}
+.btn_full05:hover {
+    background: linear-gradient(to right, #8a39ce, #635bca);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr='#8a39ce', endColorstr='#635bca');
+}
+
+/* 버튼 끝 */
+
+
+/* 탭 */
+
+.tab_type01 {
+    width: 100%;
+    overflow: hidden;
+}
+.tab_type01 > a {
+    float: left;
+    width: 50%;
+    height: 45px;
+    line-height: 45px;
+    background: #f3f5fa;
+    border: 1px solid #d7dbe3;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #a9afbd;
+    text-align: center;
+}
+.tab_type01 > a.on {
+    background: #fff;
+    border-bottom: 0;
+    color: #616781;
+}
+.tab_type01 > a:last-child {
+    border-left: 0;
+}
+.tab_type02 {
+    display: flex;
+    width: 100%;
+    height: 54px;
+}
+.tab_type02 li {
+    flex: 1;
+    background-color: #ecf2ff;
+    border: 1px solid #cfcbff;
+    font-size: 14px;
+    font-weight: 700;
+    color: #7e86a8;
+}
+.tab_type02 li:not(:last-child) {
+    border-right: 0;
+}
+.tab_type02 li.on {
+    background-color: #635bca;
+    border-color: #635bca;
+    color: #fff;
+}
+.tab_type02 li.on + li {
+    border-left: 0;
+}
+.tab_type02 li > a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.tab_type03 {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;    
+    padding: 0 40px;
+}
+.tab_type03 li {
+    width: 120px;
+    border-bottom: 1px solid transparent;
+    font-weight: 300;
+    text-align: center;
+    color: #7c7c7c;
+    display: flex;
+    justify-content: center;
+}
+.tab_type03 li.on {
+    border-bottom: 2px solid #3ADEA6;
+    font-weight:bold;
+}
+.tab_type03 li.on a {
+    color: #3ADEA6;
+}
+.tab_type03 li .btn {
+    display: block;
+    height: 100%;
+    padding-bottom: 10px;    
+    align-items: center;
+    display: flex;
+}
+.tab_box {
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    margin: 20px 0;
+    color: #666;    
+    padding: 0 40px;
+}
+/* 탭 끝 */
+
+
+/* 스위치 시작 */
+.checkbox-google {
+	display: inline-block;    
+	height: 28px;    
+	line-height: 28px;      
+	margin-right: 10px;       
+	position: relative;
+	vertical-align: middle;
+	font-size: 14px;
+	user-select: none;	
+}
+.checkbox-google .checkbox-google-switch {
+	display: inline-block;	
+	width: 36px;
+	height: 14px;	
+	border-radius: 20px;
+	position: relative;
+	top: 6px;			
+	vertical-align: top;
+	background: #DFDFDF;
+	transition: .2s;
+}
+.checkbox-google .checkbox-google-switch:before {
+	content: '';
+	display: inline-block;	
+	width: 20px;	
+	height: 20px;
+	position: absolute;
+	top: -3px;
+	left: -1px;
+	background: #B9B9B9;
+	border-radius: 50%;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+	transition: .15s;		
+}
+.checkbox-google input[type=checkbox] {
+	display: block;	
+	width: 0;
+	height: 0;	
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.checkbox-google input[type=checkbox]:checked + .checkbox-google-switch {
+	background: #FCDE96;
+}
+.checkbox-google input[type=checkbox]:checked + .checkbox-google-switch:before {
+	background: #FFB300;
+	transform:translateX(18px);
+}
+ 
+/* Hover */
+.checkbox-google input[type="checkbox"]:not(:disabled) + .checkbox-google-switch {
+	cursor: pointer;
+	border-color: rgba(0, 0, 0, .3);
+}
+ 
+/* Active/Focus */
+.checkbox-google input[type="checkbox"]:not(:disabled):active + .checkbox-google-switch:before, 
+.checkbox-google input[type="checkbox"]:not(:disabled):focus + .checkbox-google-switch:before {
+	animation: checkbox-active-on 0.5s forwards linear;
+}
+@keyframes checkbox-active-on {
+	0% {
+		box-shadow: 0 0 0 0 rgba(212,212,212, 0);
+	}
+	99% {
+		box-shadow: 0 0 0 10px rgba(212,212,212, 0.5);
+	}
+}
+ 
+.checkbox-google input[type="checkbox"]:not(:disabled):checked:active + .checkbox-google-switch:before, 
+.checkbox-google input[type="checkbox"]:not(:disabled):checked:focus + .checkbox-google-switch:before {
+	animation: checkbox-active-off 0.5s forwards linear;
+}
+@keyframes checkbox-active-off {
+	0% {
+		box-shadow: 0 0 0 0 rgba(154,190,247, 0);
+	}
+	99% {
+		box-shadow: 0 0 0 10px rgba(154,190,247, 0.5);
+	}
+}
+ 
+/* Disabled */
+.checkbox-google input[type=checkbox]:disabled + .checkbox-google-switch {
+	filter: grayscale(60%);
+	border-color: rgba(0, 0, 0, .1);
+}
+.checkbox-google input[type=checkbox]:disabled + .checkbox-google-switch:before {
+	background: #eee;
+}
+/* 스위치 끝 */

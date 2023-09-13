@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPFAC - 입점 신청</title>
+    <!-- 리셋 -->
+    <link rel="stylesheet" href="/resources/assets/css/reset.css" />
+    <!-- 공통스타일 -->
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css" />
+    <!-- 공통레이아웃스타일 -->
+    <link rel="stylesheet" href="/resources/assets/css/style.css" />
+    <!-- 반응형 -->
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css" />
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+    
+    <!-- 헤더 -->
+    <header class="header">       
+    </header>
+    <!-- 헤더 끝 -->
+    <main class="all_wrap">
+        <!-- 입점신청 -->
+        <section class="storeentry_area">
+            <div class="container">
+                <div class="cont">
+                    <div class="item">
+                        <ul class="storeentry_nav">
+                            <li>01 판매자 본인인증</li>
+                            <li>02 판매자 유형선택</li>
+                            <li class="on">03 판매자 정보입력</li>
+                            <li>04 입점 신청 완료</li>
+                        </ul>
+                        <h2>가입을 위해 판매자 정보를 입력해 주세요.</h2>
+                        <div class="form_box">
+                            <div class="input_box">
+                                <label for="">닉네임<span>내 상품에 노출되는 닉네임 설정</span></label>
+                                <input type="text" />
+                            </div>
+                            <!-- 
+                                [dev] 
+                                이미 사용중인 이메일일 경우 
+                                input_box에 duplication에
+                                <span class="duplication_text">이미 사용중인 이메일 입니다.</span> 추가
+                            -->
+                            <div class="input_box duplication">
+                                <label for="">이메일<span>정산 시 사용되는 메일주소</span><span class="duplication_text">이미 사용중인 이메일 입니다.</span></label>
+                                <input type="email" />
+                            </div>
+                            <!-- [dev] 인증하기 btn 인증 완료일 경우 class on 추가 및 텍스트 '인증완료' 로 변경 -->
+                            <button type="button" class="btn_certification on">인증하기</button>
+                            <div class="radio_box">
+                                <label for="">사업자 유형 선택</label>
+                                <div class="radio_box_cont">
+                                    <div class="radio_box_item">
+                                        <input type="radio" name="buisness_type" id="buisness_type01">
+                                        <label for="buisness_type01">과세</label>
+                                    </div>
+                                    <div class="radio_box_item">
+                                        <input type="radio" name="buisness_type" id="buisness_type02">
+                                        <label for="buisness_type02">면세</label>
+                                    </div>
+                                    <div class="radio_box_item">
+                                        <input type="radio" name="buisness_type" id="buisness_type03">
+                                        <label for="buisness_type03">과면세</label>
+                                    </div>
+                                    <div class="radio_box_item">
+                                        <input type="radio" name="buisness_type" id="buisness_type04">
+                                        <label for="buisness_type04">간이사업자</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_box">
+                                <label for="">계약자 정보 기입</label>
+                                <div class="input_line2">
+                                    <input type="text" placeholder="상호명">
+                                    <input type="text" placeholder="대표자 명">
+                                </div>
+                                <input type="text" placeholder="사업자 등록번호">
+                            </div>
+
+                            <div class="input_box">
+                                <label for="">입점 검토 자료<span>최소 3개 이상의 모델링 첨부 필요</span></label>
+                                <input type="text" placeholder="구글 드라이브 주소 혹은 드래그하여 파일 첨부" />
+                            </div>
+                            <div class="file_dropzon">
+                                <div class="file_dropzon_item">
+                                    <span class="file_dropzon_title">1번 파일</span>
+                                    <img src="/resources/assets/images/storeentry/ico_cloud.svg" alt="업로드" />
+                                    <p class="explanation">
+                                        드래그 앤 드롭 또는<br />
+                                        클릭하여 파일 찾기
+                                    </p>
+                                </div>
+                                <div class="file_dropzon_item">
+                                    <span class="file_dropzon_title">2번 파일</span>
+                                    <img src="/resources/assets/images/storeentry/ico_cloud.svg" alt="업로드" />
+                                    <p class="explanation">
+                                        드래그 앤 드롭 또는<br />
+                                        클릭하여 파일 찾기
+                                    </p>
+                                </div>
+                                <div class="file_dropzon_item">
+                                    <span class="file_dropzon_title">3번 파일</span>
+                                    <img src="/resources/assets/images/storeentry/ico_cloud.svg" alt="업로드" />
+                                    <p class="explanation">
+                                        드래그 앤 드롭 또는<br />
+                                        클릭하여 파일 찾기
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="input_box">
+                                <div class="input_download">
+                                    <label for="">약관 동의 및 계약서 서명<span>입점계약서를 다운받아 인감/서명 후 스캔하여 파일첨부</span></label>
+                                    <a href="폴더경로" class="download" download>계약서 다운로드</a>
+                                </div>
+                                <div class="input_box_file">
+                                    <label for="uploadFile01">파일선택</label>
+                                    <input class="input_upload" placeholder="선택된 파일 없음" readonly />
+                                    <input type="file" id="uploadFile01" />
+                                </div>
+                            </div>
+                            <div class="input_box">
+                                <label for="">정산 정보<span>판매완료 시 인증된 계좌로 정산이 진행됩니다.</span></label>
+                                <label for="" class="input_file_label">1. 사업자등록증 사본 등록</label>
+                                <div class="input_box_file">
+                                    <label for="uploadFile02">파일선택</label>
+                                    <input class="input_upload" placeholder="선택된 파일 없음" readonly />
+                                    <input type="file" id="uploadFile02" />
+                                </div>
+                                <label for="" class="input_file_label">2. 통장 사본 등록</label>
+                                <div class="input_box_file">
+                                    <label for="uploadFile03">파일선택</label>
+                                    <input class="input_upload" placeholder="선택된 파일 없음" readonly />
+                                    <input type="file" id="uploadFile03" />
+                                </div>
+                            <a href="javascript:;" class="btn_check btn_examine">심사 검토 신청</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 입점신청 끝 -->
+    </main>
+
+    
+    <!-- 푸터 -->
+    <footer class="footer">
+    </footer>
+    <!-- 푸터 끝 -->
+    
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- 공통js -->
+    <script src="/resources/assets/js/common.js"></script>
+    <!-- Swiper -->
+    <script src="/resources/assets/js/swiper-bundle.min.js"></script>
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script>  
+
+    <script>
+        // [dev] 파일 업로드시 파일명 반영
+        for (var i = 1; i <= 3; i++) {
+            $("#uploadFile0" + i).on('change', function () {
+                var fileName = $(this).val();
+                $(this).siblings(".input_upload").val(fileName);
+            });
+        }
+    </script>
+</body>
+</html>

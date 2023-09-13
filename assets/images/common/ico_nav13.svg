@@ -1,0 +1,6 @@
+<svg id="face" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="패스_46" data-name="패스 46" d="M8.5.5a8,8,0,1,0,8,8A8,8,0,0,0,8.5.5Zm4.9,12.9a6.908,6.908,0,1,1,1.486-2.2A6.908,6.908,0,0,1,13.4,13.4Z" transform="translate(-0.5 -0.5)"/>
+  <path id="패스_47" data-name="패스 47" d="M4,6H5.25V7.25H4Z" transform="translate(-0.245 -0.1)"/>
+  <path id="패스_48" data-name="패스 48" d="M10.5,6h1.25V7.25H10.5Z" transform="translate(0.227 -0.1)"/>
+  <path id="패스_49" data-name="패스 49" d="M7.25,9.592a.158.158,0,0,1,.006-.043L8.25,6.07V5.25h-1v.68L6.295,9.274A1.158,1.158,0,0,0,7.408,10.75H9.25v-1H7.408a.158.158,0,0,1-.158-.158Z" transform="translate(-0.021 0)"/>
+</svg>

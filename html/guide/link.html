@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크 공통 정의</title>
+	<style>
+		html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:Interstate,Verdana,sans-serif,"Malgun Gothic";font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input,button,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#0076c0;text-decoration:none}a:hover,a:focus{color:#0076c0;text-decoration:none}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}figure{margin:0}img{vertical-align:middle}ul,ol,li,dt,dd{margin:0;padding:0;list-style:none}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:inherit;font-weight:inherit;line-height:1.1;color:inherit;margin:0;padding:0}caption{display:none}em{font-style:normal;color:#555}fieldset{border:0;padding:0;margin:0}fieldset legend{position:absolute;hanging-punctuation:0;width:0;opacity:0}input[type=text],input[type=password],input[type=number]{-webkit-appearance:none}input[type=number]{text-align:right}input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=number]::-ms-clear{display:none}
+		table{width:100%; border-left:1px solid #ddd;}
+		tr:hover{background:#eee;}
+		td, th{font-size:12px; padding:5px;}
+		th{color:#000; background:#fefefe;border-bottom:1px solid #aaa; border-right:1px solid #aaa;}
+		td{ border-bottom:1px solid #ddd; border-right:1px solid #ddd; color:#555; text-align: center;}
+		td.tit{ color:#333; font-weight:bold;}
+		td.sbj{ text-align: left; }
+		td.link{ text-align: left; }
+		td:last-child{ color:red}
+		td.comment{ text-align: left; }
+		.link_notice{ position: relative;  border-top:2px solid #444;}
+		.link_notice.on{ padding-right: 20%;}
+		.link_notice .noti_comment{ display: none; position: fixed; right: 0; top: 40px; width: 18%; height: 95%; margin-right: 1%; border:1px solid #999; background-color: #f9f9f9; }
+		.link_notice .noti_comment .wrap{ padding: 10px; }
+		.link_notice .noti_comment .wrap > strong{ display: block; margin-bottom: 10px; color:red;}
+		.link_notice .noti_comment .wrap pre{ white-space: pre-wrap; font-size: 13px;}
+		.link_notice.on .noti_comment{ display:block; }
+		.line_top td{ border-top: 2px solid #666; }
+		.tab{overflow:hidden;}
+		.tab > li{float:left;}
+		.tab > li >a{display:block; padding:10px 20px; background:#dedede; color:#666;}
+		.tab > li.on > a{ background:#32373c; color:#fff; font-weight:bold;}
+		.red{ color:red;}
+		.calc{ position:absolute; right:10px; top:20px;}
+		.calc .fine{color:red;}
+		.top, .notice{ position: fixed; right:10px; bottom:10px; z-index:100; background:#333; width:50px; height:50px; text-align:center; line-height:50px; color:#fff; border-radius:50%;}
+		.notice{ bottom: 65px; background: #0073aa;}
+		.status.done {color: rgb(0, 0, 255);}
+		tr.finish {background: rgb(255, 249, 173);}
+	</style>
+</head>
+<body>
+    <div>
+        <div class="link_notice">
+			<table>
+				<colgroup>
+					<col>
+					<col>
+					<col width="40">
+					<col>
+					<col>
+					<col>
+					<col width="50">
+					<col width="50">
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>대분류</th>
+						<th>화면명</th>
+						<th>구분</th>
+						<th>페이지경로</th>
+						<th>작업시작일</th>
+						<th>작업완료일</th>
+						<th>상태</th>
+						<th>작업자</th>
+						<th>비고</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr class="finish">
+						<td class="tit" rowspan="1">메인</td>
+						<td class="sbj">메인</td>
+						<td></td>
+						<td class="link"><a href="/index.html" target="_blank">/index.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status done">완료</td>
+						<td>정성원</td>
+						<td class="comment"></td>
+					</tr>
+					<tr class="finish">
+						<td class="tit" rowspan="2">로그인</td>
+						<td class="sbj">로그인</td>
+						<td></td>
+						<td class="link"><a href="../login/login.html" target="_blank">../login/login.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status done">완료</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>
+					<tr class="finish">
+						<td class="sbj">비밀번호찾기</td>
+						<td></td>
+						<td class="link"><a href="../login/findPW.html" target="_blank">../login/findPW.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status done">완료</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>	
+					<tr class="finish">
+						<td class="tit" rowspan="2">회원가입</td>
+						<td class="sbj">회원가입01</td>
+						<td></td>
+						<td class="link"><a href="../member/newMemberRegist.html" target="_blank">../member/newMemberRegist.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status done">완료</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>
+					<tr class="finish">
+						<td class="sbj">회원가입02</td>
+						<td></td>
+						<td class="link"><a href="../member/newMemberRegistDone.html" target="_blank">../member/newMemberRegistDone.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status done">완료</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>	
+					<tr class="">
+						<td class="tit" rowspan="1">결제</td>
+						<td class="sbj">결제하기</td>
+						<td></td>
+						<td class="link"><a href="../payment/payment.html" target="_blank">../payment/payment.html</a></td>
+						<td>2023.09.04</td>
+						<td>2023.09.05</td>
+						<td class="status done">진행</td>
+						<td>정성원</td>
+						<td class="comment"></td>
+					</tr>									
+					<tr>
+						<td class="tit" rowspan="3">물품</td>
+						<td class="sbj">구매 > 리스트</td>
+						<td></td>
+						<td class="link"><a href="../products/productsList.html" target="_blank">../products/productsList.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status">진행</td>
+						<td>정성원</td>
+						<td class="comment"></td>
+					</tr>
+					<tr>
+						<td class="sbj">구매 > 상품디테일</td>
+						<td>팝업</td>
+						<td class="link"><a href="../products/productsBuyView.html" target="_blank">../products/productsBuyView.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status done">완료</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>	
+					<tr>
+						<td class="sbj">판매 > 판매등록</td>
+						<td></td>
+						<td class="link"><a href="../products/productsSellView.html" target="_blank">../products/productsSellView.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status">진행</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>	
+					<tr class="">
+						<td class="tit" rowspan="2">마이페이지</td>
+						<td class="sbj">마이페이지01</td>
+						<td></td>
+						<td class="link"><a href="../mypage/mypage.html" target="_blank">../mypage/mypage.html</a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status">진행</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>
+					<tr class="">
+						<td class="sbj">마이페이지02</td>
+						<td></td>
+						<td class="link"><a href="" target="_blank"></a></td>
+						<td>2023.08.29</td>
+						<td>2023.08.29</td>
+						<td class="status">진행</td>
+						<td>황승현</td>
+						<td class="comment"></td>
+					</tr>			
+				</tbody>
+				<tfoot>
+					<tr class="line_top">
+						<td>레이어 팝업 샘플</td>
+						<td></td>
+						<td></td>
+						<td class="link"><a href="" target="_blank"></a></td>
+						<td></td>
+						<td></td>
+						<td class="status"></td>
+						<td></td>
+						<td class="comment"></td>
+					</tr>
+					<tr>
+						<td>헤더</td>
+						<td></td>
+						<td></td>
+						<td class="link"><a href="" target="_blank"></a></td>
+						<td></td>
+						<td></td>
+						<td class="status"></td>
+						<td></td>
+						<td class="comment"></td>
+					</tr>
+					<tr>
+						<td>슬라이드</td>
+						<td></td>
+						<td></td>
+						<td class="link"><a href="" target="_blank"></a></td>
+						<td></td>
+						<td></td>
+						<td class="status"></td>
+						<td></td>
+						<td class="comment"></td>
+					</tr>
+					<tr>
+						<td>프론트 기본레이아웃</td>
+						<td></td>
+						<td></td>
+						<td class="link"><a href="" target="_blank"></a></td>
+						<td></td>
+						<td></td>
+						<td class="status"></td>
+						<td></td>
+						<td class="comment"></td>
+					</tr>
+				</tfoot>
+			</table>
+			<a href="#top" class="top">Top</a>
+			<button type="button" class="notice">공지</button>			
+		</div>
+    </div>
+</body>
+</html>

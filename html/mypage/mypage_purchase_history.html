@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - 구매 내역</title>
+    <link rel="stylesheet" href="/resources/assets/css/reset.css">
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/payment.css">
+    <link rel="stylesheet" href="/resources/assets/css/mypage.css">
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css">
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+    <header class="header"></header>
+
+    <main class="all_wrap">
+        <section class="mypage_area">
+            <div class="my_info">
+                <div class="container">
+                    <!-- [dev] 판매자 모드일경우 my_info_cont 에 on 추가 -->
+                    <div class="my_info_cont">
+                        <div class="is_profile">
+                            <div class="is_img">
+                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" />
+                            </div>
+                            <div class="is_text">
+                                <!-- [dev] 판매자 모드일경우 type_user 텍스트 '판매자 회원' 으로 변경-->
+                                <div class="type">
+                                    <p class="type_user">구매자 회원</p>
+                                    <p>판매자 모드</p>
+                                    <div class="switch">
+                                        <span>ON</span>
+                                        <span>OFF</span>
+                                    </div>
+                                </div>
+                                <h3>Whisky Hotel 1996</h3>
+                                <div class="following">
+                                    <p>Follow</p>
+                                    <a href="javascript:;">123,456,170</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [dev]
+                            <h5>사용가능 쿠폰</h5>  >   <h5>N월 판매 내역<p class="i_info"><img src="/resources/assets/images/mypage/ico_info.svg" alt="아이콘" /><span class="tooltip">· 구매 취소가 반영되지 않은 내용으로 실 판매 내역과,<br />실 정산 금액은 차이가 발생할 수 있습니다</span></p></h5>
+                            <h5>적립금</h5>  >  <h5>N월 정산 예정금액<p class="i_info"><img src="/resources/assets/images/mypage/ico_settings.svg" alt="아이콘" />내 정산 계좌<span class="tooltip">· 내 정산 계좌 : (국민) 841201-04-012808<a href="javascript:;">수정</a></span></p></h5>
+                        -->
+                        <div class="is_benefits">
+                            <div class="is_coupon">
+                                <h5>사용가능 쿠폰</h5>
+                                <p><span>1</span>장</p>
+                            </div>
+                            <div class="is_point">
+                                <h5>적립금</h5>
+                                <p><span>13,200</span>P</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="mypage_list">
+                    <li class="on"><a href="javascript:;">내가 본 상품</a></li>
+                    <li><a href="javascript:;">즐겨찾기</a></li>
+                    <li><a href="javascript:;">장바구니</a></li>
+                    <li><a href="javascript:;">구매 내역</a></li>
+                    <li><a href="javascript:;">다운로드 내역</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- 쿠폰 내역 -->
+        <div class="mypage_table_area">
+            <div class="container">
+                <div class="cont">
+                    <div class="item_date">
+                        <ul class="date_list tab_none_style">
+                            <li class="on"><button type="button">오늘</button></li>
+                            <li><button type="button">7일</button></li>
+                            <li><button type="button">15일</button></li>
+                            <li><button type="button">1개월</button></li>
+                            <li><button type="button">3개월</button></li>
+                            <li><button type="button">6개월</button></li>
+                            <li><button type="button">전체</button></li>
+                        </ul>
+                        <div class="date_search">
+                            <div class="date_search_input">
+                                <input type="text" id="dateSearchStart" readonly />
+                            </div>
+                            <p>~</p>
+                            <div class="date_search_input">
+                                <input type="text" id="dateSearchEnd" readonly />
+                            </div>
+                            <button type="button">검색</button>
+                        </div>
+                    </div>
+                    <table class="item_table item_table_purchase_history">
+                        <colgroup>
+                            <col class="col01">
+                            <col class="col02">
+                            <col class="col03">
+                            <col class="col04">
+                            <col class="col05">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <td>일자</td>
+                                <td>상품명</td>
+                                <td>상품금액</td>
+                                <td>최종 결제 금액</td>
+                                <td>내역</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023.08.18 19:06</td>
+                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
+                                <td><span>140,000</span>원</td>
+                                <td class="end"><span>70,000</span>원</td>
+                                <td><button type="button" class="detail">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2023.08.18 19:06</td>
+                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
+                                <td><span>140,000</span>원</td>
+                                <td class="end"><span>70,000</span>원</td>
+                                <td><button type="button" class="detail">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2023.08.18 19:06</td>
+                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
+                                <td><span>140,000</span>원</td>
+                                <td class="end"><span>70,000</span>원</td>
+                                <td><button type="button" class="detail">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2023.08.18 19:06</td>
+                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
+                                <td><span>140,000</span>원</td>
+                                <td class="end"><span>70,000</span>원</td>
+                                <td><button type="button" class="detail">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td>2023.08.18 19:06</td>
+                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
+                                <td><span>140,000</span>원</td>
+                                <td class="end"><span>70,000</span>원</td>
+                                <td><button type="button" class="detail">상세보기</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- 쿠폰 내역 끝 -->
+
+        <!-- 구매 내역 팝업 -->
+        <div class="pop_payment_detail">
+            <div class="cont">
+                <div class="item item01">
+                    <div class="end_info">
+                        <h5>결제완료</h5>
+                        <p>2023.07.27 18:23</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button">결제 확인서</button>
+                        <button type="button">결제 영수증</button>
+                    </div>
+                </div>
+                <div class="item item02">
+                    <h6 class="item_list_title">그레이하운드 캐릭터 3D 이미지</h6>
+                    <ul class="item_list_amount">
+                        <li>
+                            <p>상품금액</p>
+                            <p>35,000<span>원</span></p>
+                        </li>
+                        <li>
+                            <p>할인금액</p>
+                            <p>-12,500<span>원</span></p>
+                        </li>
+                    </ul>
+                    <ul class="item_list_discount">
+                        <li>
+                            <p>자체 할인</p>
+                            <p>-10,000<span>원</span></p>
+                        </li>
+                        <li>
+                            <p>쿠폰</p>
+                            <p>0<span>원</span></p>
+                        </li>
+                        <li>
+                            <p>포인트</p>
+                            <p>2,500<span>P</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item item02">
+                    <h6 class="item_list_title">그레이하운드 캐릭터 3D 이미지</h6>
+                    <ul class="item_list_amount">
+                        <li>
+                            <p>상품금액</p>
+                            <p>35,000<span>원</span></p>
+                        </li>
+                        <li>
+                            <p>할인금액</p>
+                            <p>-12,500<span>원</span></p>
+                        </li>
+                    </ul>
+                    <ul class="item_list_discount">
+                        <li>
+                            <p>자체 할인</p>
+                            <p>-10,000<span>원</span></p>
+                        </li>
+                        <li>
+                            <p>쿠폰</p>
+                            <p>0<span>원</span></p>
+                        </li>
+                        <li>
+                            <p>포인트</p>
+                            <p>2,500<span>P</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item item03">
+                    <div class="pay_amount">
+                        <h6>최종 결제 금액</h6>
+                        <p><span>35,000</span>원</p>
+                    </div>
+                    <div class="pay_type">
+                        <h6>결제 방법</h6>
+                        <p>신용카드</p>
+                    </div>
+                </div>
+                <div class="btn_check">
+                    <button type="button">확인</button>
+                </div>
+            </div>
+        </div>
+        <!-- 구매 내역 팝업 -->
+    </main>
+
+    <footer class="footer"></footer>
+    
+    <!-- Jquery -->
+    <script type="text/javascript" src="/resources/assets/js/jquery.min.js"></script>
+    <!-- Swiper -->
+    <script type="text/javascript" src="/resources/assets/js/swiper-bundle.min.js"></script>
+    <!-- 공통js -->
+    <script type="text/javascript" src="/resources/assets/js/common.js"></script>
+    <!-- threesixty -->
+    <script type="text/javascript" src="/resources/assets/js/plugins/jquery.threesixty.js"></script>    
+    <!-- 데이터피커 -->
+    <script type="text/javascript" src="/resources/assets/js/plugins/jquery-ui.min.js"></script>
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script> 
+
+    <script>
+        $(function(){
+            // [dev] 판매자모드 전환 스위치 
+            $('.mypage_area .my_info .my_info_cont .type').on('click',function(){
+                $(this).toggleClass('on');
+            });
+            // [dev] 날짜 최초 오늘값 세팅
+            // document.getElementById('dateSearchStart').value = new Date().toISOString().substring(0, 10);
+            // document.getElementById('dateSearchEnd').value = new Date().toISOString().substring(0, 10);
+
+            // [dev] 날짜 데이터피커
+            var today = new Date();
+            $.datepicker.setDefaults({
+                dateFormat: 'yy.mm.dd',
+                prevText: '이전 달',
+                nextText: '다음 달',
+                monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                showMonthAfterYear: true,
+                yearSuffix: '년',
+            });
+            $('#dateSearchStart').datepicker({});
+            $('#dateSearchStart').datepicker('setDate', today);
+            $('#dateSearchEnd').datepicker({});
+            $('#dateSearchEnd').datepicker('setDate', today);
+
+
+            // [dev] 내역 상세보기 팝업
+            $('.mypage_table_area .item_table tbody td button.detail').on('click', function(){
+                $('.pop_payment_detail').addClass('on');
+            })
+            $('.pop_payment_detail .btn_check button').on('click', function(){
+                $('.pop_payment_detail').removeClass('on');
+            })
+        })
+    </script>
+</body>
+</html>

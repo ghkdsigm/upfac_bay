@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>UPFAC-결제하기</title>
+    <!-- 리셋 -->
+    <link rel="stylesheet" href="/resources/assets/css/reset.css" />
+    <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css" />
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="/resources/assets/css/style.css" />
+    <!-- 해당페이지 -->
+    <link rel="stylesheet" href="/resources/assets/css/payment.css">
+    <!-- 반응형 -->
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css" />
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+    
+    <!-- 헤더 -->
+    <header class="header"></header>
+    <!-- 헤더 끝 -->
+
+    <main class="all_wrap">
+        <div class="category_cont_area">
+            <!-- 왼쪽 카테고리 영역 -->
+            <div class="left_category_area">
+                <div class="left_category_cont">
+                    <div class="left_category_filter">
+                        <img src="/resources/assets/images/products/ico_filter.svg" alt="필터 아이콘" class="img_filter" />
+                        <p>카테고리 필터</p>
+                        <img src="/resources/assets/images/products/ico_category_arw.svg" alt="화살표 아이콘" class="img_arw" />
+                    </div>
+                    <div class="accordion_all">
+                        <div class="accordion_list">
+                            <div class="accordion_title">
+                                <img src="/resources/assets/images/products/ico_3d.svg" alt="3D 아이콘" />
+                                <p>3D</p>
+                                <img src="/resources/assets/images/common/ico_arw_12x6.svg" alt="화살표 아이콘" class="img_arw" />
+                            </div>
+                            <ul class="accordion_toggle">
+                                <li class="list_all">
+                                    <input type="checkbox" id="3dAll"/>
+                                    <label for="3dAll">3D 전체</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dAnimal"/>
+                                    <label for="3dAnimal">동물 <span>(1,211)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dBild"/>
+                                    <label for="3dBild">건축 <span>(22)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dArt"/>
+                                    <label for="3dArt">예술 <span>(33)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dTransit"/>
+                                    <label for="3dTransit">운송수단 <span>(876)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dCharacter"/>
+                                    <label for="3dCharacter">캐릭터 <span>(383)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dHistory"/>
+                                    <label for="3dHistory">역사 <span>(80)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dElectronic"/>
+                                    <label for="3dElectronic">전자제품 <span>(1,403)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dFashion"/>
+                                    <label for="3dFashion">패션 <span>(1,203)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dFood"/>
+                                    <label for="3dFood">음식&음료 <span>(63)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dFurniture"/>
+                                    <label for="3dFurniture">가구 <span>(13)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dMusic"/>
+                                    <label for="3dMusic">음악 <span>(4)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dNature"/>
+                                    <label for="3dNature">자연&식물 <span>(157)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dCharacter"/>
+                                    <label for="3dCharacter">인물 <span>(85)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dPlace"/>
+                                    <label for="3dPlace">장소 <span>(38)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dScience"/>
+                                    <label for="3dScience">과학기술 <span>(122)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dSports"/>
+                                    <label for="3dSports">스포츠 <span>(7)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dGame"/>
+                                    <label for="3dGame">게임 <span>(1,211)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="3dEtc"/>
+                                    <label for="3dEtc">기타 <span>(11,551)</span></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="accordion_list">
+                            <div class="accordion_title">
+                                <img src="/resources/assets/images/products/ico_2d.svg" alt="3D 아이콘" />
+                                <p>2D</p>
+                                <img src="/resources/assets/images/common/ico_arw_12x6.svg" alt="화살표 아이콘" class="img_arw" />
+                            </div>
+                            <ul class="accordion_toggle">
+                                <li class="list_all">
+                                    <input type="checkbox" id="2dAll"/>
+                                    <label for="2dAll">2D 전체</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dAnimal"/>
+                                    <label for="2dAnimal">동물 <span>(1,211)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dBild"/>
+                                    <label for="2dBild">건축 <span>(22)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dArt"/>
+                                    <label for="2dArt">예술 <span>(33)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dTransit"/>
+                                    <label for="2dTransit">운송수단 <span>(876)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dCharacter"/>
+                                    <label for="2dCharacter">캐릭터 <span>(383)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dHistory"/>
+                                    <label for="2dHistory">역사 <span>(80)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dElectronic"/>
+                                    <label for="2dElectronic">전자제품 <span>(1,403)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dFashion"/>
+                                    <label for="2dFashion">패션 <span>(1,203)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dFood"/>
+                                    <label for="2dFood">음식&음료 <span>(63)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dFurniture"/>
+                                    <label for="2dFurniture">가구 <span>(13)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dMusic"/>
+                                    <label for="2dMusic">음악 <span>(4)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dNature"/>
+                                    <label for="2dNature">자연&식물 <span>(157)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dCharacter"/>
+                                    <label for="2dCharacter">인물 <span>(85)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dPlace"/>
+                                    <label for="2dPlace">장소 <span>(38)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dScience"/>
+                                    <label for="2dScience">과학기술 <span>(122)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dSports"/>
+                                    <label for="2dSports">스포츠 <span>(7)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dGame"/>
+                                    <label for="2dGame">게임 <span>(1,211)</span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="2dEtc"/>
+                                    <label for="2dEtc">기타 <span>(11,551)</span></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 물품 리스트 -->
+            <section class="product_area product_sub_area">
+                <div class="container_full pos-rel">
+                    <div class="product_sub_top">
+                        <div class="title">
+                            <button type="button" class="btn_category_open">
+                                <img src="/resources/assets/images/products/ico_category_arw.svg" alt="화살표 아이콘" class="img_arw">
+                            </button>
+                            <h2>3D</h2>
+                            <ul class="list_format tab_none_style">
+                                <!-- [pub] 확장자 추가시 title 필수로 넣어야함 -->
+                                <li><button type="button" title="모든 확장자">모든 확장자</button></li>
+                                <li><button type="button" title="GLB">GLB</button></li>
+                                <li><button type="button" title="OBJ">OBJ</button></li>
+                                <li><button type="button" title="GLTF">GLTF</button></li>
+                                <li><button type="button" title="Autodesk FBX">Autodesk FBX</button></li>
+                            </ul>
+                        </div>
+                        <div class="select_item">
+                            <div class="select_box">
+                                <div class="select_cont">
+                                    <div class="select_title">
+                                        <img src="/resources/assets/images/common/ico_filter.svg" alt="목록 아이콘" />
+                                        <p>한국어</p>
+                                        <img src="/resources/assets/images/common/ico_arw_12x6.svg" alt="화살표" class="arw" />
+                                    </div>
+                                    <ul class="select_list">
+                                        <li><button type="button">인기순</button></li>
+                                        <li><button type="button">최신순</button></li>
+                                        <li><button type="button">인기 많은순</button></li>
+                                        <li><button type="button">낮은 가격순</button></li>
+                                        <li><button type="button">높은 가격순</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="select_box">
+                                <div class="select_cont">
+                                    <div class="select_title">
+                                        <img src="/resources/assets/images/common/ico_filter.svg" alt="목록 아이콘" />
+                                        <p>즐겨찾기 많은순</p>
+                                        <img src="/resources/assets/images/common/ico_arw_12x6.svg" alt="화살표" class="arw" />
+                                    </div>
+                                    <ul class="select_list">
+                                        <li><button type="button">인기순</button></li>
+                                        <li><button type="button">최신순</button></li>
+                                        <li><button type="button">인기 많은순</button></li>
+                                        <li><button type="button">낮은 가격순</button></li>
+                                        <li><button type="button">높은 가격순</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_tag">
+                    <div class="container_full">
+                        <ul class="cont">
+                            <li>
+                                <p>전체</p>
+                                <button type="button" class="btn_close"><img src="/resources/assets/images/products/ico_close.svg" alt="삭제 버튼"></button>
+                            </li>
+                            <li>
+                                <p>캐릭터</p>
+                                <button type="button" class="btn_close"><img src="/resources/assets/images/products/ico_close.svg" alt="삭제 버튼"></button>
+                            </li>
+                            <li>
+                                <p>예술</p>
+                                <button type="button" class="btn_close"><img src="/resources/assets/images/products/ico_close.svg" alt="삭제 버튼"></button>
+                            </li>
+                            <li class="delete_all"><button type="button" class="btn_close">모두 지우기</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container_full">
+                    <ul class="cont cont_product" id="product_pop">
+                        <li class="item">
+                            <a href="javascript:;">
+                                <div class="is_img">
+                                    <img src="" alt="">
+                                </div>
+                            </a>
+                            <div class="is_text">
+                                <div class="is_text_top">
+                                    <div class="user">
+                                        <a href="javascript:;">
+                                            <!-- [dev] 유저 프로필 이미지 없을경우 img 태그 제거 -->
+                                            <div class="user_img">
+                                                <img src="/resources/assets/images/test/user_img.svg" alt="프로필 사진" />
+                                            </div>
+                                            <!-- [dev] 유저 이름 -->
+                                            <h3 class="user_name">Umbra Marauder Rig</h3>
+                                        </a>
+                                        <div class="user_detail">
+                                            <div class="user_detail_img">
+                                                <img src="/resources/assets/images/products/user_detail.jpg" alt="프로필 사진" />
+                                            </div>
+                                            <div class="user_detail_name">
+                                                <h4>Umbra Marauder Rig</h4>
+                                                <button type="button" class="btn_follow">Follow</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <span class="info_view">1.1K</span>
+                                        <!-- [dev] 즐겨찾기 돼 있을경우 on 추가 -->
+                                        <button type="button" class="info_favorites on">123</button>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <p>13,000<small>원</small></p>
+                                    <button type="button"><img src="/resources/assets/images/common/ico_cart_add.svg" alt="장바구니" /></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="javascript:;">
+                                <div class="is_img">
+                                    <img src="" alt="">
+                                </div>
+                            </a>
+                            <div class="is_text">
+                                <div class="is_text_top">
+                                    <div class="user">
+                                        <a href="javascript:;">
+                                            <div class="user_img"></div>
+                                            <h3 class="user_name">유저이름</h3>
+                                        </a>
+                                        <div class="user_detail">
+                                            <div class="user_detail_img">
+                                                <img src="/resources/assets/images/products/user_detail.jpg" alt="프로필 사진" />
+                                            </div>
+                                            <div class="user_detail_name">
+                                                <h4>Umbra Marauder Rig</h4>
+                                                <button type="button" class="btn_follow">Follow</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <span class="info_view">1.1K</span>
+                                        <!-- [dev] 즐겨찾기 돼 있을경우 on 추가 -->
+                                        <button type="button" class="info_favorites on">123</button>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <p>13,000<small>원</small></p>
+                                    <button type="button"><img src="/resources/assets/images/common/ico_cart_add.svg" alt="장바구니" /></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="javascript:;">
+                                <div class="is_img">
+                                    <img src="" alt="">
+                                </div>
+                            </a>
+                            <div class="is_text">
+                                <div class="is_text_top">
+                                    <div class="user">
+                                        <a href="javascript:;">
+                                            <div class="user_img"></div>
+                                            <h3 class="user_name">유저이름유저이름유저이름유저이름유저이름유저이름유저이름유저이름유저이름유저이름</h3>
+                                        </a>
+                                        <div class="user_detail">
+                                            <div class="user_detail_img">
+                                                <img src="/resources/assets/images/products/user_detail.jpg" alt="프로필 사진" />
+                                            </div>
+                                            <div class="user_detail_name">
+                                                <h4>Umbra Marauder RigUmbra Marauder RigUmbra Marauder RigUmbra Marauder RigUmbra Marauder RigUmbra Marauder RigUmbra Marauder RigUmbra Marauder Rig</h4>
+                                                <button type="button" class="btn_follow">Follow</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <span class="info_view">1.1K</span>
+                                        <!-- [dev] 즐겨찾기 돼 있을경우 on 추가 -->
+                                        <button type="button" class="info_favorites on">123</button>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <p>13,000<small>원</small></p>
+                                    <button type="button"><img src="/resources/assets/images/common/ico_cart_add.svg" alt="장바구니" /></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a href="javascript:;">
+                                <div class="is_img">
+                                    <img src="" alt="">
+                                </div>
+                            </a>
+                            <div class="is_text">
+                                <div class="is_text_top">
+                                    <div class="user">
+                                        <a href="javascript:;">
+                                            <div class="user_img"></div>
+                                            <h3 class="user_name">유저이름</h3>
+                                        </a>
+                                        <div class="user_detail">
+                                            <div class="user_detail_img">
+                                                <img src="/resources/assets/images/products/user_detail.jpg" alt="프로필 사진" />
+                                            </div>
+                                            <div class="user_detail_name">
+                                                <h4>Umbra Marauder Rig</h4>
+                                                <button type="button" class="btn_follow">Follow</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <span class="info_view">1.1K</span>
+                                        <!-- [dev] 즐겨찾기 돼 있을경우 on 추가 -->
+                                        <button type="button" class="info_favorites on">123</button>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <p>13,000<small>원</small></p>
+                                    <button type="button"><img src="/resources/assets/images/common/ico_cart_add.svg" alt="장바구니" /></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="more">
+                        <a href="javascript:;" class="btn_more">이런 유형 상품 더보기</a>
+                    </div>
+                </div>
+            </section>
+            <!-- 물품 리스트 끝 -->
+        </div>
+    </main>
+    
+    <!-- 푸터 -->
+    <footer class="footer">        
+    </footer>
+    <!-- 푸터 끝 -->
+
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- Swiper -->
+    <script src="/resources/assets/js/swiper-bundle.min.js"></script>
+    <!-- 공통 js -->
+    <script src="/resources/assets/js/common.js"></script>
+    <!-- 물품 팝업 -->
+    <script src="/resources/assets/js/list.js"></script>
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script>
+    <script>
+        $(function(){
+            // [dev] 물품리스트 왼쪽 카테고리 영역 제어
+            $(".category_cont_area .left_category_area .left_category_filter .img_arw").on('click',function(){
+                $(this).parents('.left_category_area').addClass('on')
+                $('.product_sub_area .btn_category_open').addClass('on')
+            })
+            $(".product_sub_area .btn_category_open").on('click',function(){
+                $('.left_category_area').removeClass('on');
+                $(this).removeClass('on')
+            })
+            // [dev] 카테고리 필터 전체 체크 제어
+            $("#3dAll").change(function() {
+                $(this).parents('li').siblings().children("input[type='checkbox']").prop('checked', $(this).prop("checked"));
+            });
+            $("#2dAll").change(function() {
+                $(this).parents('li').siblings().children("input[type='checkbox']").prop('checked', $(this).prop("checked"));
+            });
+        })
+    </script>
+    
+</body>
+</html>

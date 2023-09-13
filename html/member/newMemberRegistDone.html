@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="/resources/assets/css/reset.css">
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/login.css">
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css">
+</head>
+<body>
+    <!-- 임시 헤더 -->
+    <header class="header">
+    </header>
+    <!-- //임시헤더 -->
+
+    <main class="all_wrap">
+        <section class="login_area pop_up">
+            <div class="login_wrap">
+                <a href="javascript:;" onclick="popupClose(this);" class="layerpop_close" id="layerbox_close"><img src="/resources/assets/images/common/ico_closepop.svg" alt=""></a>
+                <div class="login_forms">
+                    <div class="login_form signup">
+                        <div class="login_form-content">
+                            <div class="title">
+                                <h2>회원가입</h2>
+                            </div>
+                            <form action="#">
+                                <div class="field input-field">
+                                    <label for="email"><em>아이디(Email)</em></label>
+                                    <input type="email" placeholder="example@example.com" class="input" id="email">
+                                </div>
+                                <div class="field button-field mt-10">
+                                    <button class="loginbt_type03 on" id="get_auth">인증하기</button>
+                                </div>
+                                <div class="field button-field authconfirm mt-10">
+                                    <label for="">
+                                        <input type="number" placeholder="6자리 인증코드 입력">
+                                        <button type="submit">확인</button>
+                                    </label>
+                                </div>
+                                <div class="regetauth">메일을 받지 못하셨나요? <a href="javascript:;">인증코드 다시 보내기</a></div>
+                                <div class="field input-field">
+                                    <label for="txtPassword1"><em>비밀번호</em></label>
+                                    <span class="tip">영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합(10~16자)</span>
+                                    <input type="password" placeholder="비밀번호 입력" class="input" name="txtPassword1" id="txtPassword1" maxlength="20" />
+                                </div>
+                                <div class="field input-field field_pwconfirm">
+                                    <label for="txtPassword2"><em>비밀번호 확인</em></label>
+                                    <input type="password" placeholder="비밀번호 확인" class="input" name="txtPassword2" id="txtPassword2" maxlength="20" />
+                                </div>
+                                <div class="field input-field">
+                                    <label for="nickname"><em>닉네임</em></label>
+                                    <input type="password" placeholder="UPFAC에서 사용하실 닉네임" class="input" name="nickname" id="nickname" maxlength="20" />
+                                </div>
+    
+                                <div class="field input-field field_agree">
+                                    <div class="checkbox_group">
+                                        <input type="checkbox" id="check_all" >
+                                        <label for="check_all" class="check_all"><span>모든 약관을 확인하고 전체 동의합니다.</span></label>
+                                        
+                                        <input type="checkbox" id="check_1" class="normal" >
+                                        <label for="check_1"><span>이용약관 및 개인정보처리방침 동의 (필수)</span></label>
+                                        
+                                        <input type="checkbox" id="check_2" class="normal" >
+                                        <label for="check_2"><span>할인소식 및 프로모션 알림 동의 (선택)</span></label>
+                                        
+                                        <input type="checkbox" id="check_3" class="normal" >
+                                        <label for="check_3"><span>개인정보 수집 및 이용동의 (선택)</span></label>
+                                        
+                                      </div>
+                                </div>  
+
+                                <div class="field button-field mt-20">
+                                    <button class="loginbt_type04">가입하기</button>
+                                </div>
+                            </form>
+                        </div>  
+    
+                        <div class="line"></div>
+                
+                        <div class="media-options">
+                            <a href="#" title="네이버 회원가입" class="field facebook">
+                                <img src="/resources/assets/images/login/sns_naver.png" alt="sns 네이버 로그인" />
+                            </a>
+                            <a href="#" title="카카오 회원가입"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_kakao.png" alt="sns 카카오 로그인" />
+                            </a>
+                            <a href="#" title="구글 회원가입"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_google.png" alt="sns 구글 로그인" />
+                            </a>
+                            <a href="#" title="페이스북 회원가입"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_facebook.png" alt="sns 페이스북 로그인" />
+                            </a>
+                            <a href="#" title="트위터 회원가입"  class="field facebook">
+                                <img src="/resources/assets/images/login/sns_tweeter.png" alt="sns 트위터 로그인" />
+                            </a>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </section> 
+    </main>  
+    
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- 물품 팝업 -->
+    <script src="/resources/assets/js/list.js"></script>
+    
+    <script>        
+        $(document).ready(function(){
+            // 체크박스 전체 선택
+            $(".checkbox_group").on("click", "#check_all", function () {
+                $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
+            });
+
+            // 체크박스 개별 선택
+            $(".checkbox_group").on("click", ".normal", function() {
+                var is_checked = true;
+
+                $(".checkbox_group .normal").each(function(){
+                    is_checked = is_checked && $(this).is(":checked");
+                });
+
+                $("#check_all").prop("checked", is_checked);
+            });
+
+            // 인증하기 on 클래스 추가시 6자리 코드입력 및 다시보내기 영역 추가
+            if(!$('#get_auth').hasClass('on')){
+                $('.authconfirm').hide()
+                $('.regetauth').hide()
+            } else {
+                $('.authconfirm').show()
+                $('.regetauth').show()
+            }
+        })
+    </script>
+
+</body>
+</html>

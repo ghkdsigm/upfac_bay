@@ -1,0 +1,886 @@
+.mypage_area {}
+/* 마이페이지 상단 공통 */
+.mypage_area .my_info {
+    background: #303136;
+}
+.mypage_area .my_info .my_info_cont {
+    display: flex;
+    color: #fff;
+}
+.mypage_area .my_info .my_info_cont .is_profile{
+    display: flex;
+    width: 50%;
+    padding: 60px 0 60px 20px;
+}
+.mypage_area .my_info .my_info_cont .is_text {
+    padding-top: 15px;
+    margin-left: 20px;
+}
+.mypage_area .my_info .my_info_cont .type {
+    display: flex;
+    align-items: center;
+}
+.mypage_area .my_info .my_info_cont .type p {
+    font-size: 14px;
+    color: #DFDFDF;
+}
+.mypage_area .my_info .my_info_cont .type p.type_user {
+    font-weight: bold;
+    color: #FFC400;
+}
+.mypage_area .my_info .my_info_cont.on .type p.type_user {
+    color: #3ADEA6;
+}
+.mypage_area .my_info .my_info_cont .type p + p {
+    position: relative;
+    margin-left: 20px;
+}
+.mypage_area .my_info .my_info_cont .type p + p::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 1px;
+    width: 1px;
+    height: 14px;
+    background: #878787;
+}
+.mypage_area .my_info .my_info_cont .type .switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 42px;
+    height: 18px;
+    padding: 0 3px;
+    margin-left: 13px;
+    background: #878787;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.mypage_area .my_info .my_info_cont.on .type .switch {
+    background: #3ADEA6;
+}
+.mypage_area .my_info .my_info_cont .type .switch::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -3px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 100%;
+    transition: all .3s;
+}
+.mypage_area .my_info .my_info_cont.on .type .switch::before {
+    left: 22px;
+}
+.mypage_area .my_info .my_info_cont .type .switch span {
+    line-height: 0;
+    font-size: 10px;
+    margin-left: 0;
+}
+.mypage_area .my_info .my_info_cont .is_text h3 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+}
+.mypage_area .my_info .my_info_cont .following {
+    display: flex;
+    margin-top: 20px;
+}
+.mypage_area .my_info .my_info_cont .following p {
+    font-size: 14px;
+    margin-right: 20px;
+}
+.mypage_area .my_info .my_info_cont .following a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+.mypage_area .my_info .is_benefits {
+    display: flex;
+    width: 50%;
+    padding: 60px 0;
+}
+.mypage_area .my_info .my_info_cont .is_benefits h5 {
+    font-weight: bold;
+    color: #878787;
+}
+.mypage_area .my_info .is_benefits p {
+    font-size: 20px;
+    /* margin-top: 55px; */
+}
+.mypage_area .my_info .my_info_cont .is_benefits p span {
+    font-size: 60px;
+}
+.mypage_area .my_info .my_info_cont.on .is_benefits p span {
+    font-size: 40px;
+}
+.mypage_area .my_info .my_info_cont.on .is_benefits h5 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.mypage_area .my_info .my_info_cont.on .is_benefits .is_coupon .i_info {
+    display: inline-block;
+    margin-left: 4px;
+}
+.mypage_area .my_info .my_info_cont.on .is_benefits .is_coupon .i_info img {
+    vertical-align: inherit;
+}
+.mypage_area .my_info .my_info_cont .is_benefits .is_coupon p span.tooltip {
+    opacity: 0;
+    visibility: hidden;
+    line-height: 1.4;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    font-weight: 500;
+    top: 23px;
+    width: 340px;
+    height: 74px;
+    font-size: 12px;
+    color: #878787;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    transition: all .3s;
+    text-align: left;
+}
+.mypage_area .my_info .my_info_cont .is_benefits .is_coupon .i_info:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mypage_area .my_info .my_info_cont .is_benefits .is_point .i_info {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 6px;
+    margin-left: 10px;
+    border: 1px solid #fff;
+    border-radius: 12px;
+}
+.mypage_area .my_info .my_info_cont .is_benefits .is_point .i_info > img {
+    margin-right: 4px;
+}
+.mypage_area .my_info .my_info_cont .is_benefits .is_point p span.tooltip {
+    opacity: 0;
+    visibility: hidden;
+    line-height: 1.4;
+    z-index: 1;
+    position: absolute;
+    left: 55px;
+    font-weight: 500;
+    top: 23px;
+    width: 340px;
+    height: 54px;
+    font-size: 12px;
+    color: #878787;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    transition: all .3s;
+    text-align: left;
+}
+.mypage_area .my_info .my_info_cont .is_benefits .is_point p span.tooltip a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    width: 40px;
+    height: 24px;
+    margin-left: 10px;
+    color: #fff;
+    border-radius: 4px;
+    background: #3ADEA6;
+}
+.mypage_area .my_info .my_info_cont .is_benefits .is_point .i_info:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+.mypage_area .my_info .is_benefits .is_coupon,
+.mypage_area .my_info .is_benefits .is_point {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mypage_area .my_info .is_benefits .is_coupon {
+    max-width: 265px;
+    width: 100%;
+    padding-left: 30px;
+}
+.mypage_area .my_info .is_benefits .is_point {
+    padding-left: 30px;
+}
+.mypage_area .my_info .is_benefits .is_coupon::before,
+.mypage_area .my_info .is_benefits .is_point::before  {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 136px;
+    background: #4B4B4F;
+}
+/* 마이페이지 상단 공통 끝 */
+
+/* 마이페이지 쿠폰등록 */
+.mypage_area .mypage_coupon_info {
+    display: flex;
+    margin-top: 40px;
+    border: 1px solid #DFDFDF;
+}
+.mypage_area .mypage_coupon_info .item {
+    display: flex;
+    align-items: center;
+}
+.mypage_area .mypage_coupon_info .item01 {
+    width: 52%;
+    padding: 20px;
+}
+.mypage_area .mypage_coupon_info .item input {
+    max-width: 322px;
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    margin-left: 10px;
+    background: #F8F8F8;
+    border-bottom: 1px solid #DFDFDF;
+}
+.mypage_area .mypage_coupon_info .item .btn_add {
+    font-weight: bold;
+    width: 130px;
+    height: 60px;
+    color: #fff;
+    background: #1C1B1B;
+}
+.mypage_area .mypage_coupon_info .item02 {
+    width: 48%;
+    height: auto;
+}
+.mypage_area .mypage_coupon_info .item02 > .item {
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+    padding: 0 20px;
+    border-left: 1px solid #DFDFDF;
+}
+.mypage_area .mypage_coupon_info .item02 p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFB300;
+}
+/* 적립금 */
+.mypage_area .mypage_point_info .item02 {
+    width: 100%;
+    height: 100px;
+} 
+.mypage_area .mypage_point_info .item02 > .item {
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+    padding: 0 20px;
+    border-left: none;
+}
+.mypage_area .mypage_point_info .item02 > .item + .item {
+    border-left: 1px solid #DFDFDF;
+}
+/* 마이페이지 쿠폰등록 끝 */
+
+/* 마이페이지 리스트 공통 */
+.mypage_area .mypage_list {
+    display: flex;
+    padding-bottom: 15px;
+    margin-top: 60px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.mypage_area .mypage_list a {
+    padding: 0 50px;
+    padding-bottom: 11px;
+    height: 100%;
+}
+.mypage_area .mypage_list li.on a {
+    font-weight: bold;
+    border-bottom: 3px solid #1C1B1B;
+}
+/* 마이페이지 리스트 공통 끝 */
+
+/* 결제하기 마이페이지 */
+.payment_cart_wrap .cont_info {
+    padding-right: 40px;
+}
+.payment_cart_wrap .cont_info .item_product_list {
+    margin-top: 20px;
+    border-top: 1px solid #DFDFDF;
+}
+.payment_cart_wrap .cont_info .item_product .item .detail {
+    align-items: flex-start;
+    margin-top: 0;
+}
+.payment_cart_wrap .cont_info .item_product .item sup {
+    font-size: 14px;
+    color: #878787;
+}
+.payment_cart_wrap .cont_info .item_product .item h4 {
+    margin-top: 30px;
+    width: 370px;
+}
+.payment_cart_wrap .cont_info .item_product .item .detail .price {
+    margin-top: 10px;
+}
+.payment_cart_wrap .cont_info .item_product .item .tag {
+    align-self: flex-end;
+    margin-top: 54px;
+}
+.payment_cart_wrap .cont_info .item_product .item .btn_close {
+    margin-left: auto;
+}
+.payment_cart_wrap .input_check input[type="checkbox"] {
+    display: none;
+}
+.payment_cart_wrap .input_check label {
+    font-size: 14px;    
+    cursor: pointer;
+    color: #3D3D3D;
+}
+.payment_cart_wrap .input_check input + label:before {
+    content: "";
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: -4px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: url(/resources/assets/images/common/check_square_off.svg) no-repeat;
+}
+.payment_cart_wrap .input_check input:checked + label:before {
+    content: "";
+    background: url(/resources/assets/images/common/check_square_on.svg) no-repeat;
+    background-position: center;
+    text-align: center;
+}
+.payment_cart_wrap .input_check button {
+    position: relative;
+    font-size: 14px;
+    margin-left: 18px;
+    color: #3D3D3D;
+}
+.payment_cart_wrap .input_check button::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -10px;
+    width: 1px;
+    height: 20px;
+    background: #EFEFEF;
+}
+.payment_cart_wrap .is_check {
+    margin: 0 30px 0 20px;
+    align-self: center;
+}
+.payment_cart_wrap .is_check input[type="checkbox"] {
+    display: none;
+}
+.payment_cart_wrap .is_check label {
+    cursor: pointer;
+}
+.payment_cart_wrap .is_check input + label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: url(/resources/assets/images/common/check_square_off.svg) no-repeat;
+}
+.payment_cart_wrap .is_check input:checked + label:before {
+    content: "";
+    background: url(/resources/assets/images/common/check_square_on.svg) no-repeat;
+    background-position: center;
+    text-align: center;
+}
+/* 결제하기 마이페이지 끝 */
+
+/* 쿠폰 내역 */
+.mypage_table_area .cont {
+    margin-top: 60px;
+}
+.mypage_table_area .item_date {
+    display: flex;
+    justify-content: space-between;
+}
+.mypage_table_area .item_date .date_list {
+    display: flex;
+}
+.mypage_table_area .item_date .date_list button {
+    font-size: 14px;
+    width: 68px;
+    height: 40px;
+    border: 1px solid #DFDFDF;
+}
+.mypage_table_area .item_date .date_list li + li button {
+    border-left: none;
+}
+.mypage_table_area .item_date .date_list li.on button {
+    font-weight: bold;
+    color: #fff;
+    background: #1C1B1B;
+}
+.mypage_table_area .item_date .date_search {
+    display: flex;
+    align-items: center;
+}
+.mypage_table_area .item_date .date_search p {
+    margin: 0 10px;
+}
+.mypage_table_area .item_date .date_search .date_search_input {
+    position: relative;
+    font-size: 14px;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #DFDFDF;
+}  
+.mypage_table_area .item_date .date_search .date_search_input::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: url(/resources/assets/images/mypage/ico_calendar.svg) no-repeat;
+}
+.mypage_table_area .item_date .date_search .date_search_input input {
+    width: 100%;
+    padding: 0 10px;
+    cursor: pointer;
+    height: 100%;
+}
+.mypage_table_area .item_date .date_search button {
+    font-weight: bold;
+    color: #fff;
+    width: 68px;
+    height: 40px;
+    margin-left: 10px;
+    background: #1C1B1B;
+}
+.mypage_table_area .item_table {
+    margin-top: 20px;
+}
+.mypage_table_area .item_table_coupon .col01 {
+    width: 310px;
+}
+.mypage_table_area .item_table_coupon .col02 {
+    width: 140px;
+}
+.mypage_table_area .item_table_coupon .col03 {
+    width: 280px;
+}
+.mypage_table_area .item_table_coupon .col04 {
+    width: 300px;
+}
+.mypage_table_area .item_table_coupon .col05 {
+    width: 150px;
+}
+.mypage_table_area .item_table_point .col01 {
+    width: 380px;
+}
+.mypage_table_area .item_table_point .col02 {
+    width: 140px;
+}
+.mypage_table_area .item_table_point .col03 {
+    width: 230px;
+}
+.mypage_table_area .item_table_point .col04 {
+    width: 280px;
+}
+.mypage_table_area .item_table_point .col05 {
+    width: 150px;
+}
+.mypage_table_area .item_table_purchase_history .col01 {
+    width: 150px;
+}
+.mypage_table_area .item_table_purchase_history .col02 {
+    width: 610px;
+}
+.mypage_table_area .item_table_purchase_history .col03 {
+    width: 130px;
+}
+.mypage_table_area .item_table_purchase_history .col04 {
+    width: 170px;
+}
+.mypage_table_area .item_table_purchase_history .col05 {
+    width: 120px;
+}
+.mypage_table_area .item_table thead tr {
+    height: 50px;
+    background: #F8F8F8;
+    border-top: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
+}
+.mypage_table_area .item_table thead td {
+    font-weight: bold;
+    text-align: center;
+}
+.mypage_table_area .item_table tbody tr {
+    height: 100px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.mypage_table_area .item_table tbody td {
+    font-size: 14px;
+    text-align: center;
+    color: #878787;
+}
+.mypage_table_area .item_table tbody td .extinction {
+    font-size: 10px;
+    padding: 2.5px 4px;
+    margin-right: 6px;
+    color: #fff;
+    background: #FF3B7E;
+    border-radius: 4px 4px 0 4px;
+}
+.mypage_table_area .item_table tbody td:nth-of-type(1) {
+    padding-left: 20px;
+    text-align: left;
+}
+.mypage_table_area .item_table tbody td span.end {
+    color: #FF5050;
+}
+.mypage_table_area .item_table tbody td.end {
+    color: #FF5050;
+}
+.mypage_table_area .item_table tbody td span.end_block {
+    display: block;
+    color: #FF5050;
+    margin-top: 5px;
+}
+.mypage_table_area .item_table tbody td button.detail {
+    font-size: 12px;
+    padding: 5px 9px;
+    border: 1px solid #DFDFDF;
+}
+/* 쿠폰 내역 끝 */
+
+/* 다운로드 내역 */
+.mypage_download_area .item_tab {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 60px;
+}
+.mypage_download_area .item_tab .item_tab_list {
+    display: flex;
+}
+.mypage_download_area .item_tab .item_tab_list li.on button {
+    font-weight: bold;
+    color: #fff;
+    background: #1C1B1B;
+}
+.mypage_download_area .item_tab .item_tab_list li + li button {
+    border-left: none;
+}
+.mypage_download_area .item_tab .item_tab_list button {
+    font-size: 14px;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #DFDFDF;
+}
+.mypage_download_area .item_tab span {
+    font-size: 12px;
+    color: #878787;
+    margin-left: 10px;
+}
+.mypage_download_area .item_product {
+    margin-top: 40px;
+}
+.mypage_download_area .item_product + .item_product{
+    margin-top: 60px;
+}
+.mypage_download_area .item_product_title {
+    padding: 20px;
+    background: #F8F8F8;
+    border-top: 1px solid #DFDFDF;
+}
+.mypage_download_area .item_product_title h3 span {
+    font-weight: bold;
+    margin-left: 12px;
+}
+
+.mypage_download_area .item_product_list li {
+    display: flex;
+    padding: 30px 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.mypage_download_area .item_product_list .is_img {
+    max-width: 272px;
+    min-width: 272px;
+    width: 100%;
+    background: #000;
+    margin-right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.mypage_download_area .item_product_list .is_text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.mypage_download_area .item_product_list sup {
+    font-size: 14px;
+    color: #878787;
+}
+.mypage_download_area .item_product_list h4 {
+    font-size: 20px;
+    margin-top: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.mypage_download_area .item_product_list .price {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+.mypage_download_area .item_product_list .price .price_final {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.mypage_download_area .item_product_list .price .price_final small {
+    font-size: 16px;
+}
+.mypage_download_area .item_product_list .price .price_og {
+    font-size: 14px;
+    color: #878787;
+    text-decoration: line-through;
+}
+.mypage_download_area .item_product_list .tag {
+    display: flex;
+    margin-top: auto;
+}
+.mypage_download_area .item_product_list .tag span {
+    font-size: 10px;
+    display: inline-block;
+    padding: 4px 8px;
+    color: #4E76CB;
+    background: #D6E3FF;
+    border-radius: 4px;
+}
+.mypage_download_area .item_product_list .tag span + span {
+    margin-left: 4px;
+}
+
+.mypage_download_area .item_product_list .is_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+}
+.mypage_download_area .item_product_list .is_btn p {
+    font-size: 14px;
+    color: #FF5050;
+}
+.mypage_download_area .item_product_list .is_btn p.download_re {
+    color: #878787;
+}
+.mypage_download_area .item_product_list .is_btn button {
+    font-size: 18px;
+    font-weight: bold;
+    width: 200px;
+    height: 60px;
+    border-radius: 8px;
+    transition: all .3s;
+}
+.mypage_download_area .item_product_list .is_btn button + button {
+    margin-top: 10px;
+}
+.mypage_download_area .item_product_list .is_btn button.btn_download {
+    color: #fff;
+    background: #1C1B1B;
+    margin-top: 37px;
+}
+.mypage_download_area .item_product_list .is_btn button.btn_download:hover {
+    background: #404040;
+}
+.mypage_download_area .item_product_list .is_btn button.btn_cancel {
+    color: #878787;
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+}
+.mypage_download_area .item_product_list .is_btn button.btn_cancel:hover {
+    background: #F8F8F8;
+}
+.mypage_download_area .item_product_list .is_btn button.btn_download_re {
+    color: #5F6C80;
+    background: #C8DDFF;
+    margin-top: 45px;
+}
+.mypage_download_area .item_product_list .is_btn button.btn_download_re:hover {
+    background: #B6CFF8;
+}
+.mypage_download_area .item_product_list .is_btn button.btn_download_end {
+    color: #fff;
+    background: #DFDFDF;
+    margin-top: 45px;
+}
+/* 다운로드 내역 끝 */
+
+/* 구매 내역 팝업 */
+.pop_payment_detail {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 15px;
+    background: rgba(0, 0, 0, .6);
+    transition: all .3s;
+}
+.pop_payment_detail.on {
+    opacity: 1;
+    visibility: visible;
+}
+.pop_payment_detail .cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 640px;
+    width: 100%;
+    padding: 20px 20px 23px;
+    background: #fff;
+}
+.pop_payment_detail .cont .item {
+    padding: 20px;
+    border: 1px solid #DFDFDF;
+}
+.pop_payment_detail .cont .item + .item {
+    margin-top: 10px;
+}
+.pop_payment_detail .cont .item01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8F8F8;
+}
+.pop_payment_detail .cont .item01 .end_info {
+    display: flex;
+}
+.pop_payment_detail .cont .item01 .end_info h5 {
+    font-weight: bold;
+    color: #FF5050;
+    margin-right: 10px;
+}
+.pop_payment_detail .cont .item01 .end_info p {
+    font-weight: bold;
+}
+.pop_payment_detail .cont .item01 .btn_area {
+    display: flex;
+}
+.pop_payment_detail .cont .item01 .btn_area button {
+    font-size: 12px;
+    padding: 5px 9px;
+    border: 1px solid #DFDFDF;
+    background: #fff;
+}
+.pop_payment_detail .cont .item01 .btn_area button + button {
+    margin-left: 6px;
+}
+.pop_payment_detail .cont .item02 .item_list_title {
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.pop_payment_detail .cont .item02 .item_list_amount {
+    margin-top: 20px;
+}
+.pop_payment_detail .cont .item02 .item_list_amount li {
+    display: flex;
+    justify-content: space-between;
+}
+.pop_payment_detail .cont .item02 .item_list_amount li + li {
+    margin-top: 12px;
+}
+.pop_payment_detail .cont .item02 .item_list_amount li p {
+    font-size: 14px;
+}
+.pop_payment_detail .cont .item02 .item_list_amount li p:last-child {
+    font-weight: bold;
+}
+.pop_payment_detail .cont .item02 .item_list_discount li {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.pop_payment_detail .cont .item02 .item_list_discount li::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    background: url(/resources/assets/images/mypage/ico_line.svg);
+}
+.pop_payment_detail .cont .item02 .item_list_discount li {
+    margin-top: 12px;
+    padding-left: 12px;
+}
+.pop_payment_detail .cont .item02 .item_list_discount li p {
+    font-size: 14px;
+}
+.pop_payment_detail .cont .item02 .item_list_discount li p:last-child {
+    color: #878787;
+}
+.pop_payment_detail .cont .item03 {
+    border: none;
+    margin-top: 15px;
+}
+.pop_payment_detail .cont .item03 .pay_amount {
+    display: flex;
+    justify-content: space-between;
+}
+.pop_payment_detail .cont .item03 .pay_amount h6 {
+    font-weight: bold;
+    font-size: 18px;
+}
+.pop_payment_detail .cont .item03 .pay_amount p {
+    font-weight: bold;
+    font-size: 18px;
+    color: #FF5050;
+}
+.pop_payment_detail .cont .item03 .pay_type {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 12px;
+}
+.pop_payment_detail .btn_check {
+    text-align: center;
+}
+.pop_payment_detail .btn_check button {
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    color: #fff;
+    background: #1C1B1B;
+    border-radius: 8px;
+}
+/* 구매 내역 팝업 끝 */
