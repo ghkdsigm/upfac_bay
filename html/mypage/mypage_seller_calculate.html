@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이페이지 - 구매 내역</title>
+    <title>마이페이지 - 정산 관리</title>
     <link rel="stylesheet" href="/resources/assets/css/reset.css">
     <link rel="stylesheet" href="/resources/assets/css/common.css">
     <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
@@ -30,7 +30,7 @@
             <div class="my_info">
                 <div class="container">
                     <!-- [dev] 판매자 모드일경우 my_info_cont 에 on 추가 -->
-                    <div class="my_info_cont">
+                    <div class="my_info_cont on">
                         <div class="is_profile">
                             <div class="is_img">
                                 <input type="file" accept="image/*" id="profileImageInput" class="hidden" onchange="readURL(this);">
@@ -74,20 +74,19 @@
                 </div>
             </div>
         </section>
-
-        <!-- 마이페이지 리스트 영역 -->
+        
+        <!-- 마이페이지 리스트 -->
         <div class="mypage_list_area">
             <div class="container">
                 <ul class="mypage_list">
-                    <li><a href="javascript:;">내가 본 상품</a></li>
-                    <li><a href="javascript:;">즐겨찾기</a></li>
-                    <li><a href="javascript:;">장바구니</a></li>
-                    <li class="on"><a href="javascript:;">구매 내역</a></li>
-                    <li><a href="javascript:;">다운로드 내역</a></li>
+                    <li><a href="javascript:;">등록 물품 관리</a></li>
+                    <li><a href="javascript:;">판매관리(국내)</a></li>
+                    <li><a href="javascript:;">판매관리(해외)</a></li>
+                    <li class="on"><a href="javascript:;">정산 관리</a></li>
                 </ul>
             </div>
         </div>
-        <!-- 마이페이지 리스트 영역 끝 -->
+        <!-- 마이페이지 리스트 끝 -->
         
         <!-- 쿠폰 내역 -->
         <div class="mypage_table_area">
@@ -101,7 +100,6 @@
                             <li><button type="button">1개월</button></li>
                             <li><button type="button">3개월</button></li>
                             <li><button type="button">6개월</button></li>
-                            <li><button type="button">전체</button></li>
                         </ul>
                         <div class="date_search">
                             <div class="date_search_input">
@@ -114,62 +112,64 @@
                             <button type="button">검색</button>
                         </div>
                     </div>
-                    <table class="item_table item_table_purchase_history">
+                    <table class="item_table item_table_seller_calculate">
                         <colgroup>
                             <col class="col01">
                             <col class="col02">
                             <col class="col03">
                             <col class="col04">
                             <col class="col05">
+                            <col class="col06">
                         </colgroup>
                         <thead>
                             <tr>
-                                <td>일자</td>
-                                <td>상품명</td>
-                                <td>상품금액</td>
-                                <td>최종 결제 금액</td>
-                                <td>내역</td>
+                                <td>기간</td>
+                                <td>정산 금액</td>
+                                <td>정산(예정)일</td>
+                                <td>상태</td>
+                                <td>상세내역</td>
+                                <td>정산요청</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>2023.08.18 19:06</td>
-                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
-                                <td><span>140,000</span>원</td>
-                                <td class="end"><span>70,000</span>원</td>
-                                <td><button type="button" class="detail">상세보기</button></td>
+                                <td>2023.08.18 00:00 ~ 2023.09.17 23:59</td>
+                                <td><span>21,429,000</span>원</td>
+                                <td>2023.09.25</td>
+                                <td><span class="not_registered">서류 미등록</span>입금예정계좌 : 국민 851201-12-012345</td>
+                                <td><button type="button" class="detail">판매 상세내역</button></td>
+                                <td><button type="button" class="detail detail_registration">세금계산서 등록</button></td>
                             </tr>
                             <tr>
-                                <td>2023.08.18 19:06</td>
-                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
-                                <td><span>140,000</span>원</td>
-                                <td class="end"><span>70,000</span>원</td>
-                                <td><button type="button" class="detail">상세보기</button></td>
+                                <td>2023.08.18 00:00 ~ 2023.09.17 23:59</td>
+                                <td><span>21,429,000</span>원</td>
+                                <td>2023.09.25</td>
+                                <td><span class="examine">서류 검토중</span>입금예정계좌 : 국민 851201-12-012345</td>
+                                <td><button type="button" class="detail">판매 상세내역</button></td>
+                                <td><button type="button" class="detail">세금계산서 확인</button></td>
                             </tr>
                             <tr>
-                                <td>2023.08.18 19:06</td>
-                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
-                                <td><span>140,000</span>원</td>
-                                <td class="end"><span>70,000</span>원</td>
-                                <td><button type="button" class="detail">상세보기</button></td>
+                                <td>2023.08.18 00:00 ~ 2023.09.17 23:59</td>
+                                <td><span>21,429,000<b></b></span>원</td>
+                                <td>2023.09.25</td>
+                                <td><span class="completed">지급 완료<b>23.07.25 16:20</b></span>입금예정계좌 : 국민 851201-12-012345</td>
+                                <td><button type="button" class="detail">판매 상세내역</button></td>
+                                <td><button type="button" class="detail">세금계산서 확인</button></td>
                             </tr>
                             <tr>
-                                <td>2023.08.18 19:06</td>
-                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
-                                <td><span>140,000</span>원</td>
-                                <td class="end"><span>70,000</span>원</td>
-                                <td><button type="button" class="detail">상세보기</button></td>
+                                <td>2023.08.18 00:00 ~ 2023.09.17 23:59</td>
+                                <td><span>21,429,000</span>원</td>
+                                <td>2023.09.25</td>
+                                <td><span class="completed">지급 완료<b>23.07.25 16:20</b></span>입금예정계좌 : 국민 851201-12-012345</td>
+                                <td><button type="button" class="detail">판매 상세내역</button></td>
+                                <td><button type="button" class="detail">세금계산서 확인</button></td>
                             </tr>
-                            <tr>
-                                <td>2023.08.18 19:06</td>
-                                <td>그레이하운드 캐릭터 3D 이미지 외 2개</td>
-                                <td><span>140,000</span>원</td>
-                                <td class="end"><span>70,000</span>원</td>
-                                <td><button type="button" class="detail">상세보기</button></td>
-                            </tr>
-                            <!-- [dev] 구매 내역 없을경우 -->
-                            <tr class="date_none">
-                                <td colspan="5"><p>구매 내역이 없습니다.</p></td>
+                            <!-- [dev] 내역 없을경우 -->
+                            <tr class="data_none">
+                                <td colspan="5">
+                                    <img src="/resources/assets/images/common/ico_item_none.svg" alt="느낌표 아이콘" />
+                                    <p>정산 가능 내역이 없습니다.</p>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -177,124 +177,45 @@
             </div>
         </div>
         <!-- 쿠폰 내역 끝 -->
-
-        <!-- 구매 내역 팝업 -->
-        <div class="pop_mypage pop_payment_detail">
+        
+        <!-- 세금계산서 등록 팝업 -->
+        <div class="pop_mypage pop_tax_registration">
             <div class="cont">
                 <button type="button" class="btn_close">
                     <img src="/resources/assets/images/common/ico_close_32x32_fff.svg" alt="닫기 버튼" />
                 </button>
-                <div class="item item01">
-                    <div class="end_info">
-                        <h5>결제완료</h5>
-                        <p>2023.07.27 18:23</p>
-                    </div>
-                    <div class="btn_area">
-                        <button type="button">결제 영수증</button>
-                    </div>
+                <h5>세금계산서 파일 등록</h5>
+                <p>정산을 위해, 발행된 세금계산서를 등록해주세요.</p>
+                <div class="file_dropzon">
+                    <span class="file_dropzon_title">파일 등록</span>
+                    <img src="/resources/assets/images/common/ico_cloud.svg" alt="업로드" class="i_cloud" />
+                    <p class="explanation">드래그 앤 드롭 또는 클릭하여 파일 찾기</p>
+                    <p class="info">정상적으로 발행된 세금계산서를 등록하셔야 정산이 진행됩니다.</p>
                 </div>
-                <div class="item_scroll">
-                    <div class="item item02">
-                        <h6 class="item_list_title">그레이하운드 캐릭터 3D 이미지</h6>
-                        <ul class="item_list_amount">
-                            <li>
-                                <p>상품금액</p>
-                                <p>35,000<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>할인금액</p>
-                                <p>-12,500<span>원</span></p>
-                            </li>
-                        </ul>
-                        <ul class="item_list_discount">
-                            <li>
-                                <p>자체 할인</p>
-                                <p>-10,000<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>쿠폰</p>
-                                <p>0<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>포인트</p>
-                                <p>2,500<span>P</span></p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="item item02">
-                        <h6 class="item_list_title">그레이하운드 캐릭터 3D 이미지</h6>
-                        <ul class="item_list_amount">
-                            <li>
-                                <p>상품금액</p>
-                                <p>35,000<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>할인금액</p>
-                                <p>-12,500<span>원</span></p>
-                            </li>
-                        </ul>
-                        <ul class="item_list_discount">
-                            <li>
-                                <p>자체 할인</p>
-                                <p>-10,000<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>쿠폰</p>
-                                <p>0<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>포인트</p>
-                                <p>2,500<span>P</span></p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="item item02">
-                        <h6 class="item_list_title">그레이하운드 캐릭터 3D 이미지</h6>
-                        <ul class="item_list_amount">
-                            <li>
-                                <p>상품금액</p>
-                                <p>35,000<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>할인금액</p>
-                                <p>-12,500<span>원</span></p>
-                            </li>
-                        </ul>
-                        <ul class="item_list_discount">
-                            <li>
-                                <p>자체 할인</p>
-                                <p>-10,000<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>쿠폰</p>
-                                <p>0<span>원</span></p>
-                            </li>
-                            <li>
-                                <p>포인트</p>
-                                <p>2,500<span>P</span></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="item03">
-                    <div class="pay_amount">
-                        <h6>최종 결제 금액</h6>
-                        <p><span>35,000</span>원</p>
-                    </div>
-                    <div class="pay_type">
-                        <h6>결제 방법</h6>
-                        <p>신용카드</p>
-                    </div>
-                </div>
-                <div class="item04">
-                    <p>
-                        해당 결제 내역서는 거래 내역 및 거래 금액 확인 용도로만 사용 가능하며, 세무상 증빙 서류로 활용할 수 없습니다.<br />
-                        동의 없는 무단 수정 및 부정사용을 금지합니다.
-                    </p>
-                </div>
+                <button type="button" class="btn_save">저장하기</button>
             </div>
         </div>
-        <!-- 구매 내역 팝업 -->
+        <!-- 세금계산서 등록 팝업 끝 -->
+
+        <!-- 판매 상세내역 팝업 -->
+        <div class="pop_mypage pop_tax_registration">
+            <div class="cont">
+                <button type="button" class="btn_close">
+                    <img src="/resources/assets/images/common/ico_close_32x32_fff.svg" alt="닫기 버튼" />
+                </button>
+                <h5>세금계산서 파일 등록</h5>
+                <p>정산을 위해, 발행된 세금계산서를 등록해주세요.</p>
+                <div class="file_dropzon">
+                    <span class="file_dropzon_title">파일 등록</span>
+                    <img src="/resources/assets/images/common/ico_cloud.svg" alt="업로드" class="i_cloud" />
+                    <p class="explanation">드래그 앤 드롭 또는 클릭하여 파일 찾기</p>
+                    <p class="info">정상적으로 발행된 세금계산서를 등록하셔야 정산이 진행됩니다.</p>
+                </div>
+                <button type="button" class="btn_save">저장하기</button>
+            </div>
+        </div>
+        <!-- 판매 상세내역 팝업 끝 -->
+
     </main>
 
     <footer class="footer"></footer>
@@ -334,9 +255,12 @@
                     $('.mypage_area .my_info .is_benefits .is_point > p').html('<span>13,200</span>P')
                 }
             });
+            $('.mypage_area .my_info .my_info_cont .type .type_user').text('구매자 회원')
+            $('.mypage_area .my_info .is_benefits .is_coupon h5').html('N월 판매 내역<p class="i_info"><img src="/resources/assets/images/mypage/ico_info.svg" alt="아이콘" /><span class="tooltip">· 구매 취소가 반영되지 않은 내용으로 실 판매 내역과,<br />실 정산 금액은 차이가 발생할 수 있습니다</span></p>')
+            $('.mypage_area .my_info .is_benefits .is_coupon > p').html('<span>1</span>건')
+            $('.mypage_area .my_info .is_benefits .is_point h5').html('N월 정산 예정금액<p class="i_info"><img src="/resources/assets/images/mypage/ico_settings.svg" alt="아이콘" />내 정산 계좌<span class="tooltip">· 내 정산 계좌 : (국민) 841201-04-012808<a href="javascript:;">수정</a></span></p>')
+            $('.mypage_area .my_info .is_benefits .is_point > p').html('<span>1,221,429,000</span>원')
             // [dev] 날짜 최초 오늘값 세팅
-            // document.getElementById('dateSearchStart').value = new Date().toISOString().substring(0, 10);
-            // document.getElementById('dateSearchEnd').value = new Date().toISOString().substring(0, 10);
 
             // [dev] 날짜 데이터피커
             var today = new Date();
@@ -357,13 +281,12 @@
             $('#dateSearchEnd').datepicker({});
             $('#dateSearchEnd').datepicker('setDate', today);
 
-
-            // [dev] 내역 상세보기 팝업
-            $('.mypage_table_area .item_table tbody td button.detail').on('click', function(){
-                $('.pop_payment_detail').addClass('on');
+            // [dev] 세금계산서 등록 팝업 제어
+            $('.detail_registration').on('click', function(){
+                $('.pop_tax_registration').addClass('on')
             })
-            $('.pop_mypage .cont .btn_close').on('click', function(){
-                $('.pop_payment_detail').removeClass('on');
+            $('.pop_tax_registration .btn_close').on('click', function(){
+                $('.pop_tax_registration').removeClass('on')
             })
         })
         // [dev] 유저 프로필 사진 수정

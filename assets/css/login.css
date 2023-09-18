@@ -21,12 +21,15 @@ form { margin-top: 30px; }
 .field textarea,
 .field button { height: 100%; width: 100%; border: none; font-size: 16px; font-weight: bold; border-radius: 10px; } 
 .field input { outline: none; padding: 20px; border: 1px solid#CACACA; } 
+.field input.disabled_input {background-color:#F5F5F5;}
 .field input::placeholder { font-size:14px; color:#B9B9B9; font-weight:400;} 
 .field textarea { outline: none; padding: 20px; border: 1px solid#CACACA; } 
 .field textarea::placeholder { font-size:14px; color:#B9B9B9; font-weight:400;} 
 .eye-icon { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 18px; color: #8b8b8b; cursor: pointer; padding: 5px; } 
 .field input.password.error_focus {border:1px solid #FF6E6E;}
 .field input.email.error_focus {border:1px solid #FF6E6E;}
+.field input.error_focus {border:1px solid #FF6E6E;}
+.field input.success_focus {border:1px solid #5157FF;}
 
 .field.auto_login_wrap label { display: -moz-box; display: -ms-flexbox;  -moz-box-align: start; -ms-flex-align: start;  -webkit-box-pack: left;  -moz-box-pack: left; -ms-flex-pack: left;  cursor: pointer; display:inline-flex; align-items: center; } 
 .field.auto_login_wrap span { display: inline-block; vertical-align: middle; font-size: 15px; margin-left: 8px; color: #2B2B2B; } 
@@ -68,6 +71,7 @@ form { margin-top: 30px; }
 .find_pw > a { font-size:12px; } 
 
 .error_msg { color:#FF6E6E; margin-top: 10px; font-size:12px; } 
+.success_msg {color: #5157FF; margin-top: 10px; font-size: 12px;}
 .regetauth { color:#707070; margin-top: 10px; font-size:12px; } 
 .regetauth > a { color:#000000; text-decoration: underline; font-weight:bold; } 
 .findpw_dec { text-align: center; margin-top: 40px; font-weight: bold; font-size: 16px; } 
@@ -106,6 +110,7 @@ form { margin-top: 30px; }
 .profile_form .field label.introduce {display: flex; justify-content: space-between;}
 .profile_form .field label.nickname {display: flex; justify-content: space-between;}
 .profile_form .field label.nickname .on {color:#5157FF;font-size:12px;}
+.profile_form .field label.nickname .fail {color:#FF6E6E;font-size:12px;}
 .profile_form .field label.introduce .textLengthWrap {letter-spacing: -0.5px;}
 .profile_form .field label.introduce .textLengthWrap span {font-size:16px}
 .profile_form .field label em { font-weight:bold; } 

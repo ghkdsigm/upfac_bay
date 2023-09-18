@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50.667" height="40" viewBox="0 0 50.667 40">
+  <g id="computer-solid" transform="translate(-1.333 -0.007)">
+    <path id="패스_656" data-name="패스 656" d="M31.747,34.667c-.467,1.2-1.253,2-2.147,2H18.32c-.907,0-1.68-.8-2.147-2H1.333V37A3.267,3.267,0,0,0,4.8,40H43.2a3.267,3.267,0,0,0,3.467-3V34.667Z" fill="#1c1b1b"/>
+    <path id="패스_657" data-name="패스 657" d="M8.333,13.333H39.667V32h3V10.093a2.053,2.053,0,0,0-2-2.093H7.333a2.053,2.053,0,0,0-2,2.093V32h3Z" fill="#1c1b1b"/>
+    <circle id="타원_29" data-name="타원 29" cx="10" cy="10" r="10" transform="translate(32 0.007)" fill="#ffb300"/>
+    <text id="_" data-name="?" transform="translate(42 15.007)" fill="#fff" font-size="14" font-family="ArialRoundedMTBold, Arial Rounded MT"><tspan x="-4.013" y="0">?</tspan></text>
+  </g>
+</svg>

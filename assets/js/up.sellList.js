@@ -1,52 +1,51 @@
-let UpSellList = (function($) {
-	let _init;
-	let _el;
-	let _data;
-	let _args;
-	let _util;
-	let _manipulateDom;
-	let _eventHandle;
-	let _fetch;
+let UpSellList = (function ($) {
+    let _init;
+    let _el;
+    let _data;
+    let _args;
+    let _util;
+    let _manipulateDom;
+    let _eventHandle;
+    let _fetch;
 
-	//외부 값
-	_args = {
-		categoryKey : '3D'
-	};
+    //외부 값
+    _args = {
+        categoryKey: '3D',
+        categorySeq: '',
+    };
 
-	//  private 내부 변수
-	_data = {
-		catagoryJson : [],
-		searchData : {"keyword" : "", "category" : "", "ext" : "", "global" : "0", "sort" : "1", "pageno" : "1", "limit" : "8"},
-		searchCategory : {},
-	};
+    //  private 내부 변수
+    _data = {
+        catagoryJson: [],
+        searchData: {"keyword": "", "category": "", "ext": "", "global": "1", "sort": "1", "pageno": "1", "limit": "8"},
+        searchCategory: {},
+    };
 
-	// 엘레멘트 요소
-	_el = {
-		divItemCategoryBar : () => $('#divItemCategoryBar'),
-		divItemSearchTitle : () => $('#divItemSearchTitle'),
-		divItemSearchGlobal : () => $('#divItemSearchGlobal'),
-		divItemSearchSorting : () => $('#divItemSearchSorting'),
-		ulItemSearchCategoryButton : () => $('#ulItemSearchCategoryButton'),
-		ulItemList : () => $('#ulItemList'),
-		divItemMore : () => $('#divItemMore'),
-	};
+    // 엘레멘트 요소
+    _el = {
+        divItemCategoryBar: () => $('#divItemCategoryBar'),
+        divItemSearchTitle: () => $('#divItemSearchTitle'),
+        divItemSearchGlobal: () => $('#divItemSearchGlobal'),
+        divItemSearchSorting: () => $('#divItemSearchSorting'),
+        ulItemSearchCategoryButton: () => $('#ulItemSearchCategoryButton'),
+        ulItemList: () => $('#ulItemList'),
+        divItemMore: () => $('#divItemMore'),
+    };
 
-	// UTIL형 함수
-	_util = {
+    // UTIL형 함수
+    _util = {};
 
-	};
+    // 돔 조작이벤트
+    _manipulateDom = {
+        itemCategoryBar: () => {
 
-	// 돔 조작이벤트
-	_manipulateDom = {
-		itemCategoryBar : () => {
+            _fetch.getCategoryJson().then(function (data) {
+                const category = _args.categoryKey;
+                const list = data[category].list;
 
-			_fetch.getCategoryJson().then(function(data){
-				const category = _args.categoryKey;
-				const list = data[_args.categoryKey].list;
+                _el.divItemSearchTitle().find("h2").text(category);
 
-				_el.divItemSearchTitle().find("h2").text(category);
-				
-				_el.divItemCategoryBar().html(`
+                _el.divItemCategoryBar().html(`
 					<div class="accordion_list">
                         <div class="accordion_title">
                             <img src="/resources/assets/images/products/ico_${category.toLowerCase()}.svg" alt="${category} 아이콘" />
@@ -58,31 +57,33 @@ let UpSellList = (function($) {
 								<input type="checkbox" id="chkCategoryAll" value=""/>
 								<label for="chkCategoryAll">${category} 전체</label>
 							</li>
-							${Object.keys(list).map(function(key){
-								return `<li>
-										<input type="checkbox" id="chkCategory_${list[key]}" value="${list[key]}"/>
-										<label for="chkCategory_${list[key]}">${key}</label>
-									</li>`
-							}).join('\n')}
+							${Object.keys(list).map(function (key) {
+                    return `<li>
+								<input type="checkbox" id="chkCategory_${list[key]}" ${_data.searchData.category == list[key] ? "checked" : ""} value="${list[key]}"/>
+								<label for="chkCategory_${list[key]}">${key}</label>
+							</li>`
+                }).join('\n')}
 							</ul>
                     </div>`);
-			});
-		},
-		itemList : (pageno) => {
-			_data.searchData.pageno = pageno;
-			if (pageno == 1) {_el.ulItemList().empty();}
+            });
+        },
+        itemList: (pageno) => {
+            _data.searchData.pageno = pageno;
+            if (pageno == 1) {
+                _el.ulItemList().empty();
+            }
 
-			_fetch.getItemList().then(function(data){
+            _fetch.getItemList().then(function (data) {
 
-				if (data.length >= _data.searchData.limit) {
-					_el.divItemMore().show().children("a").data("no", ++pageno);
-				} else {
-					_el.divItemMore().hide();
-				}
+                if (data.length >= _data.searchData.limit) {
+                    _el.divItemMore().show().children("a").data("no", ++pageno);
+                } else {
+                    _el.divItemMore().hide();
+                }
 
-				_el.ulItemList().append(`
-					${data.map(function(item){
-						return `<li class="item">
+                _el.ulItemList().append(`
+					${data.map(function (item) {
+                    return `<li class="item">
 									<a href="javascript:;">
 										<div class="is_img">
 											<img src="" alt="">
@@ -121,147 +122,152 @@ let UpSellList = (function($) {
 										</div>
 									</div>
 								</li>`
-				}).join('\n')}`);
-			});
-		}
-	}
+                }).join('\n')}`);
+            });
+        }
+    }
 
-	// 이벤트 핸들러
-	_eventHandle = {
-		init: () => {
-			_el.divItemCategoryBar().on("click", "#chkCategoryAll", function(){
-				_el.divItemCategoryBar().find("input:checkbox").prop("checked", $(this).is(":checked"));
-			});
+    // 이벤트 핸들러
+    _eventHandle = {
+        init: () => {
+            _el.divItemCategoryBar().on("click", "#chkCategoryAll", function () {
+                _el.divItemCategoryBar().find("input:checkbox").prop("checked", $(this).is(":checked"));
+            });
 
-			_el.divItemCategoryBar().on("click", "input:checkbox", function(){
+            if (_data.searchData.category < 0) {
+                _el.divItemCategoryBar().find("#chkCategoryAll").trigger("click")
+            }
 
-				_data.searchCategory = {}
-				const categorys = [];
+            _el.divItemCategoryBar().on("click", "input:checkbox", function () {
 
-				$.each(_el.divItemCategoryBar().find("input:checkbox"), function(index, item){
-					// 전체
-					if (index == 0 && $(this).is(":checked")) {
-						return false;
-					}
+                _data.searchCategory = {}
+                const categorys = [];
 
-					if ($(this).is(":checked")) {
-						_data.searchCategory[$(item).val()] = $(item).next().text();
-					}
-				});
+                $.each(_el.divItemCategoryBar().find("input:checkbox"), function (index, item) {
+                    // 전체
+                    if (index == 0 && $(this).is(":checked")) {
+                        return false;
+                    }
 
-				if (JSON.stringify(_data.searchCategory) === "{}")
-				{
-					_el.ulItemSearchCategoryButton().html("<li><p>전체</p></li>");
-				}
-				else {
-					_el.ulItemSearchCategoryButton().html(
-						`${Object.keys(_data.searchCategory).map(function (key) {
-							categorys.push(key)
-							
-							return `<li>
+                    if ($(this).is(":checked")) {
+                        _data.searchCategory[$(item).val()] = $(item).next().text();
+                    }
+                });
+
+                if (JSON.stringify(_data.searchCategory) === "{}") {
+                    _el.ulItemSearchCategoryButton().html("<li><p>전체</p></li>");
+                } else {
+                    _el.ulItemSearchCategoryButton().html(
+                        `${Object.keys(_data.searchCategory).map(function (key) {
+                            categorys.push(key)
+
+                            return `<li>
                             <p>${_data.searchCategory[key]}</p>
                             <button type="button" class="btn_close" data-idx="${key}"><img src="/resources/assets/images/products/ico_close.svg" alt="삭제 버튼"></button>
                         </li>`
-						}).join('\n')}`
-					);
-				}
+                        }).join('\n')}`
+                    );
+                }
 
-				_data.searchData.category = `${categorys.join(',')}`;
-				_manipulateDom.itemList(1);
-			});
+                _data.searchData.category = `${categorys.join(',')}`;
+                _manipulateDom.itemList(1);
+            });
 
-			_el.ulItemSearchCategoryButton().on("click", "button", function() {
-				const idx = $(this).data("idx");
-				_el.divItemCategoryBar().find("input:checkbox").eq(idx).trigger("click");
-			})
+            _el.ulItemSearchCategoryButton().on("click", "button", function () {
+                const idx = $(this).data("idx");
+                _el.divItemCategoryBar().find("input:checkbox").eq(idx).trigger("click");
+            })
 
-				// 아코디언
-			_el.divItemCategoryBar().on("click", ".accordion_title", function(){
-				$(this).siblings().stop().slideToggle()
-				$(this).parents('.accordion_list').toggleClass('on');
-			});
+            // 아코디언
+            _el.divItemCategoryBar().on("click", ".accordion_title", function () {
+                $(this).siblings().stop().slideToggle()
+                $(this).parents('.accordion_list').toggleClass('on');
+            });
 
-			_el.divItemSearchTitle().on("click", ".tab_none_style  > li", function() {
-				_data.searchData.ext = $(this).children("button").val();
-				_manipulateDom.itemList(1);
-			});
+            _el.divItemSearchTitle().on("click", ".tab_none_style  > li", function () {
+                _data.searchData.ext = $(this).children("button").val();
+                _manipulateDom.itemList(1);
+            });
 
-			_el.divItemSearchGlobal().on("click", ".select_list  > li", function() {
-				_data.searchData.global = $(this).children("button").val();
-				_manipulateDom.itemList(1);
+            _el.divItemSearchGlobal().on("click", ".select_list  > li", function () {
+                _data.searchData.global = $(this).children("button").val();
+                _manipulateDom.itemList(1);
 
-				_el.divItemSearchGlobal().toggleClass('on');
-				_el.divItemSearchGlobal().find(".select_title > p").text($(this).children("button").text());
-			});
+                _el.divItemSearchGlobal().toggleClass('on');
+                _el.divItemSearchGlobal().find(".select_title > p").text($(this).children("button").text());
+            });
 
-			_el.divItemSearchSorting().on("click", ".select_list  > li", function() {
-				_data.searchData.sort = $(this).children("button").val();
-				_manipulateDom.itemList(1);
+            _el.divItemSearchSorting().on("click", ".select_list  > li", function () {
+                _data.searchData.sort = $(this).children("button").val();
+                _manipulateDom.itemList(1);
 
-				_el.divItemSearchSorting().toggleClass('on');
-				_el.divItemSearchSorting().find(".select_title > p").text($(this).children("button").text());
-			});
+                _el.divItemSearchSorting().toggleClass('on');
+                _el.divItemSearchSorting().find(".select_title > p").text($(this).children("button").text());
+            });
 
-			_el.divItemMore().on("click", "a", function() {
-				const no = $(this).data("no");
-				_manipulateDom.itemList(no);
-			});
-		}
-	}
+            _el.divItemMore().on("click", "a", function () {
+                const no = $(this).data("no");
+                _manipulateDom.itemList(no);
+            });
 
-	_fetch = {
-		getCategoryJson : () => {
-			const url = "/resources/assets/json/category.json";
 
-			return new Promise(function (resolve, reject) {
+        }
+    }
 
-				$.ajax({
-					url: url,
-					type: "GET",
-					async: false,
-					dataType: "json"
-				})
-					.done(function (data) {
-						resolve(data);
-					})
-					.fail(function () {
-						reject();
-					});
-			});
-		},
-		getItemList : () => {
-			const url = "/sell/list";
+    _fetch = {
+        getCategoryJson: () => {
+            const url = "/resources/assets/json/category.json";
 
-			console.log(_data.searchData);
+            return new Promise(function (resolve, reject) {
 
-			return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    async: false,
+                    dataType: "json"
+                })
+                    .done(function (data) {
+                        resolve(data);
+                    })
+                    .fail(function () {
+                        reject();
+                    });
+            });
+        },
+        getItemList: () => {
+            const url = "/sell/list";
 
-				$.ajax({
-					url: url,
-					type: "POST",
-					async: false,
-					data : _data.searchData,
-					dataType: "json"
-				})
-					.done(function (data) {
-						resolve(data);
-					})
-					.fail(function () {
-						reject();
-					});
-			});
-		},
+            return new Promise(function (resolve, reject) {
 
-	}
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    async: false,
+                    data: _data.searchData,
+                    dataType: "json"
+                })
+                    .done(function (data) {
+                        resolve(data);
+                    })
+                    .fail(function () {
+                        reject();
+                    });
+            });
+        },
 
-	_init = async (args = {}) => {
-		_fetch.getCategoryJson();
-		_manipulateDom.itemCategoryBar();
-		_eventHandle.init();
-	}
+    }
 
-	// 클로저
-	return {
-		init : _init
-	}
+    _init = async (args = {}) => {
+        _data.searchData.category = args.categorySeq;
+        _args.categoryKey = args.type;
+        _manipulateDom.itemList(1);
+        _manipulateDom.itemCategoryBar();
+        await _fetch.getCategoryJson();
+        _eventHandle.init();
+    }
+
+    // 클로저
+    return {
+        init: _init
+    }
 }(jQuery));

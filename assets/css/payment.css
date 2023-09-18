@@ -138,7 +138,13 @@
 .payment_wrap .cont_info .item_product .item .tag span + span {
     margin-left: 4px;
 }
-
+.payment_wrap .cont_info .item_product .item.data_none {
+    text-align: center;
+}
+.payment_wrap .cont_info .item_product .item.data_none p {
+    color: #878787;
+    margin-top: 20px;
+}
 /* 사용권 유형 */
 .payment_wrap .item_license {
     margin-top: 60px;

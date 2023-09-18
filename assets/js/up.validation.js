@@ -254,6 +254,11 @@ let UpValidation = (function($) {
             return (str != '' && exp.test(str));
         },
 
+        isValidNickName: function(str) {
+            let exp=/^[가-힣a-zA-Z]{1, 16}$/;
+            return (str !='' && exp.test(str))
+        },
+
         // 휴대폰번호 유효성 검사
         isValidMobilePhone: function(str) {
             let exp = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/;

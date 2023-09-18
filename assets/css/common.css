@@ -207,6 +207,21 @@
 /* 탭 끝 */
 
 
+/* 공통 팝업 시작 */
+.common_popup_area { display: flex; width: 100%; height: 100%; position: absolute;  top: 0; z-index: 100; background-repeat: no-repeat; background-position: top center; background-size: cover; } 
+.common_popup_area::before { content: ""; z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); } 
+.common_popup_area .common_popup_area_wrap {position: absolute;top: 0; left: 0; bottom: 0; right: 0;margin: auto; z-index: 1; max-width: 500px; height: fit-content; max-height: 700px; background: #fff; border-radius: 10px; box-sizing: border-box; align-items: center;width: 100%; justify-content: center;} 
+.common_popup_area .common_popup_area_wrap .profile_form {max-width: 600px;}
+.common_popup-content .title h2 {font-size:32px; text-align:center;}
+.common_popup_forms {width: 100%; height: 100%; overflow-y: auto; padding: 30px 40px;} 
+.common_popup_form { position: relative; max-width: 430px; width: 100%; border-radius: 6px; background: #FFF; } 
+.common_dec {text-align: center; margin-top: 40px; font-weight: bold; font-size: 16px;}
+/* 공통 팝업 끝 */
+/* 공통 팝업 닫기 시작 */
+.common_popup_area_wrap .layerpop_close {width: 20px;height: 20px; position: absolute; top: -30px;display: block;right: 0px;font-size: 40px;color: #ffffff;z-index: 15;}
+.common_popup_area_wrap .layerpop_close img {display: block;}
+/* 공통 팝업 닫기 끝 */
+
 /* 스위치 시작 */
 .checkbox-google {
 	display: inline-block;    

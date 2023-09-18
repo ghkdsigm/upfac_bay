@@ -326,6 +326,8 @@ a {
 .item_detail > .section > .below_container .content_desc .detail .tab_box .item_content .additional_content > ul { display: flex; flex-wrap: wrap; gap: 20px;} 
 .item_detail > .section > .below_container .content_desc .detail .tab_box .item_content .additional_content > ul li { width: calc(25% - 30px) } 
 .item_detail > .section > .below_container .content_desc .detail .tab_box .item_content .additional_content > ul li + li { margin-left:20px; } 
+.item_detail > .section > .below_container .content_desc .detail .tab_box .item_content .additional_content > ul.item_empty {align-items: center;  justify-content: center;    text-align: center;}
+.item_detail > .section > .below_container .content_desc .detail .tab_box .item_content .additional_content > ul.item_empty li {padding:90px 0; color: #878787; font-size: 14px;}
 .item_detail > .section > .below_container .content_desc .detail .tab_box .item_content .additional_content > ul > li .thumb_wrap { height: 100%; display: flex; flex-direction: column; border: 1px solid #DFDFDF; border-radius: 8px; overflow: hidden;} 
 .item_detail .cont .is_text_top .info {
     display: flex;
@@ -354,7 +356,7 @@ a {
     height: 11px;
     background: url(/resources/assets/images/common/ico_mark.svg) no-repeat;
 }
-.item_detail > .section > .upper_container .content .viewer .viewer_info.info .info_favorites.on::before {
+.item_detail > .section > .upper_container .content .viewer .viewer_info .info .info_favorites.on::before {
     background: url(/resources/assets/images/common/ico_mark_on.svg) no-repeat;
 }
 .item_detail > .section > .upper_container .content .viewer .viewer_info .is_text .price {
@@ -895,7 +897,7 @@ a {
 
 .product_area {
     margin-top: 80px;
-    margin-bottom: 140px;
+    margin-bottom: 200px;
 }
 .product_area .cont {
     display: flex;
@@ -908,6 +910,19 @@ a {
     border: 1px solid #DFDFDF;
     border-radius: 8px;
     overflow: hidden;
+}
+.product_area .cont .data_none {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.product_area .cont .data_none img {
+    margin-bottom: 20px;
+}
+.product_area .cont .data_none p {
+    color: #878787;
 }
 .product_area .cont .item:nth-of-type(1),
 .product_area .cont .item:nth-of-type(2),
@@ -1039,6 +1054,11 @@ a {
     padding: 7px 13px;
     background: #5157FF;
     border-radius: 4px;
+}
+.product_area .cont .is_text_top .user_detail_name .btn_follow.on {
+    color: #5157FF;
+    border: 1px solid #5157FF;
+    background: #fff;
 }
 
 
@@ -1468,7 +1488,48 @@ a {
 .product_sub_area .cont_recomment .cont_product {
     margin-top: 60px;
 }
+
 /* 물품 서브 리스트 끝 */
+
+/* 라이센스 팝업 시작 */
+.license_area .common_popup-content .title h2 {
+    font-size:22px;
+    font-weight:bold;
+}
+.license_area .common_dec {
+    font-size:14px;
+    font-weight:400;
+}
+.license_area .common_dec b {
+    font-weight:bold;
+}
+.license_area .common_popup-content .check_box {
+    margin-top: 40px;
+}
+.license_area .common_popup-content .check_box input[type="checkbox"] {
+    display: none;
+}
+.license_area .common_popup-content .check_box label {
+    font-weight: bold;
+}
+.license_area .common_popup-content .check_box input + label:before {
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: -2px;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: url(/resources/assets/images/common/check_off.svg) no-repeat;
+}
+.license_area .common_popup-content .check_box input:checked + label:before {
+    content: "";
+    background: url(/resources/assets/images/common/check_on.svg) no-repeat;
+    background-position: center;
+    text-align: center;
+}
+/* 라이센스 팝업 끝 */
 
 /* 물품 팝업 */
 .pop_product {
@@ -1587,6 +1648,23 @@ a {
     display: block;
     font-weight: bold;
 }
+/* 마이페이지 커스텀 */
+.storeentry_area.mypage_seller_enter_area .cont .form_box {
+    margin-top: 90px;
+}
+.storeentry_area.mypage_seller_enter_area .cont .input_box ~ .input_box {
+    margin-top: 20px;
+}
+.storeentry_area.mypage_seller_enter_area .cont .input_box label {
+    font-size: 14px;
+}
+.storeentry_area.mypage_seller_enter_area .cont .input_box label.origin {
+    font-size: 16px;
+}
+.storeentry_area.mypage_seller_enter_area .cont .input_box .input_box_file label {
+    font-size: 16px;
+}
+/* 마이페이지 커스텀 */
 .storeentry_area .cont .input_box label span {
     font-size: 12px;
     font-weight: 500;
@@ -1598,6 +1676,7 @@ a {
 }
 .storeentry_area .cont .input_box input {
     max-width: 700px;
+    min-width: 700px;
     width: 100%;
     height: 60px;
     padding: 0 20px;
@@ -1688,6 +1767,9 @@ a {
 }
 .storeentry_area .cont .input_box input::placeholder {
     color: #B9B9B9;
+}
+.storeentry_area .cont .input_box .input_line2 input {
+    min-width: inherit;
 }
 .storeentry_area .cont .input_box .input_line2 {
     display: flex;

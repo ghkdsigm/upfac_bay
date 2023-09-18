@@ -449,78 +449,15 @@
                                                 <hr />
                                             </div>    
                                             <!-- 비슷한 컨텐츠 -->
-                                            <div class="additional_content">
+                                            <div class="additional_content simular_cont">
                                                 <strong>비슷한 컨텐츠</strong>
                                                 <ul>
-                                                    <li>
-                                                        <a href="javascript:;" class="thumb_wrap">
-                                                            <div class="thumb_preview">
-                                                                <!-- 360 preview -->
-                                                                <div class="threesixty-wrapper">
-                                                                    <div class="threesixty"
-                                                                        data-path="/resources/assets/images/threesixty/gem{index}.jpg"
-                                                                        data-count="61">
-                                                                        <!-- put your preloader here -->
-                                                                        <div class="ui-spinner">
-                                                                            <span class="side side-left">
-                                                                                <span class="fill"></span>
-                                                                            </span>
-                                                                            <span class="side side-right">
-                                                                                <span class="fill"></span>
-                                                                            </span>
-                                                                        </div>
-                                                                        <!-- end preloader -->
-                                                                    </div>
-                                                                </div>
-                                                                <!-- //360 preview -->
-                                                            </div>
-                                                            <div class="thumb_info">
-                                                                <img src="/resources/assets/images/thumb/thumb_user.jpg" alt="">
-                                                                <div class="thumb_name">그레이하운드 캐릭터 3D 이미지</div>
-                                                            </div>
-                                                        </a>
-                                                    </li>                                                   
-                                                    <li>
-                                                        <a href="javascript:;" class="thumb_wrap">
-                                                            <div class="thumb_preview">
-                                                                <img src="https://media.sketchfab.com/models/67e1ee2e49c543b2a3a52ccc8988810a/thumbnails/b9166ec6dc3b4747b8314d47a7456c40/58c01fdfef7e4d0b8730f7e7014418ba.jpeg"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="thumb_info">
-                                                                <img src="/resources/assets/images/thumb/thumb_user.jpg" alt="">
-                                                                <div class="thumb_name">그레이하운드 캐릭터 3D 이미지</div>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;" class="thumb_wrap">
-                                                            <div class="thumb_preview">
-                                                                <img src="https://media.sketchfab.com/models/67e1ee2e49c543b2a3a52ccc8988810a/thumbnails/b9166ec6dc3b4747b8314d47a7456c40/58c01fdfef7e4d0b8730f7e7014418ba.jpeg"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="thumb_info">
-                                                                <img src="/resources/assets/images/thumb/thumb_user.jpg" alt="">
-                                                                <div class="thumb_name">그레이하운드 캐릭터 3D 이미지</div>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;" class="thumb_wrap">
-                                                            <div class="thumb_preview">
-                                                                <img src="https://media.sketchfab.com/models/67e1ee2e49c543b2a3a52ccc8988810a/thumbnails/b9166ec6dc3b4747b8314d47a7456c40/58c01fdfef7e4d0b8730f7e7014418ba.jpeg"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="thumb_info">
-                                                                <img src="/resources/assets/images/thumb/thumb_user.jpg" alt="">
-                                                                <div class="thumb_name">그레이하운드 캐릭터 3D 이미지</div>
-                                                            </div>
-                                                        </a>
-                                                    </li>
+                                                    
                                                 </ul>
                                             </div>
                                             <!-- //비슷한 컨텐츠 -->
                                             <!-- 다른 컨텐츠 -->
-                                            <div class="additional_content">
+                                            <div class="additional_content other_cont">
                                                 <strong>Whisky Hotel 님의 다른 컨텐츠</strong>
                                                 <ul>
                                                     <li>
@@ -972,6 +909,27 @@
                     disableOnInteraction: false
                 },
             });
+
+            // 상품 디테일 팝업 하단 리스트 값이 0일때 빈 텍스트 넣기 로직
+            var item_contents = $('.additional_content > ul');
+
+            for(var i = 0; i < item_contents.length; i++){
+                if(item_contents[i].children.length <= 0){                    
+                    item_contents[i].classList.add('item_empty')                    
+                    var li = document.createElement("li");
+                    var txt = '';
+                    if(item_contents[i].parentElement.classList.contains('simular_cont')){
+                        txt = '상품과 비슷한'
+                    } else {
+                        txt = '작가의 다른'
+                    }     
+                    item_contents[i].appendChild(li).innerText = `해당 ${txt} 작품이 없습니다.`
+
+                } else {
+                    item_contents[i].classList.remove('item_empty')
+                }
+                
+            }
         })
     </script>
 </body>

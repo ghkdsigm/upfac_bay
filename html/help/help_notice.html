@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객센터 - 공지사항</title>
+    <link rel="stylesheet" href="/resources/assets/css/reset.css">
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/style.css">
+    <link rel="stylesheet" href="/resources/assets/css/mypage.css">
+    <link rel="stylesheet" href="/resources/assets/css/help.css">
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css">
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+    <header class="header"></header>
+
+    <main class="all_wrap">      
+        <!-- 고객센터 리스트 -->
+        <div class="help_list_area">
+            <div class="container">
+                <div class="sub_title">
+                    <h2>고객센터</h2>
+                </div>
+                <ul class="help_list">
+                    <li class="on"><a href="javascript:;"><img src="/resources/assets/images/help/ico_notice.svg" alt="공지사항 아이콘" /><span>공지사항</span></a></li>
+                    <li><a href="javascript:;"><img src="/resources/assets/images/help/ico_faq.svg" alt="공지사항 아이콘" /><span>자주하는 질문</span></a></li>
+                    <li><a href="javascript:;"><img src="/resources/assets/images/help/ico_inquiry.svg" alt="공지사항 아이콘" /><span>1:1 문의</span></a></li>
+                    <li><a href="javascript:;"><img src="/resources/assets/images/help/ico_enter.svg" alt="공지사항 아이콘" /><span>입점 문의</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 고객센터 리스트 끝 -->
+
+        <!-- 고객센터 공지사항 리스트 -->
+        <section class="help_area help_sub_area notice_area">
+            <div class="container">
+                <div class="cont">
+                    <div class="accordion_container">
+                        <div class="accordion_header">
+                            <span>제목</span>
+                            <span>작성일</span>
+                        </div>
+                        <div class="accordion_head on"><span>[안내] 개인정보 처리방침 개정 안내</span><span>2023.08.18</span></div>
+                        <div class="accordion_body" style="display: block;">
+                            <p> 
+                                안녕하세요 신규 고객님!<br />
+                                고객님의 상품을 입점할 수 있게 되어 기쁩니다.<br />
+                                앞으로 UPFAC에서 많은 작품 등록과 판매활동을 부탁드립니다.<br />
+                                <br />
+                                UPFAC 관리자 일동
+                            </p>
+                        </div>
+                        <div class="accordion_head"><span>[안내] 저작권 분쟁 해결기준 안내</span><span>2023.08.18</span></div>
+                        <div class="accordion_body" style="display: none;">
+                            <p> 
+                                안녕하세요 신규 고객님!<br />
+                                고객님의 상품을 입점할 수 있게 되어 기쁩니다.<br />
+                                앞으로 UPFAC에서 많은 작품 등록과 판매활동을 부탁드립니다.<br />
+                                <br />
+                                UPFAC 관리자 일동
+                            </p>
+                        </div>
+                        <div class="accordion_head"><span>[안내] 개인정보 처리방침 개정 안내</span><span>2023.08.18</span></div>
+                        <div class="accordion_body" style="display: none;">
+                            <p> 
+                                안녕하세요 신규 고객님!<br />
+                                고객님의 상품을 입점할 수 있게 되어 기쁩니다.<br />
+                                앞으로 UPFAC에서 많은 작품 등록과 판매활동을 부탁드립니다.<br />
+                                <br />
+                                UPFAC 관리자 일동
+                            </p>
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+        </section>
+        <!-- 고객센터 공지사항 리스트 끝 -->
+    </main>
+
+    <footer class="footer"></footer>
+    
+    <!-- Jquery -->
+    <script type="text/javascript" src="/resources/assets/js/jquery.min.js"></script>
+    <!-- Swiper -->
+    <script type="text/javascript" src="/resources/assets/js/swiper-bundle.min.js"></script>
+    <!-- 공통js -->
+    <!-- <script type="text/javascript" src="/resources/assets/js/common.js"></script> -->
+    <!-- threesixty -->
+    <script type="text/javascript" src="/resources/assets/js/plugins/jquery.threesixty.js"></script>    
+    <!-- 물품 팝업 -->
+    <!-- <script type="text/javascript" src="/resources/assets/js/list.js"></script> -->
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script> 
+
+    <script>        
+        $(document).ready(function() {
+            //토글
+            $(".accordion_head").click(function() {               
+                $(".accordion_head").removeClass('on')
+                $(this).addClass('on')
+                if ($('.accordion_body').is(':visible')) {
+                    $(".accordion_body").slideUp(300);
+                }
+                if ($(this).next(".accordion_body").is(':visible')) {
+                    $(this).next(".accordion_body").slideUp(300);
+                    $(this).css('padding-bottom', '40px')
+                } else {
+                    $(this).next(".accordion_body").slideDown(300);
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>

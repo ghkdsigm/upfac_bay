@@ -33,7 +33,11 @@
                     <div class="my_info_cont">
                         <div class="is_profile">
                             <div class="is_img">
-                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" />
+                                <input type="file" accept="image/*" id="profileImageInput" class="hidden" onchange="readURL(this);">
+                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" class="user_profile" id="preview"/>
+                                <button type="button" class="btn_profile_edit" onclick="onClickUpload()">
+                                    <img src="/resources/assets/images/mypage/ico_profile_edit.svg" alt="프로필" />
+                                </button>
                             </div>
                             <div class="is_text">
                                 <!-- [dev] 판매자 모드일경우 type_user 텍스트 '판매자 회원' 으로 변경-->
@@ -69,17 +73,19 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <ul class="mypage_list">
-                    <li class="on"><a href="javascript:;">내가 본 상품</a></li>
-                    <li><a href="javascript:;">즐겨찾기</a></li>
-                    <li><a href="javascript:;">장바구니</a></li>
-                    <li><a href="javascript:;">구매 내역</a></li>
-                    <li><a href="javascript:;">다운로드 내역</a></li>
-                </ul>
-            </div>
         </section>
         
+        <!-- 마이페이지 리스트 영역 -->
+        <div class="mypage_list_area">
+            <div class="container">
+                <ul class="mypage_list">
+                    <li class="on"><a href="javascript:;">쿠폰 내역</a></li>
+                    <li><a href="javascript:;">적립금 내역</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 마이페이지 리스트 영역 끝 -->
+
         <!-- 쿠폰 내역 -->
         <div class="mypage_table_area">
             <div class="container">
@@ -144,6 +150,13 @@
                                 <td>2023.08.18 00:00 ~<span class="end"> 2023.09.17 23:59</span></td>
                                 <td>2023.08.18 19:06</td>
                             </tr>
+                            <!-- [dev] 내역 없을경우 -->
+                            <tr class="data_none">
+                                <td colspan="5">
+                                    <img src="/resources/assets/images/common/ico_item_none.svg" alt="느낌표 아이콘" />
+                                    <p>쿠폰 내역이 없습니다.</p>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -171,7 +184,23 @@
         $(function(){
             // [dev] 판매자모드 전환 스위치 
             $('.mypage_area .my_info .my_info_cont .type').on('click',function(){
-                $(this).toggleClass('on');
+                $('.mypage_area .my_info .my_info_cont').toggleClass('on');
+                if($('.mypage_area .my_info .my_info_cont').hasClass('on')) {
+                    $('.mypage_area .my_info .my_info_cont .type .type_user').text('판매자 회원')
+                } else {
+                    $('.mypage_area .my_info .my_info_cont .type .type_user').text('구매자 회원')
+                }
+                if($('.mypage_area .my_info .my_info_cont').hasClass('on')) {
+                    $('.mypage_area .my_info .is_benefits .is_coupon h5').html('N월 판매 내역<p class="i_info"><img src="/resources/assets/images/mypage/ico_info.svg" alt="아이콘" /><span class="tooltip">· 구매 취소가 반영되지 않은 내용으로 실 판매 내역과,<br />실 정산 금액은 차이가 발생할 수 있습니다</span></p>')
+                    $('.mypage_area .my_info .is_benefits .is_coupon > p').html('<span>1</span>건')
+                    $('.mypage_area .my_info .is_benefits .is_point h5').html('N월 정산 예정금액<p class="i_info"><img src="/resources/assets/images/mypage/ico_settings.svg" alt="아이콘" />내 정산 계좌<span class="tooltip">· 내 정산 계좌 : (국민) 841201-04-012808<a href="javascript:;">수정</a></span></p>')
+                    $('.mypage_area .my_info .is_benefits .is_point > p').html('<span>1,221,429,000</span>원')
+                } else {
+                    $('.mypage_area .my_info .is_benefits .is_coupon h5').text('사용가능 쿠폰')
+                    $('.mypage_area .my_info .is_benefits .is_coupon > p').html('<span>1</span>장')
+                    $('.mypage_area .my_info .is_benefits .is_point h5').text('적립금')
+                    $('.mypage_area .my_info .is_benefits .is_point > p').html('<span>13,200</span>P')
+                }
             });
             // [dev] 날짜 최초 오늘값 세팅
             // document.getElementById('dateSearchStart').value = new Date().toISOString().substring(0, 10);
@@ -196,6 +225,23 @@
             $('#dateSearchEnd').datepicker({});
             $('#dateSearchEnd').datepicker('setDate', today);
         })
+        // [dev] 유저 프로필 사진 수정
+        function onClickUpload() {
+            let myInput = document.getElementById("profileImageInput");
+            myInput.click();
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                document.getElementById('preview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                document.getElementById('preview').src = e.target.result;
+            }
+        }
     </script>
 </body>
 </html>

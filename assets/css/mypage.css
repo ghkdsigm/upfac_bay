@@ -7,14 +7,32 @@
     display: flex;
     color: #fff;
 }
-.mypage_area .my_info .my_info_cont .is_profile{
+.mypage_area .my_info .my_info_cont .is_profile {
     display: flex;
     width: 50%;
     padding: 60px 0 60px 20px;
 }
+.mypage_area .my_info .my_info_cont .is_profile .is_img {
+    position: relative;
+}
+.mypage_area .my_info .my_info_cont .is_profile .is_img input {
+    display: none;
+}
+.mypage_area .my_info .my_info_cont .is_profile .is_img .user_profile {
+    width: 120px;
+    height: 136px;
+    object-fit: cover;
+    border-radius: 50px 50px 0 50px;
+    overflow: hidden;
+}
+.mypage_area .my_info .my_info_cont .is_profile .is_img .btn_profile_edit {
+    position: absolute;
+    right: -15px;
+    bottom: -1px;
+}
 .mypage_area .my_info .my_info_cont .is_text {
     padding-top: 15px;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 .mypage_area .my_info .my_info_cont .type {
     display: flex;
@@ -300,18 +318,18 @@
 /* 마이페이지 쿠폰등록 끝 */
 
 /* 마이페이지 리스트 공통 */
-.mypage_area .mypage_list {
+.mypage_list_area .mypage_list {
     display: flex;
     padding-bottom: 15px;
     margin-top: 60px;
     border-bottom: 1px solid #DFDFDF;
 }
-.mypage_area .mypage_list a {
+.mypage_list_area .mypage_list a {
     padding: 0 50px;
     padding-bottom: 11px;
     height: 100%;
 }
-.mypage_area .mypage_list li.on a {
+.mypage_list_area .mypage_list li.on a {
     font-weight: bold;
     border-bottom: 3px solid #1C1B1B;
 }
@@ -525,6 +543,39 @@
 .mypage_table_area .item_table_purchase_history .col05 {
     width: 120px;
 }
+.mypage_table_area .item_table_seller_management .col01 {
+    width: 300px;
+}
+.mypage_table_area .item_table_seller_management .col02 {
+    width: 420px;
+}
+.mypage_table_area .item_table_seller_management .col03 {
+    width: 150px;
+}
+.mypage_table_area .item_table_seller_management .col04 {
+    width: 160px;
+}
+.mypage_table_area .item_table_seller_management .col05 {
+    width: 150px;
+}
+.mypage_table_area .item_table_seller_calculate .col01 {
+    width: 280px;
+}
+.mypage_table_area .item_table_seller_calculate .col02 {
+    width: 160px;
+}
+.mypage_table_area .item_table_seller_calculate .col03 {
+    width: 160px;
+}
+.mypage_table_area .item_table_seller_calculate .col04 {
+    width: 310px;
+}
+.mypage_table_area .item_table_seller_calculate .col05 {
+    width: 130px;
+}
+.mypage_table_area .item_table_seller_calculate .col06 {
+    width: 140px;
+}
 .mypage_table_area .item_table thead tr {
     height: 50px;
     background: #F8F8F8;
@@ -544,6 +595,10 @@
     text-align: center;
     color: #878787;
 }
+.mypage_table_area .item_table tbody td.left {
+    text-align: left;
+    padding-left: 20px;
+}
 .mypage_table_area .item_table tbody td .extinction {
     font-size: 10px;
     padding: 2.5px 4px;
@@ -562,15 +617,55 @@
 .mypage_table_area .item_table tbody td.end {
     color: #FF5050;
 }
+.mypage_table_area .item_table tbody td.blue {
+    color: #5157FF;
+}
 .mypage_table_area .item_table tbody td span.end_block {
     display: block;
     color: #FF5050;
     margin-top: 5px;
 }
+.mypage_table_area .item_table tbody td span.not_registered {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.mypage_table_area .item_table tbody td span.examine {
+    font-weight: bold;
+    display: block;
+    color: #1C1B1B;
+    margin-bottom: 5px;
+}
+.mypage_table_area .item_table tbody td span.completed {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.mypage_table_area .item_table tbody td span.completed b {
+    color: #FF5050;
+    margin-left: 5px;
+}
 .mypage_table_area .item_table tbody td button.detail {
     font-size: 12px;
     padding: 5px 9px;
     border: 1px solid #DFDFDF;
+}
+.mypage_table_area .item_table tbody td button.detail_registration {
+    color: #fff;
+    background: #1C1B1B;
+    border: 1px solid #1C1B1B;
+}
+.mypage_table_area .item_table tbody tr.data_none {
+    height: 400px;
+}
+.mypage_table_area .item_table tbody tr.data_none td {
+    text-align: center;
+}
+.mypage_table_area .item_table tbody tr.data_none td img {
+    margin-bottom: 20px;
+}
+.mypage_table_area .item_table tbody tr.data_none td p {
+    font-size: 16px;
 }
 /* 쿠폰 내역 끝 */
 
@@ -623,13 +718,21 @@
     padding: 30px 20px;
     border-bottom: 1px solid #DFDFDF;
 }
-
+.mypage_download_area .item_product_list li.data_none {
+    flex-direction: column;
+    align-items: center;
+}
+.mypage_download_area .item_product_list li.data_none img {
+    margin-bottom: 20px;
+}
+.mypage_download_area .item_product_list li.data_none p {
+    color: #878787;
+}
 .mypage_download_area .item_product_list .is_img {
     max-width: 272px;
     min-width: 272px;
     width: 100%;
     background: #000;
-    margin-right: 20px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -740,7 +843,7 @@
 /* 다운로드 내역 끝 */
 
 /* 구매 내역 팝업 */
-.pop_payment_detail {
+.pop_mypage {
     opacity: 0;
     visibility: hidden;
     z-index: 100;
@@ -753,9 +856,14 @@
     background: rgba(0, 0, 0, .6);
     transition: all .3s;
 }
-.pop_payment_detail.on {
+.pop_mypage.on {
     opacity: 1;
     visibility: visible;
+}
+.pop_mypage .cont .btn_close {
+    position: absolute;
+    top: -42px;
+    right: 0;
 }
 .pop_payment_detail .cont {
     position: absolute;
@@ -773,6 +881,11 @@
 }
 .pop_payment_detail .cont .item + .item {
     margin-top: 10px;
+}
+.pop_payment_detail .cont .item_scroll {
+    margin-top: 10px;
+    height: 465px;
+    overflow-y: auto;
 }
 .pop_payment_detail .cont .item01 {
     display: flex;
@@ -871,16 +984,79 @@
     font-size: 18px;
     margin-top: 12px;
 }
-.pop_payment_detail .btn_check {
-    text-align: center;
+.pop_payment_detail .cont .item04 {
+    padding-top: 10px;
+    margin-top: 30px;
+    border-top: 1px solid #DFDFDF;
 }
-.pop_payment_detail .btn_check button {
-    font-size: 18px;
-    font-weight: bold;
+.pop_payment_detail .cont .item04 p {
+    line-height: 1.5;
+    letter-spacing: -.5px;
+    font-size: 12px;
+    text-align: center;
+    color: #878787;
+}
+
+/* 구매 내역 팝업 끝 */
+
+/* 세금계산서 등록 */
+.pop_tax_registration .cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 740px;
     width: 100%;
-    height: 60px;
-    color: #fff;
-    background: #1C1B1B;
+    padding: 30px 20px 40px;
+    text-align: center;
+    background: #fff;
     border-radius: 8px;
 }
-/* 구매 내역 팝업 끝 */
+.pop_tax_registration .cont h5 {
+    font-size: 22px;
+    font-weight: bold;
+}
+.pop_tax_registration .cont > p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+.pop_tax_registration .cont .file_dropzon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    margin-top: 30px;
+    border: 2px dashed #DFDFDF;
+    cursor: pointer;
+}
+.pop_tax_registration .cont .file_dropzon .file_dropzon_title {
+    font-weight: bold;
+    padding: 10px 35px;
+    color: #fff;
+    background: #878787;
+    border-radius: 20px;
+}
+.pop_tax_registration .cont .file_dropzon .i_cloud {
+    margin-top: 30px;
+} 
+.pop_tax_registration .cont .file_dropzon .explanation {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 32px;
+}
+.pop_tax_registration .cont .file_dropzon .info {
+    font-size: 12px;
+    margin-top: 5px;
+}
+.pop_tax_registration .cont .btn_save {
+    font-size: 24px;
+    font-weight: bold;
+    width: 300px;
+    height: 60px;
+    margin-top: 20px;
+    color: #fff;
+    background: #FFB300;
+    border-radius: 10px;
+}
+/* 세금계산서 등록 끝 */

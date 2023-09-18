@@ -1,8 +1,5 @@
  // [dev] 리스트 아이템 북마크 표시 클릭 이벤트
-$('.product_area .cont .info_favorites').on('click', function(){
-    $(this).toggleClass('on')
-})
-$('.item_side_info .item_buy .takebt .info_favorites').on('click', function(){
+$('.product_area .cont .info_favorites, .takebt .info_favorites, .info .info_favorites').on('click', function(){
     $(this).toggleClass('on')
 })
 

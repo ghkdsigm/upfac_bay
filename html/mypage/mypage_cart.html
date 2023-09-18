@@ -32,7 +32,11 @@
                     <div class="my_info_cont">
                         <div class="is_profile">
                             <div class="is_img">
-                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" />
+                                <input type="file" accept="image/*" id="profileImageInput" class="hidden" onchange="readURL(this);">
+                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" class="user_profile" id="preview"/>
+                                <button type="button" class="btn_profile_edit" onclick="onClickUpload()">
+                                    <img src="/resources/assets/images/mypage/ico_profile_edit.svg" alt="프로필" />
+                                </button>
                             </div>
                             <div class="is_text">
                                 <!-- [dev] 판매자 모드일경우 type_user 텍스트 '판매자 회원' 으로 변경-->
@@ -68,16 +72,21 @@
                     </div>
                 </div>
             </div>
+        </section>
+        
+        <!-- 마이페이지 리스트 영역 -->
+        <div class="mypage_list_area">
             <div class="container">
                 <ul class="mypage_list">
-                    <li class="on"><a href="javascript:;">내가 본 상품</a></li>
+                    <li><a href="javascript:;">내가 본 상품</a></li>
                     <li><a href="javascript:;">즐겨찾기</a></li>
-                    <li><a href="javascript:;">장바구니</a></li>
+                    <li class="on"><a href="javascript:;">장바구니</a></li>
                     <li><a href="javascript:;">구매 내역</a></li>
                     <li><a href="javascript:;">다운로드 내역</a></li>
                 </ul>
             </div>
-        </section>
+        </div>
+        <!-- 마이페이지 리스트 영역 끝 -->
         
         <!-- 결제하기 -->
         <section class="payment_wrap payment_cart_wrap">
@@ -168,6 +177,10 @@
                                         </button>
                                     </div>
                                 </li>
+                                <li class="item data_none">
+                                    <img src="/resources/assets/images/common/ico_item_none.svg" alt="느낌표 아이콘" />
+                                    <p>장바구니에 담긴 상품이 없습니다.</p>
+                                </li>
                             </ul>
                         </div>
                         <!-- 결제 상품 끝 -->
@@ -234,7 +247,23 @@
         $(function(){
             // [dev] 판매자모드 전환 스위치 
             $('.mypage_area .my_info .my_info_cont .type').on('click',function(){
-                $(this).toggleClass('on');
+                $('.mypage_area .my_info .my_info_cont').toggleClass('on');
+                if($('.mypage_area .my_info .my_info_cont').hasClass('on')) {
+                    $('.mypage_area .my_info .my_info_cont .type .type_user').text('판매자 회원')
+                } else {
+                    $('.mypage_area .my_info .my_info_cont .type .type_user').text('구매자 회원')
+                }
+                if($('.mypage_area .my_info .my_info_cont').hasClass('on')) {
+                    $('.mypage_area .my_info .is_benefits .is_coupon h5').html('N월 판매 내역<p class="i_info"><img src="/resources/assets/images/mypage/ico_info.svg" alt="아이콘" /><span class="tooltip">· 구매 취소가 반영되지 않은 내용으로 실 판매 내역과,<br />실 정산 금액은 차이가 발생할 수 있습니다</span></p>')
+                    $('.mypage_area .my_info .is_benefits .is_coupon > p').html('<span>1</span>건')
+                    $('.mypage_area .my_info .is_benefits .is_point h5').html('N월 정산 예정금액<p class="i_info"><img src="/resources/assets/images/mypage/ico_settings.svg" alt="아이콘" />내 정산 계좌<span class="tooltip">· 내 정산 계좌 : (국민) 841201-04-012808<a href="javascript:;">수정</a></span></p>')
+                    $('.mypage_area .my_info .is_benefits .is_point > p').html('<span>1,221,429,000</span>원')
+                } else {
+                    $('.mypage_area .my_info .is_benefits .is_coupon h5').text('사용가능 쿠폰')
+                    $('.mypage_area .my_info .is_benefits .is_coupon > p').html('<span>1</span>장')
+                    $('.mypage_area .my_info .is_benefits .is_point h5').text('적립금')
+                    $('.mypage_area .my_info .is_benefits .is_point > p').html('<span>13,200</span>P')
+                }
             });
             // [dev] X버튼 클릭시 물품 제거
             $('.payment_cart_wrap .cont_info .item_product .item .btn_close').on('click', function(){
@@ -246,6 +275,23 @@
                 $('.payment_cart_wrap .cont_info .item_product .item .detail input[type="checkbox"]').prop('checked', $(this).prop("checked"));
             });
         })
+        // [dev] 유저 프로필 사진 수정
+        function onClickUpload() {
+            let myInput = document.getElementById("profileImageInput");
+            myInput.click();
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                document.getElementById('preview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                document.getElementById('preview').src = e.target.result;
+            }
+        }
     </script>
 </body>
 </html>

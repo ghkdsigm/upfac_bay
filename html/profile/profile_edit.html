@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="field input-field">
                                     <label for="id"><em>아이디(Email)</em></label>
-                                    <input type="id" placeholder="whjeong@itembay.com" class="input" id="id" disabled>
+                                    <input type="id" placeholder="whjeong@itembay.com" class="input disabled_input" id="id" readonly >
                                 </div>
                                 <div class="field input-field">
                                     <label for="txtPassword1"><em>비밀번호</em></label>
@@ -84,7 +84,8 @@
                                 </div>
                                 <div class="field input-field">
                                     <label for="phonenum"><em>휴대전화 번호</em></label>
-                                    <input type="number" placeholder="-없이 숫자만 입력" class="input" name="phonenum" id="phonenum" maxlength="20" />
+                                    <input type="number" placeholder="-없이 숫자만 입력" class="input error_focus" name="phonenum" id="phonenum" maxlength="20" />
+                                    <div class="error_msg">유효하지않은 번호입니다.</div> 
                                 </div>
                                 <div class="switch-field">
                                     <div>

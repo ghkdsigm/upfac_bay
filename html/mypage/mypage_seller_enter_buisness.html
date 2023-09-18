@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPFAC - 정산정보 입력</title>
+    <!-- 리셋 -->
+    <link rel="stylesheet" href="/resources/assets/css/reset.css" />
+    <!-- 공통스타일 -->
+    <link rel="stylesheet" href="/resources/assets/css/common.css">
+    <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="/resources/assets/css/swiper-bundle.min.css" />
+    <!-- 공통레이아웃스타일 -->
+    <link rel="stylesheet" href="/resources/assets/css/style.css" />
+    <!-- 반응형 -->
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css" />
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+    
+    <!-- 헤더 -->
+    <header class="header">       
+    </header>
+    <!-- 헤더 끝 -->
+    <main class="all_wrap">
+        <!-- 입점신청 -->
+        <section class="storeentry_area mypage_seller_enter_area">
+            <div class="container">
+                 <div class="cont">
+                    <div class="item">
+                        <h2>수익금이 정산될 정보를 입력해주세요.</h2>
+                        <div class="form_box">
+                            <div class="input_box">
+                                <label for="" class="origin">정산 정보<span>판매완료 시 인증된 계좌로 정산이 진행됩니다.</span></label>
+                            </div>
+                            <div class="input_box">
+                                <label for="">1. 사업자등록증 사본 등록</label>
+                                <div class="input_box_file">
+                                    <label for="uploadFile01">파일선택</label>
+                                    <input class="input_upload" placeholder="선택된 파일 없음" readonly />
+                                    <input type="file" id="uploadFile01" />
+                                </div>
+                            </div>
+                            <div class="input_box">
+                                <label for="">2. 은행정보 입력</label>
+                                <div class="input_line2">
+                                    <select name="" id="">
+                                        <option value="" hidden>은행 선택</option>
+                                        <option value="">국민은행</option>
+                                        <option value="">신한은행</option>
+                                        <option value="">우리은행</option>
+                                    </select>
+                                    <input type="text" placeholder="계좌번호를 입력해주세요" />
+                                </div>
+                            </div>
+                            <!-- 인증완료시 btn_certification 에 on 추가 -->
+                            <button type="button" class="btn_certification">계좌 인증</button>
+                            <div class="input_box">
+                                <label for="">3. 통장 사본 등록</label>
+                                <div class="input_box_file">
+                                    <label for="uploadFile02">파일선택</label>
+                                    <input class="input_upload" placeholder="선택된 파일 없음" readonly />
+                                    <input type="file" id="uploadFile02" />
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="btn_check btn_examine">수정하기</a>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </section>
+        <!-- 입점신청 끝 -->
+    </main>
+
+    
+    <!-- 푸터 -->
+    <footer class="footer">        
+    </footer>
+    <!-- 푸터 끝 -->
+    
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- Swiper -->
+    <script src="/resources/assets/js/swiper-bundle.min.js"></script>
+    <!-- 공통js -->
+    <script src="/resources/assets/js/common.js"></script>
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script>  
+    
+    <script>
+        // [dev] 파일 업로드시 파일명 반영
+        for (var i = 1; i <= 2; i++) {
+            $("#uploadFile0" + i).on('change', function () {
+                var fileName = $(this).val();
+                $(this).siblings(".input_upload").val(fileName);
+            });
+        }
+    </script>
+</body>
+</html>

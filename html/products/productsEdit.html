@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>등록물품수정</title>
+    <!-- 리셋 -->
+    <link rel="stylesheet" href="/resources/assets/css/reset.css" />
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="/resources/assets/css/style.css" />
+    <!-- 해당페이지 -->
+    <link rel="stylesheet" href="/resources/assets/css/products.css">
+    <!-- 반응형 -->
+    <link rel="stylesheet" href="/resources/assets/css/responsive.css" />
+    <!-- quilljs 에디터 -->
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+    <!-- dropzone 업로드 -->
+    <link rel="stylesheet" href="/resources/assets/css/dropzone/dropzone.min.css">
+</head>
+<body>
+    <!-- 최상단 네비 -->
+    <nav class="top_nav">
+        <ul class="top_nav_list">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">고객센터</a></li>
+        </ul>
+    </nav>
+    <!-- 최상단 네비 끝 -->
+
+    <!-- 임시 헤더 -->
+    <header class="header">
+    </header>
+    <!-- //임시헤더 -->
+
+    <main class="all_wrap">
+        <section class="product_area">
+            <div class="container">
+                <div class="cont">        
+                    <div class="sub_title">
+                        <h2>등록물품수정</h2>
+                        <a href="javascript:;">상품등록 가이드 보기</a>
+                    </div>     
+                    <!-- 신규상품등록 -->         
+                    <div class="product_wrap product_edit_wrap">                          
+                        <div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            카테고리
+                                        </td>
+                                        <td class="flexline">
+                                            <div class="flexline">
+                                                <span class="pr-10 regit_tit">상품 구분</span>
+                                                <div class="selectresult">3D</div>
+                                            </div>
+                                            <div class="flexline regit_category">
+                                                <span class="pr-10 regit_tit">상세 카테고리</span>
+                                                <div class="selectresult">건축</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            제목
+                                        </td>
+                                        <td>
+                                            <div class="register_title">
+                                                <input type="text" placeholder="제목입니다 입력 시 인풋박스 라인 컬러 텍스트 컬러 변경됩니다">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="vertical_top">
+                                        <td>
+                                            파일등록
+                                        </td>
+                                        <td>                                            
+                                            <div>
+                                                <!-- 업로드 완료시 아래 태그 (off 대신 on 추가) 미완료시 (on 대신 off태그) -->
+                                                <div class="uploaded_area on">
+                                                    <div class="reg_thumb">
+                                                        <!-- <img src="/resources/assets/images/webGL.jpg" alt="" /> -->
+                                                        <iframe title="Holland Windmill 3D model - Sketchfab" class="c-viewer__iframe" src="https://sketchfab.com/models/e9667197a82d4ea49319e89bdea87005/embed?autostart=1&amp;internal=1&amp;tracking=0&amp;ui_infos=0&amp;ui_snapshots=1&amp;ui_stop=0&amp;ui_watermark=0" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking="true" execution-while-out-of-viewport="true" execution-while-not-rendered="true" web-share="true" allowfullscreen=""></iframe>
+                                                    </div>                                                   
+                                                    <div class="upload_area reupload">
+                                                        <!-- 등록된 파일 로딩중에 하단 태그에 클래스 on 추가 그 외에는 off 상태 -->
+                                                        <p class="registered_loading off">등록한 파일을 읽어오는 중입니다.</p>
+                                                        <div class="registered_zone">
+                                                            <strong>등록된 파일 내역</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    Source/camel_with_saddle_rigged_and_animated.glb 
+                                                                </li>
+                                                                <li>
+                                                                    textures/gltf_embedded_0.jpeg 
+                                                                </li>
+                                                                <li>
+                                                                    textures/gltf_embedded_1.jpeg 
+                                                                </li>
+                                                                <li>
+                                                                    textures/gltf_embedded_2.jpeg
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            판매가격
+                                        </td>
+                                        <td>
+                                            <div class="register_sellprice flexline">
+                                                <input type="text" placeholder="58,000"> 원
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            해외 판매가격
+                                        </td>
+                                        <td>
+                                            <div class="register_sellprice flexline">
+                                                <input type="text" placeholder="4.1"> &#36; (달러)
+                                                <span>· 가격을 입력하지 않으면 해외 몰에는 상품이 노출되지 않습니다.</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="vertical_top">
+                                        <td style="line-height: 40px;">
+                                            할인설정
+                                        </td>
+                                        <td>
+                                            <div class="tab_toggle">
+                                                <li class="on">
+                                                    <span>사용함</span>
+                                                </li>
+                                                <li>
+                                                    <span>사용안함</span>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <div class="register_discount">
+                                                    <div class="dc_area">
+                                                        <div class="dc_title">
+                                                            <span>국내 가격할인</span>
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" placeholder="5,000"> 원 할인
+                                                            <div class="sell_discount">
+                                                                <span class="dsc_calc">
+                                                                    <span class="discount_dash">할인 적용가</span>
+                                                                    <span class="discount_price"><em>53,000</em> 원</span>
+                                                                </span>
+                                                                <span class="dsc_txt">
+                                                                    (5,000원 할인)에 판매합니다.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dc_area">
+                                                        <div class="dc_title">
+                                                            <span>해외 가격할인</span>
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" placeholder="0"> 원 할인
+                                                            <div class="sell_discount">
+                                                                <span class="dsc_calc">
+                                                                    <span class="discount_dash">할인 적용가</span>
+                                                                    <span class="discount_price"><em>0</em> &#36;</span>
+                                                                </span>
+                                                                <span class="dsc_txt">
+                                                                    (&#36; 할인)에 판매합니다.
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="vertical_top">
+                                        <td>
+                                            물품설명
+                                        </td>
+                                        <td>
+                                            <!-- Create the editor container -->
+                                            <div id="editor-container">
+                                                <h1>Quill to HTML</h1>
+                                                Modify this content to update HTML output.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="vertical_top">
+                                        <td style="line-height: 50px;">
+                                            태그
+                                        </td>
+                                        <td>
+                                            <div class="register_title tag">
+                                                <input type="text" placeholder="5자 이내로 작성, 띄워 쓰기 불가, 최대 10까지 등록 가능">
+                                                <a href="javascript:;" class="add_tag">태그추가</a>
+                                            </div>
+                                            <ul class="register_tags">
+                                                <li>
+                                                    <span>#3DModel</span>
+                                                    <a href="javascript:;"><img src="/resources/assets/images/products/ico_close.svg" alt=""></a>
+                                                </li>
+                                                <li>
+                                                    <span>#동물</span>
+                                                    <a href="javascript:;"><img src="/resources/assets/images/products/ico_close.svg" alt=""></a>
+                                                </li>
+                                                <li>
+                                                    <span>#동물</span>
+                                                    <a href="javascript:;"><img src="/resources/assets/images/products/ico_close.svg" alt=""></a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>          
+                        </div>  
+                    </div>  
+                    <!-- //신규상품등록 -->           
+                </div>
+            </div>            
+        </section>         
+    </main>
+
+    <!-- 신규상품등록 최하단 버튼 -->  
+    <div class="regit_product">
+        <a href="javascript:;">수정하기</a>
+    </div>
+    <!-- //신규상품등록 최하단 버튼 -->  
+    
+    
+    <!-- Jquery -->
+    <script src="/resources/assets/js/jquery.min.js"></script>
+    <!-- 공통헤더,푸터 -->
+    <script src="/resources/common_hf.js"></script> 
+    <!-- quilljs 에디터 -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- dropzone 업로드 -->
+    <script src="/resources/assets/js/plugins/jquery.dropzone.min.js"></script>
+
+    <script>
+        //상품등록
+        $(window).scroll(function() {
+            var scrollTop = $(window).scrollTop();
+            var footerHeight = $('.footer').outerHeight();
+            var scrollBottom = $(document).height() - $(window).height() - footerHeight;
+            $(".regit_product").css("bottom",0);
+            if (scrollTop > scrollBottom + 130) {
+                $(".regit_product").css("bottom",footerHeight);
+            } else {
+                $(".regit_product").css("bottom",0);
+            }
+        });
+
+        //탭 스타일 없음, 상품 등록 토글 탭
+        $('.tab_toggle li').click(function () {
+            var idx = $(this).index();
+            $('.tab_toggle li').removeClass('on');
+            $('.tab_toggle li').eq(idx).addClass('on');
+            if(idx === 0){
+                $('.register_discount').slideDown();
+            } else {
+                $('.register_discount').slideUp();
+            }
+        }) 
+    </script>
+
+    <script>
+        // Initialize QUill editor
+    
+        var quill = new Quill('#editor-container', {
+        modules: {
+            toolbar: [
+            [{ header: [1, 2, 3, 4, 5, 6,  false] }],
+            ['bold', 'italic', 'underline','strike'],
+            ['image', 'code-block'],
+            ['link'],
+            [{ 'script': 'sub'}, { 'script': 'super' }],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['clean']
+            ]
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow'  // or 'bubble'
+        });
+
+        // 업로드 썸네일 없을 경우 빈 텍스트 추가
+        var item_content = $('.reg_thumb')[0]
+        if($('.reg_thumb')[0].children.length <= 0){
+            $('.reg_thumb').addClass('item_empty')                    
+            var ptag = document.createElement("p");
+            $('.reg_thumb')[0].appendChild(ptag).innerText = '노출 할 화면이 없습니다.'
+        } else {
+            $('.reg_thumb').removeClass('item_empty')
+        }
+    </script>
+
+</body>
+</html>

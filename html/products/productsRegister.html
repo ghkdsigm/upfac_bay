@@ -81,7 +81,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="vertical_top">
                                         <td>
                                             파일등록
                                         </td>
@@ -99,7 +99,10 @@
                                             <div>
                                                 <!-- 업로드 완료시 아래 태그 (off 대신 on 추가) 미완료시 (on 대신 off태그) -->
                                                 <div class="uploaded_area on">
-                                                    <img src="/resources/assets/images/webGL.jpg" alt="" />
+                                                    <div class="reg_thumb">
+                                                        <img src="/resources/assets/images/webGL.jpg" alt="" />
+                                                        <!-- <iframe title="Holland Windmill 3D model - Sketchfab" class="c-viewer__iframe" src="https://sketchfab.com/models/e9667197a82d4ea49319e89bdea87005/embed?autostart=1&amp;internal=1&amp;tracking=0&amp;ui_infos=0&amp;ui_snapshots=1&amp;ui_stop=0&amp;ui_watermark=0" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking="true" execution-while-out-of-viewport="true" execution-while-not-rendered="true" web-share="true" allowfullscreen=""></iframe> -->
+                                                    </div>
                                                     <div class="upload_area default">
                                                         <p>등록된 파일이 없습니다.</p>
                                                         <a href="javascript:;" class="upload_bt" data-pop="upload_pop">업로드</a>
@@ -152,8 +155,8 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
+                                    <tr class="vertical_top">
+                                        <td style="line-height: 40px;">
                                             할인설정
                                         </td>
                                         <td>
@@ -205,7 +208,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="vertical_top">
                                         <td>
                                             물품설명
                                         </td>
@@ -217,8 +220,8 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
+                                    <tr class="vertical_top">
+                                        <td style="line-height: 50px;">
                                             태그
                                         </td>
                                         <td>
@@ -321,7 +324,7 @@
                             <div class="title">
                                 <h2>2D 상품 등록</h2>
                             </div>
-                            <div class="threejs_dropzone">
+                            <!-- <div class="threejs_dropzone">
                                 <div class="drag_area">
                                     <strong>
                                         고객에게 노출될 <em>대표 상품을 등록</em> 해주세요
@@ -349,6 +352,87 @@
                                         <p class="txt01">
                                             드래그 앤 드롭 또는 클릭하여 파일 찾기
                                         </p>                                        
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="threejs_dropzone">
+                                <div class="drag_area">
+                                    <strong>
+                                        고객에게 노출될 <em>대표 상품을 등록</em> 해주세요
+                                    </strong>
+                                    <div class="drag_zone main_drag_zone" id="mainDropzone">
+                                            <span>
+                                                대표 상품 등록
+                                            </span>
+                                        <img src="/resources/assets/images/products/ico_cloud.svg" alt="upload_icon" />
+                                        <p class="txt01">
+                                            드래그 앤 드롭 또는 클릭하여 파일 찾기
+                                        </p>
+                                        <p class="txt02">
+                                            해당 영역에 파일이, 대표 상품으로 등록됩니다.<br/>(FBX OBJ GLTF GLB, 파일만 등록 가능)
+                                        </p>
+                                        <ul id="mainDropzonePreview">
+                                            <li class="mainDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name">Dragonball</span>
+                                                <span data-dz-size="data-dz-size">15.12kb</span>
+                                                <strong data-dz-errormessage="data-dz-errormessage">에러메시지</strong>
+                                            </li>
+                                            <li class="mainDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name">Dragonball</span>
+                                                <span data-dz-size="data-dz-size">15.12kb</span>
+                                                <strong data-dz-errormessage="data-dz-errormessage">에러메시지</strong>
+                                            </li>
+                                            <li class="mainDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name">Dragonball</span>
+                                                <span data-dz-size="data-dz-size">15.12kb</span>
+                                                <strong data-dz-errormessage="data-dz-errormessage">에러메시지</strong>
+                                            </li>
+                                            <li class="mainDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name">Dragonball</span>
+                                                <span data-dz-size="data-dz-size">15.12kb</span>
+                                                <strong data-dz-errormessage="data-dz-errormessage">에러메시지</strong>
+                                            </li>
+                                            <li class="mainDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name">Dragonball</span>
+                                                <span data-dz-size="data-dz-size">15.12kb</span>
+                                                <strong data-dz-errormessage="data-dz-errormessage">에러메시지</strong>
+                                            </li>
+                                            <li class="mainDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name">Dragonball</span>
+                                                <span data-dz-size="data-dz-size">15.12kb</span>
+                                                <strong data-dz-errormessage="data-dz-errormessage">에러메시지</strong>
+                                            </li>
+                                            <li class="mainDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name">Dragonball</span>
+                                                <span data-dz-size="data-dz-size">15.12kb</span>
+                                                <strong data-dz-errormessage="data-dz-errormessage">에러메시지</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+    
+                                </div>
+                                <div class="drag_area">
+                                    <strong>
+                                        함께 <em>묶어 판매할 다른 상품</em>이 있다면 등록해주세요
+                                    </strong>
+                                    <div class="drag_zone etc_drag_zone" id="etcDropzone">
+                                            <span>
+                                                추가 상품 등록
+                                            </span>
+                                        <img src="/resources/assets/images/products/ico_cloud.svg" alt="upload_icon" />
+                                        <p class="txt01">
+                                            드래그 앤 드롭 또는 클릭하여 파일 찾기
+                                        </p>
+                                        <p class="txt02">
+                                            두 개 이상의 모델 파일을 등록하고자 할 때<br/>대표 상품을 제외한 상품은 해당 영역에 등록해주세요.
+                                        </p>
+                                        <ul id="etcDropzonePreview">
+                                            <li id="etcDropzonePreviewList">
+                                                <span data-dz-name="data-dz-name"></span>
+                                                <span data-dz-size="data-dz-size"></span>
+                                                <strong data-dz-errormessage="data-dz-errormessage"></strong>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -594,6 +678,16 @@
                 $('body').css("overflow", "unset");
             }
         });
+
+        // 업로드 썸네일 없을 경우 빈 텍스트 추가
+        var item_content = $('.reg_thumb')[0]
+        if($('.reg_thumb')[0].children.length <= 0){
+            $('.reg_thumb').addClass('item_empty')                    
+            var ptag = document.createElement("p");
+            $('.reg_thumb')[0].appendChild(ptag).innerText = '노출 할 화면이 없습니다.'
+        } else {
+            $('.reg_thumb').removeClass('item_empty')
+        }
     </script>
 
 </body>

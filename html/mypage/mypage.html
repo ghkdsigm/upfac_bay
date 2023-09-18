@@ -31,7 +31,11 @@
                     <div class="my_info_cont">
                         <div class="is_profile">
                             <div class="is_img">
-                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" />
+                                <input type="file" accept="image/*" id="profileImageInput" class="hidden" onchange="readURL(this);">
+                                <img src="/resources/assets/images/mypage/ico_profile.svg" alt="프로필" class="user_profile" id="preview"/>
+                                <button type="button" class="btn_profile_edit" onclick="onClickUpload()">
+                                    <img src="/resources/assets/images/mypage/ico_profile_edit.svg" alt="프로필" />
+                                </button>
                             </div>
                             <div class="is_text">
                                 <!-- [dev] 판매자 모드일경우 type_user 텍스트 '판매자 회원' 으로 변경-->
@@ -67,6 +71,10 @@
                     </div>
                 </div>
             </div>
+        </section>
+        
+        <!-- 마이페이지 리스트 -->
+        <div class="mypage_list_area">
             <div class="container">
                 <ul class="mypage_list">
                     <li class="on"><a href="javascript:;">내가 본 상품</a></li>
@@ -76,7 +84,8 @@
                     <li><a href="javascript:;">다운로드 내역</a></li>
                 </ul>
             </div>
-        </section>
+        </div>
+        <!-- 마이페이지 리스트 끝 -->
 
         <!-- 물품 리스트 -->
         <section class="product_area product_sub_area">
@@ -331,6 +340,11 @@
                             </div>
                         </div>
                     </li>
+                    <!-- [dev] 내역 없을경우 -->
+                    <li class="data_none">
+                        <img src="/resources/assets/images/common/ico_item_none.svg" alt="느낌표 아이콘" />
+                        <p>내가 본 상품이 없습니다.</p>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -375,6 +389,23 @@
                 }
             });
         })
+        // [dev] 유저 프로필 사진 수정
+        function onClickUpload() {
+            let myInput = document.getElementById("profileImageInput");
+            myInput.click();
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                document.getElementById('preview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                document.getElementById('preview').src = e.target.result;
+            }
+        }
     </script>
 
 
